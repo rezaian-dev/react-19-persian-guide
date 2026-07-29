@@ -275,15 +275,16 @@ python3 -m epubcheck React19-Persian-Guide.epub
 </div>
 
 ```text
-├── src/                                ← the book itself: text, styles, fonts, builders
+├── src/                                ← the whole book: text, styles, fonts, builders
 │   ├── chapters/NN-name.md             ← 37 chapters (front-matter + custom callouts)
 │   ├── style.css · style-print.css     ← colour A4/RTL · B/W print overlay
 │   ├── build.py · build_epub.py        ← Markdown → PDF / EPUB 3
 │   ├── fonts/ · cover-bg.jpg           ← Vazirmatn, JetBrains Mono, Noto Emoji
-│   └── banner/ · tools/                ← README banner, social card, cover artwork
-├── docs/                               ← GitHub Pages (main /docs) + the 3 downloads
-└── .github/workflows/build-book.yml    ← CI: builds all three, validates PDF & EPUB
+│   └── banner/                         ← README banner and social card sources
+└── docs/                               ← GitHub Pages (main /docs) + the 3 downloads
 ```
+
+۵ فایل در ریشه — «README»، «CHANGELOG»، «CONTRIBUTING»، «LICENSE» و «.gitignore» — و ۲ پوشه: «src» برای سورس کتاب و «docs» برای صفحهٔ Pages؛ نه CI، نه اسکریپت‌های حاشیه‌ای، نه نسخهٔ تکراری از یک فایل.
 
 ---
 
@@ -293,7 +294,7 @@ python3 -m epubcheck React19-Persian-Guide.epub
 
 ## 🤝 مشارکت
 
-غلط تایپی، خطای فنی یا پیشنهاد بهتر شدن یک بخش را مستقیم اصلاح کنید و PR بفرستید. قواعد نگارش فارسی، نحوۀ بلوک‌های `:::tip` و مراحل انتشار نسخۀ جدید در [CONTRIBUTING.md](./CONTRIBUTING.md) آمده است. هر PR روی **GitHub Actions** build می‌شود و هر سه خروجی به‌عنوان Artifact قابل دانلود است؛ برای اصلاح متن، به محیط محلی نیاز ندارید. تاریخچۀ نسخه‌ها در [CHANGELOG.md](./CHANGELOG.md).
+غلط تایپی، خطای فنی یا پیشنهاد بهتر شدن یک بخش را مستقیم اصلاح کنید و PR بفرستید. قواعد نگارش فارسی، نحوۀ بلوک‌های `:::tip` و مراحل انتشار نسخۀ جدید در [CONTRIBUTING.md](./CONTRIBUTING.md) آمده است. مخزن عمداً بدون CI نگه داشته شده: هر سه نسخه با چند دستور محلی ساخته می‌شوند و همین باعث می‌شود صفحه‌بندی کتاب قابل کنترل بماند. تاریخچۀ نسخه‌ها در [CHANGELOG.md](./CHANGELOG.md).
 
 </div>
 
