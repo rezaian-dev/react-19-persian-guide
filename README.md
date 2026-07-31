@@ -458,7 +458,7 @@ python3 build_epub.py               # → React19-Persian-Guide.epub
 
 <table dir="rtl">
 <tr>
-<td align="center" valign="top" width="90"><img src="./docs/assets/author.jpg" width="72" alt="محمدرضا رضائیان" /><br><sub><b>محمدرضا رضائیان</b></sub></td>
+<td align="center" valign="top" width="140"><img src="./docs/assets/avatar.png" width="120" alt="محمدرضا رضائیان" /><br><sub><b>محمدرضا رضائیان</b></sub></td>
 <td dir="rtl">
 
 نویسندهٔ [مرجع جامع Next.js 16](https://github.com/rezaian-dev/nextjs-16-persian-guide) و Front-End Developer؛ این کتاب دومِ همان مسیر است: بعد از فریم‌ورک، پایهٔ خودِ React.
