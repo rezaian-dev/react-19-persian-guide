@@ -120,12 +120,16 @@
   .shot img { display: block; width: 100%; height: auto; }
   .shot span { position: absolute; right: 0; left: 0; bottom: 0; padding: 6px 10px; font-size: 12.5px; background: rgba(7,11,24,.85); color: #e2e8f0; }
 
+  /* nothing scrolls sideways: the page is the only scroller, and it only scrolls down */
+  html, body { overflow-x: hidden; max-width: 100%; }
+  pre, code, table { max-width: 100%; }
+
   /* code teaser */
   .teaser { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; align-items: center; }
   .win { direction: ltr; text-align: left; border-radius: 14px; overflow: hidden; background: #0d1117; border: 1px solid var(--line); box-shadow: 0 30px 80px rgba(0,0,0,.55); }
   .win-head { display: flex; align-items: center; gap: 7px; padding: 10px 14px; background: #161b22; border-bottom: 1px solid var(--line); font-family: var(--mono); font-size: 12px; color: #8b949e; }
   .d { width: 10px; height: 10px; border-radius: 50%; } .d.r{background:#f87171} .d.y{background:#fbbf24} .d.g{background:#34d399}
-  .win pre { margin: 0; padding: 16px 18px; font-family: var(--mono); font-size: 13px; line-height: 1.65; color: #e6edf3; overflow-x: auto; font-variant-ligatures: none; }
+  .win pre { margin: 0; padding: 16px 18px; font-family: var(--mono); font-size: 13px; line-height: 1.65; color: #e6edf3; overflow-x: hidden; font-variant-ligatures: none; white-space: pre-wrap; overflow-wrap: anywhere; tab-size: 2; }
   .k{color:#ff7b72} .s{color:#a5d6ff} .f{color:#d2a8ff} .t{color:#ffa657} .tag{color:#7ee787} .a{color:#79c0ff} .cm{color:#8b949e;font-style:italic}
   .teaser ul { list-style: none; padding: 0; margin: 14px 0 0; color: #cbd5e1; font-size: 15px; }
   .teaser li { padding: 6px 0; padding-right: 26px; position: relative; }
@@ -260,18 +264,20 @@
     </div>
     <div class="win">
       <div class="win-head"><span class="d r"></span><span class="d y"></span><span class="d g"></span>&nbsp; src/features/checkout/CheckoutForm.tsx</div>
-<pre tabindex="0" aria-label="نمونه کد CheckoutForm"><span class="k">import</span> { useActionState, useOptimistic, Suspense } <span class="k">from</span> <span class="s">'react'</span>;
+<pre tabindex="0" aria-label="نمونه کد CheckoutForm"><span class="k">import</span> { useActionState, useOptimistic }
+  <span class="k">from</span> <span class="s">'react'</span>;
 
-<span class="k">export function</span> <span class="f">CheckoutForm</span>({ cart }: { cart: <span class="t">Cart</span> }) {
-  <span class="k">const</span> [state, submit, pending] = <span class="f">useActionState</span>(placeOrder, <span class="a">null</span>);
-  <span class="k">const</span> [items, addOptimistic] = <span class="f">useOptimistic</span>(cart.items);
+<span class="k">export function</span> <span class="f">CheckoutForm</span>({ cart }: <span class="t">Props</span>) {
+  <span class="k">const</span> [state, submit] =
+    <span class="f">useActionState</span>(placeOrder, <span class="a">null</span>);
+  <span class="k">const</span> [items] = <span class="f">useOptimistic</span>(cart.items);
 
   <span class="k">return</span> (
     &lt;<span class="tag">form</span> <span class="a">action</span>={submit}&gt;
       &lt;<span class="tag">Suspense</span> <span class="a">fallback</span>={&lt;<span class="tag">Skeleton</span> /&gt;}&gt;
         &lt;<span class="tag">CartSummary</span> <span class="a">items</span>={items} /&gt;
       &lt;/<span class="tag">Suspense</span>&gt;
-      {state?.error &amp;&amp; &lt;<span class="tag">p</span> <span class="a">role</span>=<span class="s">"alert"</span>&gt;{state.error}&lt;/<span class="tag">p</span>&gt;}
+      {state?.error &amp;&amp; &lt;<span class="tag">Alert</span> <span class="a">msg</span>={state.error} /&gt;}
       &lt;<span class="tag">SubmitButton</span> /&gt;  <span class="cm">// useFormStatus()</span>
     &lt;/<span class="tag">form</span>&gt;
   );
