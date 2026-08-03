@@ -177,21 +177,21 @@
 <tr>
 <td align="center" width="33%">
 
-<a href="./docs/pdf/React19-Persian-Guide.pdf" target="_blank"><img src="./docs/assets/page-cover.jpg" width="320" alt="جلد کتاب" /></a>
+<a href="./docs/pdf/React19-Persian-Guide.pdf" target="_blank"><img src="./docs/assets/page-cover.jpg" width="190" alt="جلد کتاب" /></a>
 
 <sub>جلد کتاب</sub>
 
 </td>
 <td align="center" width="33%">
 
-<a href="./docs/pdf/React19-Persian-Guide.pdf" target="_blank"><img src="./docs/assets/page-toc.jpg" width="320" alt="فهرست مطالب با لینک داخلی" /></a>
+<a href="./docs/pdf/React19-Persian-Guide.pdf" target="_blank"><img src="./docs/assets/page-toc.jpg" width="190" alt="فهرست مطالب با لینک داخلی" /></a>
 
 <sub>فهرست مطالب با لینک داخلی</sub>
 
 </td>
 <td align="center" width="33%">
 
-<a href="./docs/pdf/React19-Persian-Guide.pdf" target="_blank"><img src="./docs/assets/page-chapter.jpg" width="320" alt="سرآغاز فصل" /></a>
+<a href="./docs/pdf/React19-Persian-Guide.pdf" target="_blank"><img src="./docs/assets/page-chapter.jpg" width="190" alt="سرآغاز فصل" /></a>
 
 <sub>سرآغاز فصل</sub>
 
@@ -200,21 +200,21 @@
 <tr>
 <td align="center" width="33%">
 
-<a href="./docs/pdf/React19-Persian-Guide.pdf" target="_blank"><img src="./docs/assets/page-code.jpg" width="320" alt="پنجرهٔ کد با هایلایت" /></a>
+<a href="./docs/pdf/React19-Persian-Guide.pdf" target="_blank"><img src="./docs/assets/page-code.jpg" width="190" alt="پنجرهٔ کد با هایلایت" /></a>
 
 <sub>پنجرهٔ کد با هایلایت</sub>
 
 </td>
 <td align="center" width="33%">
 
-<a href="./docs/pdf/React19-Persian-Guide.pdf" target="_blank"><img src="./docs/assets/page-workshop.jpg" width="320" alt="کارگاه مینی‌پروژه‌ها" /></a>
+<a href="./docs/pdf/React19-Persian-Guide.pdf" target="_blank"><img src="./docs/assets/page-workshop.jpg" width="190" alt="کارگاه مینی‌پروژه‌ها" /></a>
 
 <sub>کارگاه مینی‌پروژه‌ها</sub>
 
 </td>
 <td align="center" width="33%">
 
-<a href="./docs/pdf/React19-Persian-Guide.pdf" target="_blank"><img src="./docs/assets/page-interview.jpg" width="320" alt="جعبهٔ سؤالات مصاحبه" /></a>
+<a href="./docs/pdf/React19-Persian-Guide.pdf" target="_blank"><img src="./docs/assets/page-interview.jpg" width="190" alt="جعبهٔ سؤالات مصاحبه" /></a>
 
 <sub>جعبهٔ سؤالات مصاحبه</sub>
 
@@ -355,11 +355,12 @@
 
 ```bash
 git clone https://github.com/rezaian-dev/react-19-persian-guide.git
+
 cd react-19-persian-guide/src
-pip install -r requirements.txt     # WeasyPrint + markdown-it + Pygments + PyMuPDF
+pip install -r requirements.txt   # WeasyPrint, markdown-it
 python3 build.py                    # → React19-Persian-Guide.pdf
 python3 build.py --print            # → B/W print edition
-python3 build.py --html             # → build/book.html for a quick browser preview
+python3 build.py --html           # build/book.html, quick preview
 python3 build_epub.py               # → React19-Persian-Guide.epub
 ```
 
@@ -370,12 +371,20 @@ python3 build_epub.py               # → React19-Persian-Guide.epub
 </div>
 
 ```text
-├── src/            ← the book: 37 chapters, styles, fonts, two builders, artwork
-│   ├── chapters/       ← Markdown + front-matter (num, part, title, subtitle, lead)
-│   ├── style.css       ← colour A4/RTL        style-print.css  ← B/W print overlay
-│   ├── build.py        ← Markdown → PDF       build_epub.py    ← Markdown → EPUB 3
-│   └── fonts/ banner/  ← Vazirmatn · JetBrains Mono · Noto Emoji · repo artwork
-└── docs/           ← GitHub Pages (main → /docs) and the 3 downloadable files
+.
+├── src/                    <- the book itself
+│   ├── chapters/           <- 37 Markdown chapters + front-matter
+│   ├── style.css           <- colour A4 / RTL
+│   ├── style-print.css     <- black & white print overrides
+│   ├── build.py            <- Markdown -> PDF
+│   ├── build_epub.py       <- Markdown -> EPUB
+│   ├── make_previews.py    <- docs/assets/page-*.jpg at 200 dpi
+│   ├── make_avatar.py      <- avatar.png, round 240 px
+│   └── fonts/ banner/      <- Vazirmatn, JetBrains Mono, artwork
+└── docs/                   <- GitHub Pages + the 3 downloads
+    ├── index.html          <- landing page
+    ├── assets/             <- previews, avatar, social card
+    └── pdf/                <- PDF, print PDF, EPUB
 ```
 
 ---
@@ -471,7 +480,8 @@ python3 build_epub.py               # → React19-Persian-Guide.epub
 
 ```bibtex
 @book{react19-persian-guide,
-  title   = {مرجع جامع React 19 — از مبانی تا معماری Production-Level},
+  title   = {مرجع جامع React 19},
+  subtitle= {از مبانی تا معماری Production-Level},
   author  = {Rezaian, Mohammadreza},
   year    = {2026},
   edition = {1.0.3},
