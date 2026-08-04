@@ -36,28 +36,17 @@
 
 ---
 
-<table dir="rtl" align="center">
-<tr>
-<td valign="top" width="50%">
+<div dir="rtl">
 
-1. [📖 چرا این مرجع؟](#mokhaddame)
-2. [📌 کتاب در یک نگاه](#amar)
-3. [🎯 برای چه کسی است؟](#dar-khoonand)
-4. [🗺️ مسیرهای خواندن](#mosirha)
-5. [👀 نگاهی به داخل](#fares)
+| | |
+|:--|:--|
+| [📖 چرا این مرجع؟](#mokhaddame) | [📚 فصل‌ها](#faselha) |
+| [📌 کتاب در یک نگاه](#amar) | [📥 دانلود سه نسخه](#danlod) |
+| [🎯 برای چه کسی است؟](#dar-khoonand) | [🛠️ ساخت از سورس](#sakht) |
+| [🗺️ مسیرهای خواندن](#mosirha) | [❓ پرسش‌های پرتکرار](#faq) |
+| [👀 نگاهی به داخل](#fares) | [👤 نویسنده و مجوز](#moalef) |
 
-</td>
-<td valign="top" width="50%">
-
-6. [📚 فصل‌ها](#faselha)
-7. [📥 دانلود سه نسخه](#danlod)
-8. [🛠️ ساخت از سورس](#sakht)
-9. [❓ پرسش‌های پرتکرار](#faq)
-10. [👤 نویسنده و مجوز](#moalef)
-
-</td>
-</tr>
-</table>
+</div>
 
 ---
 
@@ -67,40 +56,21 @@
 
 ## ✨ چرا این مرجع؟
 
-<table>
-<tr>
-<td align="right" valign="top" width="50%" dir="rtl">
-
 ### 🧠 مدل ذهنی، نه حفظ API
 
 هر فصل با «چرا» شروع می‌شود: رندر چیست، state کِی عوض می‌شود، چرا یک `console.log` مقدار تازه را نشان نمی‌دهد و چرا یک Effect بی‌پایان اجرا نمی‌شود. بعد از این کتاب می‌توانید پیش‌بینی کنید React چه کار می‌کند — نه اینکه حدس بزنید.
-
-</td>
-<td align="right" valign="top" width="50%" dir="rtl">
 
 ### ⚡ به‌روز با React 19.2 و Compiler 1.0
 
 همهٔ تغییرات نسخهٔ ۱۹.۲ پوشش داده شده: Actions و `useActionState`، `useOptimistic`، `useEffectEvent`، `<Activity>`، هوک `use`، Suspense و Server Components — هرچه پایدار است آموزش داده می‌شود و «آزمایشی»ها با همان برچسب آمده‌اند.
 
-</td>
-</tr>
-<tr>
-<td align="right" valign="top" width="50%" dir="rtl">
-
 ### 🔬 ۲۰ اشتباه رایج، کالبدشکافی‌شده
 
 در ۱۶ جعبهٔ «اشتباه رایج» و ۲۰ مورد فصل ۳۵: کد غلط، دلیلِ درست فکر کردن، و نسخهٔ صحیح کنار هم. دقیقاً همان چیزهایی که در Code Review گرفته می‌شوند.
 
-</td>
-<td align="right" valign="top" width="50%" dir="rtl">
-
 ### 🚀 پلی تا Production
 
 معماری feature-based، تست با Vitest و Playwright، امنیت و CSP، دسترسی‌پذیری و RTL، Web Vitals و استقرار؛ در انتها ۴۵ پرسش مصاحبه از Junior تا Senior با پاسخ‌های ۱ تا ۲ دقیقه‌ای.
-
-</td>
-</tr>
-</table>
 
 </div>
 
@@ -118,10 +88,12 @@
 
 ## 📌 کتاب در یک نگاه
 
-<table align="center" dir="rtl">
-<tr><td align="center" width="25%"><b>۳۷</b><br><sub>فصل در ۴ بخش</sub></td><td align="center" width="25%"><b>۲۳۹</b><br><sub>صفحهٔ A4 (نسخهٔ رنگی)</sub></td><td align="center" width="25%"><b>۸</b><br><sub>مینی‌پروژه در کارگاه</sub></td><td align="center" width="25%"><b>۴۵</b><br><sub>پرسش مصاحبه</sub></td></tr>
-<tr><td align="center" width="25%"><b>۲۵</b><br><sub>نکتهٔ طلایی</sub></td><td align="center" width="25%"><b>۲۰</b><br><sub>اشتباه رایج با راه‌حل</sub></td><td align="center" width="25%"><b>۱۳۳</b><br><sub>مدخل واژه‌نامه</sub></td><td align="center" width="25%"><b>۳</b><br><sub>نسخه: PDF · EPUB · چاپی</sub></td></tr>
-</table>
+| شاخص | مقدار | شاخص | مقدار |
+|:--|:--:|:--|:--:|
+| فصل در ۴ بخش | ۳۷ | نکتهٔ طلایی | ۲۵ |
+| صفحهٔ A4 (نسخهٔ رنگی) | ۲۳۹ | اشتباه رایج با راه‌حل | ۲۰ |
+| مینی‌پروژه در کارگاه | ۸ | مدخل واژه‌نامه | ۱۳۳ |
+| پرسش مصاحبه | ۴۵ | نسخهٔ منتشرشده | ۳ |
 
 </div>
 
