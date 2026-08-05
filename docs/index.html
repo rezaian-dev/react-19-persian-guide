@@ -1,313 +1,351 @@
 <!doctype html>
 <html lang="fa" dir="rtl">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>مرجع جامع React 19 — کتاب فارسی رایگان | محمدرضا رضائیان</title>
-<meta name="description" content="کامل‌ترین مرجع فارسی React 19.2: ۳۷ فصل، ۲۳۹ صفحه، از JSX تا Server Components، React Compiler، Actions، Suspense، تست، امنیت و ۴۵ پرسش مصاحبه. دانلود رایگان PDF.">
-<meta property="og:title" content="مرجع جامع React 19 — کتاب فارسی رایگان">
-<meta property="og:description" content="۳۷ فصل · ۲۳۹ صفحه · از مبانی تا معماری Production-Level · دانلود رایگان PDF">
-<meta property="og:image" content="https://rezaian-dev.github.io/react-19-persian-guide/assets/social-card.jpg">
-<meta property="og:image:width" content="1280">
-<meta property="og:image:height" content="640">
-<meta property="og:url" content="https://rezaian-dev.github.io/react-19-persian-guide/">
-<meta property="og:locale" content="fa_IR">
-<meta property="og:type" content="book">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="مرجع جامع React 19 — کتاب فارسی رایگان">
-<meta name="twitter:description" content="۳۷ فصل · از مبانی تا معماری Production-Level · دانلود رایگان PDF و EPUB">
-<meta name="twitter:image" content="https://rezaian-dev.github.io/react-19-persian-guide/assets/social-card.jpg">
-<meta name="theme-color" content="#070b18">
-<link rel="canonical" href="https://rezaian-dev.github.io/react-19-persian-guide/">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='-11.5 -10.23 23 20.46'%3E%3Ccircle r='2.05' fill='%2361dafb'/%3E%3Cg stroke='%2361dafb' stroke-width='1' fill='none'%3E%3Cellipse rx='11' ry='4.2'/%3E%3Cellipse rx='11' ry='4.2' transform='rotate(60)'/%3E%3Cellipse rx='11' ry='4.2' transform='rotate(120)'/%3E%3C/g%3E%3C/svg%3E">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
-<style>
-  :root {
-    --bg: #070b18; --bg2: #0b1224; --card: rgba(15,23,42,.72); --line: rgba(148,163,184,.22);
-    --ink: #e2e8f0; --muted: #94a3b8; --accent: #22d3ee; --accent2: #7c3aed; --react: #61dafb;
-    --sans: "Vazirmatn", system-ui, -apple-system, "Segoe UI", Tahoma, sans-serif;
-    --mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
-  }
-  * { box-sizing: border-box; }
-  .skip { position: absolute; top: -100px; right: 16px; z-index: 20; padding: 8px 14px; border-radius: 8px; background: var(--accent); color: #06121f; font-weight: 700; text-decoration: none; }
-  .skip:focus { top: 12px; }
-  :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
-  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { transition: none !important; } .book img { transform: none; } }
-  html { scroll-behavior: smooth; }
-  body { margin: 0; font-family: var(--sans); color: var(--ink); background: var(--bg); line-height: 1.9; -webkit-font-smoothing: antialiased; }
-  a { color: inherit; }
-  .ltr { direction: ltr; unicode-bidi: isolate; font-family: var(--mono); }
-  .wrap { width: 92%; max-width: 1120px; margin: 0 auto; }
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="color-scheme" content="dark">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <title>مرجع فارسی React 19.2 | دانلود رایگان PDF</title>
+  <meta name="description" content="مرجع فارسی React 19.2 در ۳۷ فصل؛ از JSX، State و Hooks تا Actions، Suspense، React Compiler، تست، امنیت و معماری. دانلود رایگان PDF و EPUB.">
+  <link rel="canonical" href="https://rezaian-dev.github.io/react-19-persian-guide/">
+  <meta name="theme-color" content="#050816">
 
-  /* background */
-  .sky { position: fixed; inset: 0; z-index: -1; overflow: hidden;
-    background: radial-gradient(ellipse 50% 40% at 15% 15%, rgba(124,58,237,.30), transparent 70%),
-                radial-gradient(ellipse 50% 40% at 85% 10%, rgba(14,165,233,.25), transparent 70%),
-                radial-gradient(ellipse 60% 30% at 50% 100%, rgba(34,211,238,.14), transparent 70%),
-                linear-gradient(180deg, #050816, #0b1024 50%, #070b18); }
-  .sky::after { content: ""; position: absolute; left: -20%; right: -20%; bottom: -10%; height: 55%; opacity: .55;
-    background-image: linear-gradient(rgba(56,189,248,.14) 1px, transparent 1px), linear-gradient(90deg, rgba(56,189,248,.14) 1px, transparent 1px);
-    background-size: 56px 56px; transform: perspective(700px) rotateX(62deg); transform-origin: 50% 100%;
-    -webkit-mask-image: linear-gradient(180deg, transparent, #000 60%); mask-image: linear-gradient(180deg, transparent, #000 60%); }
+  <meta property="og:type" content="book">
+  <meta property="og:locale" content="fa_IR">
+  <meta property="og:site_name" content="Persian Developer Handbook">
+  <meta property="og:title" content="مرجع فارسی React 19.2">
+  <meta property="og:description" content="مرجع فارسی React 19.2 در ۳۷ فصل؛ از JSX، State و Hooks تا Actions، Suspense، React Compiler، تست، امنیت و معماری. دانلود رایگان PDF و EPUB.">
+  <meta property="og:url" content="https://rezaian-dev.github.io/react-19-persian-guide/">
+  <meta property="og:image" content="https://rezaian-dev.github.io/react-19-persian-guide/assets/social-card.jpg">
+  <meta property="og:image:width" content="1280">
+  <meta property="og:image:height" content="640">
+  <meta property="og:image:alt" content="مرجع فارسی React 19.2">
 
-  /* nav */
-  nav { position: sticky; top: 0; z-index: 10; backdrop-filter: blur(12px); background: rgba(7,11,24,.7); border-bottom: 1px solid var(--line); }
-  nav .wrap { display: flex; align-items: center; justify-content: space-between; height: 64px; gap: 16px; }
-  .brand { display: flex; align-items: center; gap: 10px; font-weight: 800; font-size: 17px; text-decoration: none; }
-  .brand svg { width: 28px; height: 25px; }
-  .brand .v { font-family: var(--mono); color: var(--react); font-weight: 700; }
-  nav ul { display: flex; gap: 22px; list-style: none; margin: 0; padding: 0; font-size: 14.5px; color: var(--muted); }
-  nav ul a { text-decoration: none; } nav ul a:hover { color: #fff; }
-  .btn { display: inline-flex; align-items: center; gap: 8px; padding: 10px 18px; border-radius: 12px; font-weight: 700; text-decoration: none; font-size: 15px; border: 1px solid transparent; transition: transform .15s, box-shadow .15s; white-space: nowrap; }
-  .btn:hover { transform: translateY(-1px); }
-  .btn-primary { background: linear-gradient(135deg, #22d3ee, #0ea5e9); color: #06121f; box-shadow: 0 10px 30px rgba(34,211,238,.25); }
-  .btn-ghost { border-color: var(--line); color: var(--ink); background: rgba(15,23,42,.6); }
-  .btn svg { width: 18px; height: 18px; }
-  nav .btn { padding: 8px 14px; font-size: 14px; }
-  @media (max-width: 760px) { nav ul { display: none; } }
-  .brand > span { white-space: nowrap; }
-  @media (max-width: 400px) { .brand-t { display: none; } .brand { gap: 8px; } .sub { font-size: 18px; } .sub b { font-size: 16px; } }
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="مرجع فارسی React 19.2">
+  <meta name="twitter:description" content="مرجع فارسی React 19.2 در ۳۷ فصل؛ از JSX، State و Hooks تا Actions، Suspense، React Compiler، تست، امنیت و معماری. دانلود رایگان PDF و EPUB.">
+  <meta name="twitter:image" content="https://rezaian-dev.github.io/react-19-persian-guide/assets/social-card.jpg">
 
-  /* hero */
-  .hero { padding: 72px 0 40px; display: grid; grid-template-columns: 1.15fr .85fr; gap: 40px; align-items: center; }
-  .kicker { font-family: var(--mono); font-size: 12.5px; letter-spacing: 4px; color: var(--accent); direction: ltr; text-align: right; }
-  h1 { font-size: clamp(32px, 5vw, 58px); line-height: 1.3; margin: 10px 0 10px; font-weight: 800; letter-spacing: -.5px; }
-  h1 .en { font-family: var(--mono); direction: ltr; unicode-bidi: isolate; }
-  h1 .en b { color: var(--react); }
-  .sub { font-size: 20px; color: #cbd5e1; margin: 0 0 18px; font-weight: 500; }
-  .sub b { font-family: var(--mono); color: #7dd3fc; font-weight: 700; font-size: 18px; white-space: nowrap; direction: ltr; unicode-bidi: isolate; }
-  .lead { color: var(--muted); font-size: 16.5px; max-width: 560px; margin: 0 0 26px; }
-  .cta { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
-  .cta small { color: var(--muted); font-size: 13px; }
-  .stats { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 28px; }
-  .stat { padding: 10px 16px; border-radius: 12px; background: var(--card); border: 1px solid var(--line); font-size: 14px; color: #cbd5e1; }
-  .stat b { font-family: var(--mono); color: var(--accent); font-size: 17px; margin-left: 6px; }
-
-  .book { position: relative; perspective: 1400px; }
-  .book img { width: 100%; max-width: 380px; height: auto; display: block; margin: 0 auto; border-radius: 6px 14px 14px 6px;
-    box-shadow: -20px 30px 60px rgba(0,0,0,.6), 0 0 0 1px rgba(148,163,184,.25), 0 0 80px rgba(34,211,238,.15);
-    transform: rotateY(-14deg) rotateX(4deg); transition: transform .5s ease; }
-  .book:hover img { transform: rotateY(-6deg) rotateX(2deg); }
-  @media (max-width: 900px) { .hero { grid-template-columns: 1fr; padding-top: 44px; } .book img { max-width: 300px; transform: none; } }
-
-  /* sections */
-  section { padding: 56px 0; }
-  h2 { font-size: clamp(24px, 3vw, 32px); margin: 0 0 8px; font-weight: 800; }
-  h2::before { content: ""; display: inline-block; width: 5px; height: 26px; border-radius: 3px; background: var(--accent); margin-left: 12px; vertical-align: -4px; }
-  .desc { color: var(--muted); margin: 0 0 28px; font-size: 16px; max-width: 720px; }
-
-  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; }
-  .card { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 20px 20px 16px; }
-  .card .ic { width: 40px; height: 40px; border-radius: 10px; display: grid; place-items: center; background: rgba(34,211,238,.12); color: var(--accent); margin-bottom: 12px; }
-  .card .ic svg { width: 22px; height: 22px; }
-  .card h3 { margin: 0 0 6px; font-size: 17px; }
-  .card p { margin: 0; color: var(--muted); font-size: 14.5px; }
-
-  /* parts */
-  .parts { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 14px; }
-  .part { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 18px 18px 14px; }
-  .part .n { font-family: var(--mono); color: var(--accent); font-size: 12px; letter-spacing: 2px; }
-  .part h3 { margin: 4px 0 2px; font-size: 18px; }
-  .part .ch { color: var(--muted); font-size: 13px; margin-bottom: 10px; }
-  .part ol { margin: 0; padding: 0 18px 0 0; color: #cbd5e1; font-size: 14px; line-height: 1.85; }
-  .part ol li::marker { color: var(--accent); font-family: var(--mono); font-size: 12px; }
-
-  /* preview */
-  .shots { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 14px; }
-  .shot { position: relative; border-radius: 10px; overflow: hidden; border: 1px solid var(--line); background: #fff; box-shadow: 0 20px 40px rgba(0,0,0,.4); transition: transform .2s; }
-  .shot:hover { transform: translateY(-4px); }
-  .shot img { display: block; width: 100%; height: auto; }
-  .shot span { position: absolute; right: 0; left: 0; bottom: 0; padding: 6px 10px; font-size: 12.5px; background: rgba(7,11,24,.85); color: #e2e8f0; }
-
-  /* nothing scrolls sideways: the page is the only scroller, and it only scrolls down */
-  html, body { overflow-x: hidden; max-width: 100%; }
-  pre, code, table { max-width: 100%; }
-
-  /* code teaser */
-  .teaser { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; align-items: center; }
-  .win { direction: ltr; text-align: left; border-radius: 14px; overflow: hidden; background: #0d1117; border: 1px solid var(--line); box-shadow: 0 30px 80px rgba(0,0,0,.55); }
-  .win-head { display: flex; align-items: center; gap: 7px; padding: 10px 14px; background: #161b22; border-bottom: 1px solid var(--line); font-family: var(--mono); font-size: 12px; color: #8b949e; }
-  .d { width: 10px; height: 10px; border-radius: 50%; } .d.r{background:#f87171} .d.y{background:#fbbf24} .d.g{background:#34d399}
-  .win pre { margin: 0; padding: 16px 18px; font-family: var(--mono); font-size: 13px; line-height: 1.65; color: #e6edf3; overflow-x: hidden; font-variant-ligatures: none; white-space: pre-wrap; overflow-wrap: anywhere; tab-size: 2; }
-  .k{color:#ff7b72} .s{color:#a5d6ff} .f{color:#d2a8ff} .t{color:#ffa657} .tag{color:#7ee787} .a{color:#79c0ff} .cm{color:#8b949e;font-style:italic}
-  .teaser ul { list-style: none; padding: 0; margin: 14px 0 0; color: #cbd5e1; font-size: 15px; }
-  .teaser li { padding: 6px 0; padding-right: 26px; position: relative; }
-  .teaser li::before { content: "◆"; position: absolute; right: 4px; color: var(--accent); font-size: 10px; top: 10px; }
-  @media (max-width: 900px) { .teaser { grid-template-columns: 1fr; } }
-
-  /* author */
-  .author { display: flex; gap: 22px; align-items: center; background: var(--card); border: 1px solid var(--line); border-radius: 20px; padding: 22px 26px; flex-wrap: wrap; }
-  .author img { width: 96px; height: 96px; border-radius: 50%; object-fit: cover; border: 3px solid var(--accent); box-shadow: 0 0 0 6px rgba(34,211,238,.15); }
-  .author h3 { margin: 0; font-size: 22px; }
-  .author p { margin: 4px 0 0; color: var(--muted); font-size: 15px; }
-  .links { display: flex; gap: 10px; margin-right: auto; flex-wrap: wrap; }
-
-  footer { padding: 36px 0 44px; color: var(--muted); font-size: 13.5px; border-top: 1px solid var(--line); margin-top: 30px; }
-  footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; align-items: center; }
-  .tags { display: flex; gap: 8px; flex-wrap: wrap; }
-  .tags span { font-family: var(--mono); font-size: 12px; padding: 3px 10px; border-radius: 999px; border: 1px solid var(--line); color: #cbd5e1; direction: ltr; }
-</style>
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Book","name":"راهنمای جامع و حرفه‌ای React 19.2","inLanguage":"fa","bookFormat":"EBook","isAccessibleForFree":true,
- "author":{"@type":"Person","name":"محمدرضا رضائیان","url":"https://github.com/rezaian-dev"},"datePublished":"2026-09","license":"https://creativecommons.org/licenses/by-nc-sa/4.0/",
- "url":"https://rezaian-dev.github.io/react-19-persian-guide/","image":"https://rezaian-dev.github.io/react-19-persian-guide/assets/page-cover.jpg","about":["React 19","TypeScript","React Compiler"]}
-</script>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='-11.5 -10.23 23 20.46'%3E%3Ccircle r='2.05' fill='%2361dafb'/%3E%3Cg stroke='%2361dafb' stroke-width='1' fill='none'%3E%3Cellipse rx='11' ry='4.2'/%3E%3Cellipse rx='11' ry='4.2' transform='rotate(60)'/%3E%3Cellipse rx='11' ry='4.2' transform='rotate(120)'/%3E%3C/g%3E%3C/svg%3E">
+  <link rel="preload" href="assets/fonts/Vazirmatn-Regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/Vazirmatn-Bold.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="assets/site.css">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Book","name":"مرجع فارسی React 19.2","inLanguage":"fa","numberOfPages":239,"bookFormat":"EBook","isAccessibleForFree":true,"author":{"@type":"Person","name":"محمدرضا رضائیان","url":"https://github.com/rezaian-dev"},"datePublished":"2026","license":"https://creativecommons.org/licenses/by-nc-sa/4.0/","url":"https://rezaian-dev.github.io/react-19-persian-guide/","sameAs":"https://github.com/rezaian-dev/react-19-persian-guide","image":"https://rezaian-dev.github.io/react-19-persian-guide/assets/social-card.jpg","description":"مرجع فارسی React 19.2 در ۳۷ فصل؛ از JSX، State و Hooks تا Actions، Suspense، React Compiler، تست، امنیت و معماری. دانلود رایگان PDF و EPUB."}</script>
 </head>
-<body>
-<a class="skip" href="#main">پرش به محتوا</a>
-<div class="sky"></div>
+<body data-theme="react">
+  <a class="skip-link" href="#main">پرش به محتوای اصلی</a>
+  <div class="page-glow" aria-hidden="true"></div>
 
-<nav>
-  <div class="wrap">
-    <a class="brand" href="#top">
-      <svg viewBox="-11.5 -10.23 23 20.46"><circle r="2.05" fill="#61dafb"/><g stroke="#61dafb" stroke-width="1" fill="none"><ellipse rx="11" ry="4.2"/><ellipse rx="11" ry="4.2" transform="rotate(60)"/><ellipse rx="11" ry="4.2" transform="rotate(120)"/></g></svg>
-      <span><span class="brand-t">مرجع جامع </span><span class="v">React 19</span></span>
-    </a>
-    <ul>
-      <li><a href="#why">چرا این کتاب</a></li>
-      <li><a href="#parts">فهرست</a></li>
-      <li><a href="#preview">پیش‌نمایش</a></li>
-      <li><a href="#author">نویسنده</a></li>
-    </ul>
-    <a class="btn btn-primary" href="pdf/React19-Persian-Guide.pdf" download>
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0 4-4m-4 4-4-4M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
-      دانلود PDF
-    </a>
-  </div>
-</nav>
-
-<main id="main">
-<header class="wrap hero" id="top">
-  <div>
-    <div class="kicker">PERSIAN DEVELOPER HANDBOOK</div>
-    <h1>راهنمای جامع و حرفه‌ای<br><span class="en">React <b>19.2</b></span></h1>
-    <p class="sub">از مبانی تا معماری <b>Production-Level</b></p>
-    <p class="lead">کتابی رایگان و پروژه‌محور برای توسعه‌دهندگان فارسی‌زبان؛ با تمرکز بر مدل ذهنی درست، Actions و Suspense، React Compiler، Server Components و استانداردهای واقعی صنعت — به‌همراه کارگاه عملی و پرسش‌های مصاحبه.</p>
-    <div class="cta">
-      <a class="btn btn-primary" href="pdf/React19-Persian-Guide.pdf" download>
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0 4-4m-4 4-4-4M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
-        دانلود رایگان PDF
+  <header class="site-header">
+    <nav class="container navbar" aria-label="ناوبری اصلی">
+      <a class="brand" href="#top" aria-label="مجموعه راهنماهای فارسی — React 19.2؛ بازگشت به ابتدای صفحه">
+        <span class="brand__mark"><svg viewBox="-11.5 -10.23 23 20.46" aria-hidden="true"><circle r="2.05" fill="currentColor"/><g stroke="currentColor" stroke-width="1" fill="none"><ellipse rx="11" ry="4.2"/><ellipse rx="11" ry="4.2" transform="rotate(60)"/><ellipse rx="11" ry="4.2" transform="rotate(120)"/></g></svg></span>
+        <span class="brand__text">
+          <span class="brand__collection">مجموعه راهنماهای فارسی</span>
+          <span class="brand__product">React 19.2</span>
+        </span>
       </a>
-      <a class="btn btn-ghost" href="pdf/React19-Persian-Guide.epub" download>
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/></svg>
-        نسخه EPUB (موبایل)
-      </a>
-      <a class="btn btn-ghost" href="https://github.com/rezaian-dev/react-19-persian-guide" target="_blank" rel="noopener">
-        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5A11.5 11.5 0 0 0 .5 12c0 5.08 3.29 9.39 7.86 10.91.58.1.79-.25.79-.56v-2c-3.2.7-3.87-1.37-3.87-1.37-.52-1.33-1.28-1.68-1.28-1.68-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.19 1.76 1.19 1.03 1.76 2.7 1.25 3.36.96.1-.75.4-1.25.73-1.54-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.29 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.79 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.8 1.19 1.83 1.19 3.09 0 4.42-2.7 5.39-5.27 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 23.5 12 11.5 11.5 0 0 0 12 .5z"/></svg>
-        ستاره در گیت‌هاب
-      </a>
-      <small>PDF ۱٫۶ مگابایت · EPUB ۰٫۶ مگابایت · <a href="pdf/React19-Persian-Guide-Print.pdf" download style="color:#94a3b8">نسخه چاپ سیاه‌وسفید</a></small>
-    </div>
-    <div class="stats">
-      <span class="stat"><b>۳۷</b> فصل</span>
-      <span class="stat"><b>۲۳۹</b> صفحه</span>
-      <span class="stat"><b>۸</b> مینی‌پروژه</span>
-      <span class="stat"><b>۴۵</b> پرسش مصاحبه</span>
-      <span class="stat"><b>۱۲۰+</b> اصطلاح در واژه‌نامه</span>
-    </div>
-  </div>
-  <div class="book"><img src="assets/page-cover.jpg" alt="جلد کتاب مرجع جامع React 19" width="1654" height="2339" fetchpriority="high" decoding="async"></div>
-</header>
 
-<section id="why" class="wrap">
-  <h2>چرا این کتاب؟</h2>
-  <p class="desc">React را نمی‌توان با حفظ‌کردن API یاد گرفت. این کتاب به‌جای فهرست‌کردن هوک‌ها، مدل ذهنی می‌سازد و هر مفهوم را با کد واقعی، اشتباه رایج و سؤال مصاحبه‌اش تثبیت می‌کند.</p>
-  <div class="grid">
-    <div class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4.5 13.5H12l-1 8.5 8.5-11.5H12z"/></svg></div><h3>به‌روز با React 19.2</h3><p>Actions، useActionState، useOptimistic، use()، useEffectEvent، &lt;Activity&gt; و React Compiler 1.0 — با تفکیک دقیق «پایدار» از «آزمایشی».</p></div>
-    <div class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M3 9h18M9 21V9"/></svg></div><h3>معماری و Clean Code</h3><p>ساختار feature-based، لایه‌بندی، الگوهای پیشرفته کامپوننت و مدیریت state در مقیاس با Zustand، Redux Toolkit و TanStack Query.</p></div>
-    <div class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m8 6-6 6 6 6M16 6l6 6-6 6M14 4l-4 16"/></svg></div><h3>پروژه‌محور</h3><p>یک پروژه کامل مدیریت وظایف در بخش یکم + کارگاه ۸ مینی‌پروژه (Undo/Redo، جستجوی زنده، Kanban، چت WebSocket، فروشگاه) با «چالش اضافه».</p></div>
-    <div class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg></div><h3>Production Ready</h3><p>تست با Vitest/Playwright، امنیت و CSP، دسترسی‌پذیری و RTL، Web Vitals، Docker و CI، مهاجرت ۱۸ → ۱۹ و انتخاب فریم‌ورک.</p></div>
-    <div class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3M12 17h.01"/></svg></div><h3>آمادگی مصاحبه</h3><p>در پایان هر فصل جعبه‌ی «سؤالات مصاحبه» با پاسخ در سه سطح Junior / Mid / Senior، به‌علاوه ۴۵ پرسش جمع‌بندی و جدول تمرین‌های Live Coding.</p></div>
-    <div class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20M4 19.5A2.5 2.5 0 0 0 6.5 22H20V2H6.5A2.5 2.5 0 0 0 4 4.5v15z"/></svg></div><h3>فارسی روان و حرفه‌ای</h3><p>صفحه‌آرایی راست‌به‌چپ، فونت وزیرمتن، کدهای خوانا با JetBrains Mono، جعبه‌های رنگی نکته/هشدار/پروژه و واژه‌نامه فارسی–انگلیسی.</p></div>
-  </div>
-</section>
-
-<section id="parts" class="wrap">
-  <h2>فهرست کتاب در یک نگاه</h2>
-  <p class="desc">۳۷ فصل در چهار بخش — از اولین کامپوننت تا استقرار روی Production.</p>
-  <div class="parts">
-    <div class="part"><div class="n">PART 01</div><h3>بنیادها و مفاهیم اصلی</h3><div class="ch">فصل‌های ۱ تا ۱۸</div>
-      <ol><li>معرفی React و تازه‌های نسخه ۱۹</li><li>شروع به کار با Vite و React Compiler</li><li>نقشه راه یادگیری</li><li>JSX و رندر عناصر</li><li>کامپوننت‌ها و Props</li><li>State و چرخه رندر</li><li>رویدادها و تعامل کاربر</li><li>قوانین Hooks و مرور همه هوک‌ها</li><li>فرم‌ها و Actions</li><li>useOptimistic</li><li>useEffect، useRef و useEffectEvent</li><li>واکشی داده، Suspense و use</li><li>Context و useReducer</li><li>هوک‌های سفارشی</li><li>TypeScript در React</li><li>روتینگ با React Router v8</li><li>استایل‌دهی، Tailwind v4 و Metadata</li><li>پروژه عملی: مدیریت وظایف</li></ol></div>
-    <div class="part"><div class="n">PART 02</div><h3>پیشرفته، معماری و Production</h3><div class="ch">فصل‌های ۱۹ تا ۳۲</div>
-      <ol start="19"><li>کارایی، React Compiler و Concurrent Rendering</li><li>مدیریت state در مقیاس</li><li>معماری پروژه و Clean Code</li><li>الگوهای پیشرفته کامپوننت</li><li>فرم‌ها و اعتبارسنجی پیشرفته</li><li>مدیریت خطا</li><li>دسترسی‌پذیری، RTL و i18n</li><li>امنیت اپلیکیشن React</li><li>تست‌نویسی</li><li>Server Components و Server Functions</li><li>انتخاب فریم‌ورک</li><li>Build، استقرار و Web Vitals</li><li>مهاجرت و ارتقا به React 19</li><li>انیمیشن و View Transitions</li></ol></div>
-    <div class="part"><div class="n">PART 03</div><h3>کارگاه عملی و نکات طلایی</h3><div class="ch">فصل‌های ۳۳ تا ۳۵</div>
-      <ol start="33"><li>۲۵ نکته و ترفند طلایی</li><li>کارگاه ۸ مینی‌پروژه</li><li>بهترین شیوه‌ها، ۲۰ اشتباه رایج و منابع</li></ol></div>
-    <div class="part"><div class="n">PART 04</div><h3>مرجع سریع و آمادگی مصاحبه</h3><div class="ch">فصل‌های ۳۶ تا ۳۷</div>
-      <ol start="36"><li>۴۵ پرسش مصاحبه (Junior تا Senior)</li><li>واژه‌نامه فارسی–انگلیسی</li></ol></div>
-  </div>
-</section>
-
-<section id="preview" class="wrap">
-  <h2>پیش‌نمایش صفحات</h2>
-  <p class="desc">نمونه‌هایی از صفحه‌آرایی کتاب — فهرست، جدول مرجع هوک‌ها، کد Actions، کارگاه و پرسش‌های مصاحبه.</p>
-  <div class="shots">
-    <a class="shot" href="assets/page-toc.jpg" target="_blank"><img src="assets/page-toc.jpg" width="1654" height="2339" alt="فهرست مطالب" loading="lazy"><span>فهرست مطالب</span></a>
-    <a class="shot" href="assets/page-chapter.jpg" target="_blank"><img src="assets/page-chapter.jpg" width="1654" height="2339" alt="جدول مرجع هوک‌ها" loading="lazy"><span>نقشه کامل هوک‌های React 19.2</span></a>
-    <a class="shot" href="assets/page-code.jpg" target="_blank"><img src="assets/page-code.jpg" width="1654" height="2339" alt="فرم‌ها و Actions" loading="lazy"><span>فرم‌ها و Actions</span></a>
-    <a class="shot" href="assets/page-workshop.jpg" target="_blank"><img src="assets/page-workshop.jpg" width="1654" height="2339" alt="کارگاه مینی‌پروژه‌ها" loading="lazy"><span>کارگاه مینی‌پروژه‌ها</span></a>
-    <a class="shot" href="assets/page-interview.jpg" target="_blank"><img src="assets/page-interview.jpg" width="1654" height="2339" alt="پرسش‌های مصاحبه" loading="lazy"><span>پرسش‌های مصاحبه</span></a>
-  </div>
-</section>
-
-<section class="wrap">
-  <div class="teaser">
-    <div>
-      <h2>کدی که در کتاب می‌خوانید</h2>
-      <p class="desc">هر مثال، کد واقعی و قابل‌اجرا با TypeScript است؛ نه شبه‌کد. الگوی React 19 برای فرم‌ها در چند خط:</p>
-      <ul>
-        <li><b>useActionState</b> — state، pending و خطا در یک هوک</li>
-        <li><b>useOptimistic</b> — پاسخ آنی با بازگشت خودکار</li>
-        <li><b>Suspense</b> — بارگذاری اعلانی بدون isLoading</li>
-        <li><b>useFormStatus</b> — دکمه‌ای که خودش می‌داند در حال ارسال است</li>
+      <ul class="nav-links" id="primary-menu">
+        <li><a href="#why">ویژگی‌ها</a></li>
+        <li><a href="#path">مسیر کتاب</a></li>
+        <li><a href="#preview">پیش‌نمایش</a></li>
+        <li><a href="#download">دانلود</a></li>
+        <li><a href="#series">مجموعه</a></li>
+        <li><a href="#author">نویسنده</a></li>
       </ul>
+
+      <div class="nav-actions">
+        <a class="btn btn--primary btn--small nav-download" href="pdf/React19-Persian-Guide.pdf" download>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0 4-4m-4 4-4-4M4 19v2h16v-2"/></svg><span>دانلود PDF</span>
+        </a>
+        <button class="menu-toggle" type="button" aria-controls="primary-menu" aria-expanded="false" aria-label="بازکردن منو">
+          <svg class="icon-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+          <svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="container hero" id="top">
+      <div class="hero__content">
+        <span class="hero__eyebrow">PERSIAN DEVELOPER HANDBOOK</span>
+        <h1>مرجع جامع و حرفه‌ای<br><span class="hero__product">React <strong>19.2</strong></span></h1>
+        <p class="hero__subtitle">از اولین کامپوننت تا معماری رابط کاربری در Production</p>
+        <p class="hero__lead">راهنمای فارسی و پروژه‌محور React 19.2؛ با تمرکز بر مدل رندر، Actions، Suspense، React Compiler، تست و معماری مقیاس‌پذیر.</p>
+        <div class="hero__actions">
+          <a class="btn btn--primary" href="pdf/React19-Persian-Guide.pdf" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0 4-4m-4 4-4-4M4 19v2h16v-2"/></svg> دانلود رایگان PDF</a>
+          <a class="btn btn--secondary" href="pdf/React19-Persian-Guide.epub" download>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20M4 19.5A2.5 2.5 0 0 0 6.5 22H20V2H6.5A2.5 2.5 0 0 0 4 4.5v15Z"/></svg> دانلود EPUB
+          </a>
+          <a class="btn btn--secondary" href="https://github.com/rezaian-dev/react-19-persian-guide" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path fill="currentColor" stroke="none" d="M12 .8A11.2 11.2 0 0 0 .8 12c0 4.95 3.2 9.14 7.66 10.62.56.1.77-.24.77-.54v-1.92c-3.12.68-3.78-1.33-3.78-1.33-.51-1.3-1.25-1.64-1.25-1.64-1.02-.7.08-.68.08-.68 1.12.08 1.72 1.16 1.72 1.16 1 1.72 2.63 1.22 3.27.93.1-.73.39-1.22.71-1.5-2.49-.28-5.11-1.25-5.11-5.55 0-1.23.44-2.23 1.16-3.01-.12-.28-.5-1.43.11-2.97 0 0 .95-.3 3.1 1.15a10.7 10.7 0 0 1 5.64 0c2.15-1.46 3.09-1.15 3.09-1.15.62 1.54.23 2.69.11 2.97.72.78 1.16 1.78 1.16 3.01 0 4.31-2.63 5.26-5.14 5.54.4.35.76 1.03.76 2.08v3.09c0 .3.21.65.78.54A11.2 11.2 0 0 0 23.2 12 11.2 11.2 0 0 0 12 .8Z"/></svg> مخزن گیت‌هاب
+          </a>
+        </div>
+        <div class="hero__note">
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 4 4L19 6"/></svg> ویرایش ۱.۰.۳</span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 4 4L19 6"/></svg> صفحه‌آرایی کامل راست‌به‌چپ</span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 4 4L19 6"/></svg> انتشار با مجوز CC BY-NC-SA 4.0</span>
+        </div>
+      </div>
+
+      <figure class="hero__visual">
+        <div class="cover-shell">
+          <img src="assets/web/cover-hero.webp" srcset="assets/web/cover-hero-480.webp 480w, assets/web/cover-hero-720.webp 720w, assets/web/cover-hero.webp 900w" sizes="(max-width: 620px) calc(100vw - 68px), 400px" width="900" height="1273" alt="جلد مرجع فارسی React 19.2" fetchpriority="high" decoding="async">
+        </div>
+        <figcaption class="cover-caption">نسخهٔ ۲۰۲۶ · ویرایش ۱.۰.۳</figcaption>
+      </figure>
+    </section>
+
+    <div class="metrics-band" aria-label="آمار کتاب">
+      <div class="container metrics">
+        <div class="metric">
+          <strong class="metric__value">۳۷</strong>
+          <span class="metric__label">فصل ساختاریافته</span>
+        </div>
+        <div class="metric">
+          <strong class="metric__value">۲۳۹</strong>
+          <span class="metric__label">صفحهٔ رنگی</span>
+        </div>
+        <div class="metric">
+          <strong class="metric__value">۸</strong>
+          <span class="metric__label">مینی‌پروژه</span>
+        </div>
+        <div class="metric">
+          <strong class="metric__value">۴۵</strong>
+          <span class="metric__label">پرسش مصاحبه</span>
+        </div>
+        <div class="metric">
+          <strong class="metric__value">۱۳۳</strong>
+          <span class="metric__label">مدخل واژه‌نامه</span>
+        </div>
+      </div>
     </div>
-    <div class="win">
-      <div class="win-head"><span class="d r"></span><span class="d y"></span><span class="d g"></span>&nbsp; src/features/checkout/CheckoutForm.tsx</div>
-<pre tabindex="0" aria-label="نمونه کد CheckoutForm"><span class="k">import</span> { useActionState, useOptimistic }
-  <span class="k">from</span> <span class="s">'react'</span>;
 
-<span class="k">export function</span> <span class="f">CheckoutForm</span>({ cart }: <span class="t">Props</span>) {
-  <span class="k">const</span> [state, submit] =
-    <span class="f">useActionState</span>(placeOrder, <span class="a">null</span>);
-  <span class="k">const</span> [items] = <span class="f">useOptimistic</span>(cart.items);
+    <section class="section container" id="why">
+      <header class="section-head">
+        <span class="section-eyebrow">WHY THIS GUIDE</span>
+        <h2>برای یادگیری عمیق، نه مرور سطحی</h2>
+        <p class="section-copy">محتوا از مفهوم به تصمیم فنی و از تصمیم به پیاده‌سازی می‌رسد؛ با توضیح‌های متمرکز، مثال‌های واقعی و یک مسیر روشن برای ادامهٔ یادگیری.</p>
+      </header>
+      <div class="cards">
+        <article class="card">
+          <div class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20Z"/><path d="m16 8-2.7 5.3L8 16l2.7-5.3L16 8Z"/></svg></div>
+          <h3>مدل رندر را بفهمید</h3>
+          <p>State، batching، reconciliation و چرخهٔ رندر با تمرکز بر دلیل رفتار کامپوننت‌ها آموزش داده می‌شوند.</p>
+        </article>
+        <article class="card">
+          <div class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m13 2-2 7H4l5.5 4L7 22l6-6 5 4-2-7h5l-6-4-2-7Z"/></svg></div>
+          <h3>همگام با React 19.2</h3>
+          <p>Actions، useActionState، useOptimistic، use، useEffectEvent، Activity و React Compiler در یک مسیر منسجم.</p>
+        </article>
+        <article class="card">
+          <div class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 9-4 3 4 3M16 9l4 3-4 3M14 5l-4 14"/></svg></div>
+          <h3>تمرین و پروژهٔ واقعی</h3>
+          <p>یک پروژهٔ کامل مدیریت وظایف و ۸ مینی‌پروژه برای تثبیت الگوها، هوک‌ها و تصمیم‌های طراحی.</p>
+        </article>
+        <article class="card">
+          <div class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 2 9 5-9 5-9-5 9-5Z"/><path d="m3 12 9 5 9-5M3 17l9 5 9-5"/></svg></div>
+          <h3>معماری در مقیاس</h3>
+          <p>ساختار feature-based، مدیریت state، الگوهای کامپوننت و مرزبندی مسئولیت‌ها در کدبیس بزرگ.</p>
+        </article>
+        <article class="card">
+          <div class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/></svg></div>
+          <h3>کیفیت در Production</h3>
+          <p>تست با Vitest و Playwright، امنیت، دسترسی‌پذیری، RTL، Web Vitals و استقرار.</p>
+        </article>
+        <article class="card">
+          <div class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20M4 19.5A2.5 2.5 0 0 0 6.5 22H20V2H6.5A2.5 2.5 0 0 0 4 4.5v15Z"/></svg></div>
+          <h3>مهاجرت و آمادگی مصاحبه</h3>
+          <p>مسیر ارتقا به React 19، خطاهای رایج، پرسش‌های سطح‌بندی‌شده و واژه‌نامهٔ تخصصی.</p>
+        </article>
+      </div>
+    </section>
 
-  <span class="k">return</span> (
-    &lt;<span class="tag">form</span> <span class="a">action</span>={submit}&gt;
-      &lt;<span class="tag">Suspense</span> <span class="a">fallback</span>={&lt;<span class="tag">Skeleton</span> /&gt;}&gt;
-        &lt;<span class="tag">CartSummary</span> <span class="a">items</span>={items} /&gt;
-      &lt;/<span class="tag">Suspense</span>&gt;
-      {state?.error &amp;&amp; &lt;<span class="tag">Alert</span> <span class="a">msg</span>={state.error} /&gt;}
-      &lt;<span class="tag">SubmitButton</span> /&gt;  <span class="cm">// useFormStatus()</span>
-    &lt;/<span class="tag">form</span>&gt;
+    <section class="section container" id="path">
+      <header class="section-head">
+        <span class="section-eyebrow">LEARNING PATH</span>
+        <h2>مسیر کتاب در چهار مرحله</h2>
+        <p class="section-copy">ساختار فصل‌ها از پایه به Production حرکت می‌کند؛ می‌توانید کتاب را پیوسته بخوانید یا از بخش متناسب با نیاز فعلی خود شروع کنید.</p>
+      </header>
+      <div class="parts">
+        <article class="part">
+          <span class="part__number">PART 01</span>
+          <h3>بنیادها و مفاهیم اصلی</h3>
+          <span class="part__range">فصل‌های ۱ تا ۱۸</span>
+          <p>JSX، Props، State، Hooks، Actions، Suspense، Context، TypeScript، Routing و پروژهٔ مدیریت وظایف.</p>
+        </article>
+        <article class="part">
+          <span class="part__number">PART 02</span>
+          <h3>معماری و Production</h3>
+          <span class="part__range">فصل‌های ۱۹ تا ۳۲</span>
+          <p>Compiler، Performance، مدیریت state، معماری، امنیت، تست، Server Components، استقرار و مهاجرت.</p>
+        </article>
+        <article class="part">
+          <span class="part__number">PART 03</span>
+          <h3>کارگاه و تثبیت</h3>
+          <span class="part__range">فصل‌های ۳۳ تا ۳۵</span>
+          <p>ترفندهای کاربردی، کارگاه ۸ مینی‌پروژه و بررسی اشتباهات رایج با راه‌حل.</p>
+        </article>
+        <article class="part">
+          <span class="part__number">PART 04</span>
+          <h3>مرجع و آمادگی شغلی</h3>
+          <span class="part__range">فصل‌های ۳۶ تا ۳۷</span>
+          <p>پرسش‌های مصاحبه از Junior تا Senior و واژه‌نامهٔ فارسی–انگلیسی برای مرور سریع.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section container" id="preview">
+      <header class="section-head">
+        <span class="section-eyebrow">BOOK PREVIEW</span>
+        <h2>داخل کتاب را ببینید</h2>
+        <p class="section-copy">نمونه‌هایی واقعی از جلد، ساختار فصل، کد، کارگاه و بخش مصاحبه. برای مشاهدهٔ نسخهٔ کامل هر صفحه، روی تصویر کلیک کنید.</p>
+      </header>
+      <div class="gallery">
+        <a class="gallery-card" href="assets/page-toc.jpg" target="_blank" rel="noopener">
+          <img src="assets/web/preview-toc.webp" width="420" height="594" alt="" loading="lazy" decoding="async">
+          <span class="gallery-card__label">فهرست مطالب</span>
+        </a>
+        <a class="gallery-card" href="assets/page-chapter.jpg" target="_blank" rel="noopener">
+          <img src="assets/web/preview-chapter.webp" width="420" height="594" alt="" loading="lazy" decoding="async">
+          <span class="gallery-card__label">مرجع Hooks</span>
+        </a>
+        <a class="gallery-card" href="assets/page-code.jpg" target="_blank" rel="noopener">
+          <img src="assets/web/preview-code.webp" width="420" height="594" alt="" loading="lazy" decoding="async">
+          <span class="gallery-card__label">Actions و فرم‌ها</span>
+        </a>
+        <a class="gallery-card" href="assets/page-workshop.jpg" target="_blank" rel="noopener">
+          <img src="assets/web/preview-workshop.webp" width="420" height="594" alt="" loading="lazy" decoding="async">
+          <span class="gallery-card__label">کارگاه پروژه</span>
+        </a>
+        <a class="gallery-card" href="assets/page-interview.jpg" target="_blank" rel="noopener">
+          <img src="assets/web/preview-interview.webp" width="420" height="594" alt="" loading="lazy" decoding="async">
+          <span class="gallery-card__label">پرسش‌های مصاحبه</span>
+        </a>
+      </div>
+    </section>
+
+    <section class="section section--compact container">
+      <div class="showcase">
+        <div>
+          <span class="section-eyebrow">CODE FIRST</span>
+          <h2>الگوهای React 19 در کد واقعی</h2>
+          <p class="section-copy">مثال‌ها با TypeScript نوشته شده‌اند و به‌جای کنار هم گذاشتن APIها، جریان داده، وضعیت pending، خطا و بازخورد کاربر را یکپارچه می‌کنند.</p>
+          <div class="tags"><span class="tag">Actions</span><span class="tag">Suspense</span><span class="tag">React Compiler</span><span class="tag">TypeScript</span><span class="tag">Testing</span><span class="tag">A11y</span></div>
+        </div>
+        <div class="code-window">
+          <div class="code-window__bar"><span class="dot dot--red"></span><span class="dot dot--yellow"></span><span class="dot dot--green"></span><span class="file-name">src/features/checkout/CheckoutForm.tsx</span></div>
+          <pre tabindex="0" aria-label="نمونه کد کتاب"><span class="kw">export function</span> <span class="fn">CheckoutForm</span>() {
+  <span class="kw">const</span> [state, action, pending] =
+    <span class="fn">useActionState</span>(placeOrder, initialState);
+
+  <span class="kw">return</span> (
+    &lt;<span class="tag-name">form</span> action={action}&gt;
+      &lt;<span class="tag-name">CartFields</span> /&gt;
+      {state.error &amp;&amp; &lt;<span class="tag-name">Alert</span>&gt;{state.error}&lt;/<span class="tag-name">Alert</span>&gt;}
+      &lt;<span class="tag-name">SubmitButton</span> disabled={pending} /&gt;
+    &lt;/<span class="tag-name">form</span>&gt;
   );
 }</pre>
-    </div>
-  </div>
-</section>
+        </div>
+      </div>
+    </section>
 
-<section id="author" class="wrap">
-  <h2>نویسنده</h2>
-  <div class="author">
-    <img src="assets/author.jpg" width="240" height="240" alt="محمدرضا رضائیان">
-    <div>
-      <h3>محمدرضا رضائیان</h3>
-      <p>Front-End Developer · React.js · Next.js · TypeScript · Tailwind CSS · Performance · Software Architecture</p>
-      <p>گردآوری و تدوین این مرجع با هدف کمک به جامعه‌ی توسعه‌دهندگان Front-End فارسی‌زبان انجام شده است.</p>
-    </div>
-    <div class="links">
-      <a class="btn btn-ghost" href="https://github.com/rezaian-dev" target="_blank" rel="noopener">GitHub</a>
-      <a class="btn btn-ghost" href="https://github.com/rezaian-dev/nextjs-16-persian-guide" target="_blank" rel="noopener">مرجع Next.js 16</a>
-    </div>
-  </div>
-</section>
-</main>
+    <section class="section container" id="download">
+      <header class="section-head section-head--center">
+        <span class="section-eyebrow">DOWNLOAD</span>
+        <h2>نسخهٔ مناسب خود را انتخاب کنید</h2>
+        <p class="section-copy">همهٔ خروجی‌های رسمی از همین صفحه و مخزن پروژه در دسترس‌اند.</p>
+      </header>
+      <div class="files">
+        <article class="file-card">
+          <span class="file-card__type">PDF</span>
+          <h3>نسخهٔ اصلی</h3>
+          <p>نسخهٔ رنگی و قابل جست‌وجو با فهرست داخلی برای مطالعه روی دسکتاپ و تبلت.</p>
+          <span class="file-card__meta">۲۳۹ صفحه · A4</span>
+          <a class="btn btn--primary" href="pdf/React19-Persian-Guide.pdf" download>دانلود PDF</a>
+        </article>
+        <article class="file-card">
+          <span class="file-card__type">EPUB</span>
+          <h3>نسخهٔ کتاب‌خوان</h3>
+          <p>نسخهٔ بازچینش‌پذیر راست‌به‌چپ برای موبایل و نرم‌افزارهای مطالعه EPUB.</p>
+          <span class="file-card__meta">EPUB 3 · فونت داخلی</span>
+          <a class="btn btn--secondary" href="pdf/React19-Persian-Guide.epub" download>دانلود EPUB</a>
+        </article>
+        <article class="file-card">
+          <span class="file-card__type">PRINT</span>
+          <h3>نسخهٔ مناسب چاپ</h3>
+          <p>خروجی سیاه‌وسفید با پس‌زمینهٔ روشن و مصرف جوهر کمتر برای چاپ لیزری.</p>
+          <span class="file-card__meta">۲۴۰ صفحه · سیاه‌وسفید</span>
+          <a class="btn btn--secondary" href="pdf/React19-Persian-Guide-Print.pdf" download>دانلود نسخه چاپ</a>
+        </article>
+      </div>
+    </section>
 
-<footer>
-  <div class="wrap">
-    <div>© ۲۰۲۶ محمدرضا رضائیان · منتشرشده تحت مجوز CC BY-NC-SA 4.0 · ⭐ اگر مفید بود، در گیت‌هاب ستاره بدهید</div>
-    <div class="tags"><span>React 19.2</span><span>TypeScript</span><span>Vite 8</span><span>React Compiler</span></div>
-  </div>
-</footer>
+    <section class="section container" id="series">
+      <header class="section-head">
+        <span class="section-eyebrow">THE COLLECTION</span>
+        <h2>سه مرجع، یک مسیر منسجم</h2>
+        <p class="section-copy">این سه راهنما با زبان بصری و ساختار آموزشی هماهنگ طراحی شده‌اند: ابتدا زبان، سپس کتابخانهٔ رابط کاربری و در پایان فریم‌ورک Production.</p>
+      </header>
+      <div class="series-grid">
+        <a class="series-card" href="https://rezaian-dev.github.io/javascript-persian-guide/">
+          <span class="series-card__mark">JS</span>
+          <span class="series-card__content">
+            <h3>JavaScript ES2025</h3>
+            <p>زبان و مدل ذهنی؛ پایهٔ مشترک مسیر توسعه وب</p>
+
+          </span>
+        </a>
+        <a class="series-card" href="https://rezaian-dev.github.io/react-19-persian-guide/" aria-current="page">
+          <span class="series-card__mark">RE</span>
+          <span class="series-card__content">
+            <h3>React 19.2</h3>
+            <p>رابط کاربری، مدیریت state و معماری کامپوننت</p>
+            <span class="current-label">در حال مشاهده</span>
+          </span>
+        </a>
+        <a class="series-card" href="https://rezaian-dev.github.io/nextjs-16-persian-guide/">
+          <span class="series-card__mark">NX</span>
+          <span class="series-card__content">
+            <h3>Next.js 16</h3>
+            <p>فریم‌ورک، رندر سرور، کشینگ و استقرار</p>
+
+          </span>
+        </a>
+      </div>
+    </section>
+
+    <section class="section container" id="author">
+      <div class="author-card">
+        <img class="author-card__avatar" src="assets/web/author.webp" width="240" height="240" alt="محمدرضا رضائیان" loading="lazy" decoding="async">
+        <div class="author-card__content">
+          <h2>محمدرضا رضائیان</h2>
+          <p class="author-card__role">React · Next.js · TypeScript · Front-End Architecture</p>
+          <p class="author-card__bio">توسعه‌دهندهٔ فرانت‌اند و نویسندهٔ مجموعه راهنماهای فارسی توسعه وب؛ با تمرکز بر مدل ذهنی، معماری قابل نگهداری و انتقال تجربهٔ فنی به زبان روشن.</p>
+        </div>
+        <div class="author-card__links">
+          <a class="btn btn--secondary btn--small" href="https://github.com/rezaian-dev" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path fill="currentColor" stroke="none" d="M12 .8A11.2 11.2 0 0 0 .8 12c0 4.95 3.2 9.14 7.66 10.62.56.1.77-.24.77-.54v-1.92c-3.12.68-3.78-1.33-3.78-1.33-.51-1.3-1.25-1.64-1.25-1.64-1.02-.7.08-.68.08-.68 1.12.08 1.72 1.16 1.72 1.16 1 1.72 2.63 1.22 3.27.93.1-.73.39-1.22.71-1.5-2.49-.28-5.11-1.25-5.11-5.55 0-1.23.44-2.23 1.16-3.01-.12-.28-.5-1.43.11-2.97 0 0 .95-.3 3.1 1.15a10.7 10.7 0 0 1 5.64 0c2.15-1.46 3.09-1.15 3.09-1.15.62 1.54.23 2.69.11 2.97.72.78 1.16 1.78 1.16 3.01 0 4.31-2.63 5.26-5.14 5.54.4.35.76 1.03.76 2.08v3.09c0 .3.21.65.78.54A11.2 11.2 0 0 0 23.2 12 11.2 11.2 0 0 0 12 .8Z"/></svg> GitHub</a>
+          <a class="btn btn--secondary btn--small" href="https://github.com/rezaian-dev/react-19-persian-guide/issues" target="_blank" rel="noopener">گزارش خطا</a>
+          <a class="btn btn--primary btn--small" href="pdf/React19-Persian-Guide.pdf" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0 4-4m-4 4-4-4M4 19v2h16v-2"/></svg> دریافت کتاب</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer__copy">© ۲۰۲۶ محمدرضا رضائیان · مرجع فارسی React 19.2 · CC BY-NC-SA 4.0</div>
+      <nav class="footer-links" aria-label="پیوندهای پایین صفحه">
+        <a href="https://github.com/rezaian-dev/react-19-persian-guide" target="_blank" rel="noopener">مخزن</a>
+        <a href="https://github.com/rezaian-dev/react-19-persian-guide/issues" target="_blank" rel="noopener">گزارش خطا</a>
+        <a href="#top">بازگشت به بالا</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="assets/site.js" defer></script>
 </body>
 </html>

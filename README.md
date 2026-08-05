@@ -1,476 +1,252 @@
 <a id="top"></a>
 
-<div align="center">
+<p align="center">
+  <img src="./docs/assets/web/readme-hero.webp" alt="مرجع فارسی React 19.2" width="100%">
+</p>
 
-<img src="./src/banner/banner.png" alt="مرجع جامع React 19 — از مبانی تا معماری Production-Level" width="660" />
+<p align="center" dir="rtl">
+  <strong>از اولین کامپوننت تا معماری رابط کاربری در Production</strong>
+  <br>
+  راهنمای فارسی و پروژه‌محور React 19.2؛ با تمرکز بر مدل رندر، Actions، Suspense، React Compiler، تست و معماری مقیاس‌پذیر.
+</p>
 
-</div>
+<p align="center">
+  <a href="https://rezaian-dev.github.io/react-19-persian-guide/"><img src="https://img.shields.io/badge/READ_ONLINE-0EA5E9?style=for-the-badge&logo=githubpages&logoColor=white" alt="مطالعه آنلاین"></a>
+  <a href="./docs/pdf/React19-Persian-Guide.pdf"><img src="https://img.shields.io/badge/DOWNLOAD_PDF-DC2626?style=for-the-badge&logo=adobeacrobatreader&logoColor=white" alt="دانلود PDF"></a>
+  <a href="./docs/pdf/React19-Persian-Guide.epub"><img src="https://img.shields.io/badge/DOWNLOAD_EPUB-7C3AED?style=for-the-badge&logo=applebooks&logoColor=white" alt="دانلود EPUB"></a>
+</p>
 
-<div dir="rtl" align="center">
+<p align="center">
+  <img src="https://img.shields.io/badge/React-19.2-61DAFB?style=flat-square&logo=react&logoColor=000" alt="React 19.2">
+  <img src="https://img.shields.io/badge/Chapters-37-0F172A?style=flat-square" alt="۳۷ فصل">
+  <img src="https://img.shields.io/badge/Edition-1.0.3-16A34A?style=flat-square" alt="ویرایش ۱.۰.۳">
+  <img src="https://img.shields.io/badge/Language-Persian-0284C7?style=flat-square" alt="زبان فارسی">
+  <img src="https://img.shields.io/badge/License-CC_BY--NC--SA_4.0-64748B?style=flat-square" alt="مجوز CC BY-NC-SA 4.0">
+</p>
 
-# ⚛️ مرجع جامع React 19
-
-**از مبانی تا معماری Production-Level** — کامل‌ترین مرجع فارسی React ۱۹.۲، پروژه‌محور و بر پایهٔ مدل ذهنی درست.
-
-<sub>ویرایش ۱.۰.۳ · ۲۰۲۶</sub>
-
-</div>
-
-<div dir="ltr" align="center">
-
-![React](https://img.shields.io/badge/React-19.2-61DAFB?style=for-the-badge&logo=react&logoColor=black)
-![TypeScript](https://img.shields.io/badge/TypeScript-6-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
-![React Compiler](https://img.shields.io/badge/React_Compiler-1.0-0ea5e9?style=for-the-badge)
-![Chapters](https://img.shields.io/badge/37_chapters-4_parts-0f172a?style=for-the-badge)
-![Pages](https://img.shields.io/badge/239_pages-A4-1e293b?style=for-the-badge)
-![License](https://img.shields.io/badge/CC--BY--NC--SA-4.0-888888?style=for-the-badge)
-
-<br>
-
-[![📘 دانلود PDF — ۲۳۹ صفحهٔ رنگی](https://img.shields.io/badge/📘_Download_PDF-239_pages-2563eb?style=for-the-badge&logo=adobeacrobatreader&logoColor=white)](./docs/pdf/React19-Persian-Guide.pdf)
-[![📱 دانلود EPUB — ۶۱۵ کیلوبایت](https://img.shields.io/badge/📱_Download_EPUB-615_KB-7c3aed?style=for-the-badge&logo=applebooks&logoColor=white)](./docs/pdf/React19-Persian-Guide.epub)
-[![🖨️ چاپ سیاه‌وسفید — ۲۴۰ صفحهٔ لیزری](https://img.shields.io/badge/🖨️_Print_B%2FW-240_pages-475569?style=for-the-badge&logo=printer&logoColor=white)](./docs/pdf/React19-Persian-Guide-Print.pdf)
-[![🌐 صفحهٔ معرفی — پیش‌نمایش صفحات و دانلود مستقیم](https://img.shields.io/badge/🌐_Live_site-preview_%26_downloads-0ea5e9?style=for-the-badge&logo=githubpages&logoColor=white)](https://rezaian-dev.github.io/react-19-persian-guide/)
-
-</div>
-
----
-
-<div dir="rtl">
-
-| | |
-|:--|:--|
-| [📖 چرا این مرجع؟](#mokhaddame) | [📚 فصل‌ها](#faselha) |
-| [📌 کتاب در یک نگاه](#amar) | [📥 دانلود سه نسخه](#danlod) |
-| [🎯 برای چه کسی است؟](#dar-khoonand) | [🛠️ ساخت از سورس](#sakht) |
-| [🗺️ مسیرهای خواندن](#mosirha) | [❓ پرسش‌های پرتکرار](#faq) |
-| [👀 نگاهی به داخل](#fares) | [👤 نویسنده و مجوز](#moalef) |
-
-</div>
+<p align="center" dir="rtl">
+  <a href="#about">درباره</a> ·
+  <a href="#path">مسیر یادگیری</a> ·
+  <a href="#chapters">فهرست فصل‌ها</a> ·
+  <a href="#preview">پیش‌نمایش</a> ·
+  <a href="#editions">نسخه‌ها</a> ·
+  <a href="#build">ساخت از سورس</a> ·
+  <a href="#collection">مجموعه</a>
+</p>
 
 ---
 
 <div dir="rtl">
 
-<a id="mokhaddame"></a>
+<a id="about"></a>
 
-## ✨ چرا این مرجع؟
+## درباره راهنما
 
-### 🧠 مدل ذهنی، نه حفظ API
+مرجع فارسی React 19.2 در ۳۷ فصل؛ از JSX، State و Hooks تا Actions، Suspense، React Compiler، تست، امنیت و معماری. دانلود رایگان PDF و EPUB.
 
-هر فصل با «چرا» شروع می‌شود: رندر چیست، state کِی عوض می‌شود، چرا یک `console.log` مقدار تازه را نشان نمی‌دهد و چرا یک Effect بی‌پایان اجرا نمی‌شود. بعد از این کتاب می‌توانید پیش‌بینی کنید React چه کار می‌کند — نه اینکه حدس بزنید.
+این راهنما بر **مدل ذهنی، تحلیل رفتار و تصمیم‌گیری فنی** تمرکز دارد. هدف این نیست که مجموعه‌ای از APIها حفظ شود؛ هدف این است که بتوانید مسئله را بفهمید، راه‌حل را ارزیابی کنید و کدی بنویسید که در پروژهٔ واقعی قابل نگهداری باشد.
 
-### ⚡ به‌روز با React 19.2 و Compiler 1.0
+### ویژگی‌ها
 
-همهٔ تغییرات نسخهٔ ۱۹.۲ پوشش داده شده: Actions و `useActionState`، `useOptimistic`، `useEffectEvent`، `<Activity>`، هوک `use`، Suspense و Server Components — هرچه پایدار است آموزش داده می‌شود و «آزمایشی»ها با همان برچسب آمده‌اند.
+- **مدل رندر را بفهمید:** State، batching، reconciliation و چرخهٔ رندر با تمرکز بر دلیل رفتار کامپوننت‌ها آموزش داده می‌شوند.
+- **همگام با React 19.2:** Actions، useActionState، useOptimistic، use، useEffectEvent، Activity و React Compiler در یک مسیر منسجم.
+- **تمرین و پروژهٔ واقعی:** یک پروژهٔ کامل مدیریت وظایف و ۸ مینی‌پروژه برای تثبیت الگوها، هوک‌ها و تصمیم‌های طراحی.
+- **معماری در مقیاس:** ساختار feature-based، مدیریت state، الگوهای کامپوننت و مرزبندی مسئولیت‌ها در کدبیس بزرگ.
+- **کیفیت در Production:** تست با Vitest و Playwright، امنیت، دسترسی‌پذیری، RTL، Web Vitals و استقرار.
+- **مهاجرت و آمادگی مصاحبه:** مسیر ارتقا به React 19، خطاهای رایج، پرسش‌های سطح‌بندی‌شده و واژه‌نامهٔ تخصصی.
 
-### 🔬 ۲۰ اشتباه رایج، کالبدشکافی‌شده
+<a id="path"></a>
 
-در ۱۶ جعبهٔ «اشتباه رایج» و ۲۰ مورد فصل ۳۵: کد غلط، دلیلِ درست فکر کردن، و نسخهٔ صحیح کنار هم. دقیقاً همان چیزهایی که در Code Review گرفته می‌شوند.
+## مسیر یادگیری
 
-### 🚀 پلی تا Production
+### ۱. بنیادها و مفاهیم اصلی
 
-معماری feature-based، تست با Vitest و Playwright، امنیت و CSP، دسترسی‌پذیری و RTL، Web Vitals و استقرار؛ در انتها ۴۵ پرسش مصاحبه از Junior تا Senior با پاسخ‌های ۱ تا ۲ دقیقه‌ای.
+**فصل‌های ۱ تا ۱۸** — JSX، Props، State، Hooks، Actions، Suspense، Context، TypeScript، Routing و پروژهٔ مدیریت وظایف.
 
-</div>
+دستاورد: **ساخت مدل ذهنی و درک رفتار پایه**
 
-<div dir="rtl">
+### ۲. معماری و Production
 
-حفظ‌کردن API راه یادگیری React نیست. این کتاب، در ۳۷ فصل، دقیقاً برای همان «چرا» نوشته شده است: از JSX تا Server Components، با کد واقعی TypeScript در ۳۰ فصل و یک جعبهٔ «اشتباه رایج» که توضیح می‌دهد چرا آن کارِ آشنا، غلط است.
+**فصل‌های ۱۹ تا ۳۲** — Compiler، Performance، مدیریت state، معماری، امنیت، تست، Server Components، استقرار و مهاجرت.
 
-</div>
+دستاورد: **تسلط بر الگوها و قابلیت‌های مدرن**
 
----
+### ۳. کارگاه و تثبیت
 
-<div dir="rtl">
+**فصل‌های ۳۳ تا ۳۵** — ترفندهای کاربردی، کارگاه ۸ مینی‌پروژه و بررسی اشتباهات رایج با راه‌حل.
 
-<a id="amar"></a>
+دستاورد: **طراحی کد پایدار و قابل نگهداری**
 
-## 📌 کتاب در یک نگاه
+### ۴. مرجع و آمادگی شغلی
 
-| شاخص | مقدار | شاخص | مقدار |
-|:--|:--:|:--|:--:|
-| فصل در ۴ بخش | ۳۷ | نکتهٔ طلایی | ۲۵ |
-| صفحهٔ A4 (نسخهٔ رنگی) | ۲۳۹ | اشتباه رایج با راه‌حل | ۲۰ |
-| مینی‌پروژه در کارگاه | ۸ | مدخل واژه‌نامه | ۱۳۳ |
-| پرسش مصاحبه | ۴۵ | نسخهٔ منتشرشده | ۳ |
+**فصل‌های ۳۶ تا ۳۷** — پرسش‌های مصاحبه از Junior تا Senior و واژه‌نامهٔ فارسی–انگلیسی برای مرور سریع.
 
-</div>
+دستاورد: **تثبیت آموخته‌ها و آمادگی پروژه**
 
----
+> برای مطالعهٔ پیوسته از بخش اول شروع کنید. اگر تجربهٔ عملی دارید، می‌توانید مستقیماً به مرحلهٔ متناسب با نیاز فعلی خود بروید.
 
-<div dir="rtl">
+<a id="chapters"></a>
 
-<a id="dar-khoonand"></a>
+## فهرست فصل‌ها
 
-## 🎯 برای چه کسی است؟
+فهرست کامل در چهار بخش جمع شده است تا صفحه خلوت بماند. برای مشاهدهٔ فصل‌ها، هر بخش را باز کنید.
 
-| ✅ مناسب شماست اگر… | ⚠️ فعلاً نروید سراغش اگر… |
-|:--|:--|
-| با JavaScript و TypeScript آشنایید و می‌خواهید React را در نسخهٔ ۱۹، درست و از پایه یاد بگیرید | تازه با `let`، `map` و Promise آشنا شده‌اید؛ از فصل‌های ۱ تا ۴ شروع کنید |
-| کد می‌نویسید ولی «چرا این‌جا رندر شد؟» برایتان جعبهٔ سیاه است | فقط یک تکه‌کد آماده برای یک فرم می‌خواهید؛ این کتاب تفکر می‌دهد، نه اسنیپت |
-| می‌خواهید فرم، داده و خطا را با Actions و Suspense طراحی کنید، نه `useEffect` + `loading` دستی | با کلاس‌ها و Lifecycle کار کرده‌اید و JSX ندیده‌اید؛ اول فصل ۲ را بخوانید |
-| برای مصاحبه آماده می‌شوید یا می‌خواهید Code Review تیم را جدی‌تر کنید | روی نسخهٔ ۱۸ هستید و عجله دارید: اول فصل ۳۱ (مهاجرت) را بخوانید |
+<details>
+<summary><strong>بخش اول — بنیادها و مفاهیم اصلی</strong> · فصل‌های ۱ تا ۱۸</summary>
 
-</div>
+1. [معرفی React و تازه‌های نسخه ۱۹](./src/chapters/01-intro.md)
+2. [شروع به کار و ساختار پروژه](./src/chapters/02-setup.md)
+3. [نقشه راه یادگیری](./src/chapters/03-roadmap.md)
+4. [JSX و رندر عناصر](./src/chapters/04-jsx.md)
+5. [کامپوننت‌ها و Props](./src/chapters/05-components-props.md)
+6. [State و چرخه رندر](./src/chapters/06-state.md)
+7. [رویدادها و تعامل کاربر](./src/chapters/07-events.md)
+8. [قوانین Hooks و مرور همه هوک‌ها](./src/chapters/08-hooks-rules.md)
+9. [فرم‌ها و Actions در React 19](./src/chapters/09-forms-actions.md)
+10. [useOptimistic و تجربه کاربری آنی](./src/chapters/10-optimistic.md)
+11. [useEffect، useRef و useEffectEvent](./src/chapters/11-effects-refs.md)
+12. [واکشی داده، Suspense و use](./src/chapters/12-data-suspense.md)
+13. [Context و useReducer](./src/chapters/13-context-reducer.md)
+14. [هوک‌های سفارشی](./src/chapters/14-custom-hooks.md)
+15. [TypeScript در React](./src/chapters/15-typescript.md)
+16. [روتینگ با React Router v8](./src/chapters/16-routing.md)
+17. [استایل‌دهی، Tailwind v4 و Metadata](./src/chapters/17-styling-metadata.md)
+18. [پروژه عملی: مدیریت وظایف کامل](./src/chapters/18-mini-project.md)
 
----
-
-<div dir="rtl">
-
-<a id="mosirha"></a>
-
-## 🗺️ مسیرهای خواندن
-
-| مسیر | فصل‌ها | چه چیزی می‌گیرید |
-|:--|:--|:--|
-| **مبتدی تا اولین اپلیکیشن** | از ۱ تا ۱۸ | مدل ذهنی، هوک‌ها، فرم، داده، TypeScript و یک پروژهٔ کامل مدیریت وظایف |
-| **سطح Production** | از ۱۹ تا ۳۲ | کارایی، Compiler، معماری، تست، امنیت، دسترسی‌پذیری، RSC و استقرار |
-| **کارگاه و تثبیت** | از ۳۳ تا ۳۵ | ۸ مینی‌پروژه، ۲۵ نکتهٔ طلایی و ۲۰ اشتباه رایج |
-| **هفتهٔ مصاحبه** | فصل ۳۶ و ۳۷ | ۴۵ پرسش با پاسخ + واژه‌نامهٔ ۱۳۳ مدخلی برای مرور سریع |
-
-سه عادت که کتاب را نتیجه‌بخش می‌کند: **یک فصل، یک بازسازی** — کد فصل را در پروژهٔ خودتان بنویسید، نه کپی؛ **جعبهٔ «اشتباه رایج» را جدی بگیرید** — دقیقاً همان چیزی که در Code Review می‌گیرند؛ و **نقشهٔ راه فصل ۳** را اول بخوانید تا مسیر پراکنده نشود.
-
-</div>
-
----
-
-<div dir="rtl">
-
-<a id="fares"></a>
-
-## 👀 نگاهی به داخل کتاب
-
-با کلیک روی هر تصویر، PDF باز می‌شود.
-
-</div>
-
-<table align="center">
-<tr>
-<td align="center" width="33%">
-
-<a href="./docs/pdf/React19-Persian-Guide.pdf" target="_blank"><img src="./docs/assets/page-cover.jpg" width="190" alt="جلد کتاب" /></a>
-
-<sub>جلد کتاب</sub>
-
-</td>
-<td align="center" width="33%">
-
-<a href="./docs/pdf/React19-Persian-Guide.pdf" target="_blank"><img src="./docs/assets/page-toc.jpg" width="190" alt="فهرست مطالب با لینک داخلی" /></a>
-
-<sub>فهرست مطالب با لینک داخلی</sub>
-
-</td>
-<td align="center" width="33%">
-
-<a href="./docs/pdf/React19-Persian-Guide.pdf" target="_blank"><img src="./docs/assets/page-chapter.jpg" width="190" alt="سرآغاز فصل" /></a>
-
-<sub>سرآغاز فصل</sub>
-
-</td>
-</tr>
-<tr>
-<td align="center" width="33%">
-
-<a href="./docs/pdf/React19-Persian-Guide.pdf" target="_blank"><img src="./docs/assets/page-code.jpg" width="190" alt="پنجرهٔ کد با هایلایت" /></a>
-
-<sub>پنجرهٔ کد با هایلایت</sub>
-
-</td>
-<td align="center" width="33%">
-
-<a href="./docs/pdf/React19-Persian-Guide.pdf" target="_blank"><img src="./docs/assets/page-workshop.jpg" width="190" alt="کارگاه مینی‌پروژه‌ها" /></a>
-
-<sub>کارگاه مینی‌پروژه‌ها</sub>
-
-</td>
-<td align="center" width="33%">
-
-<a href="./docs/pdf/React19-Persian-Guide.pdf" target="_blank"><img src="./docs/assets/page-interview.jpg" width="190" alt="جعبهٔ سؤالات مصاحبه" /></a>
-
-<sub>جعبهٔ سؤالات مصاحبه</sub>
-
-</td>
-</tr>
-</table>
-
----
-
-<div dir="rtl">
-
-<a id="faselha"></a>
-
-## 📚 فصل‌ها
-
-چک‌لیست کامل ۳۷ فصل؛ بخش‌های بسته با یک کلیک باز می‌شوند.
-
-</div>
-
-<details open>
-<summary><b>بخش یکم — بنیادها و مفاهیم اصلی</b> &nbsp;·&nbsp; ۱۸ فصل</summary>
-
-<div dir="rtl">
-
-ستون‌های مدل ذهنی: از JSX تا Actions، Suspense، TypeScript و روتینگ.
-
-| # | فصل | محور فصل |
-|:--:|:--|:--|
-| ۱ | **معرفی React و تازه‌های نسخه ۱۹** | کتابخانه چیست، چه مشکلی را حل می‌کند و در نسخه ۱۹ چه تغییر کرده |
-| ۲ | **شروع به کار و ساختار پروژه** | نصب با Vite، ساختار فولدرها، ابزارهای توسعه و اولین کامپوننت |
-| ۳ | **نقشه راه یادگیری** | مسیر مبتدی تا حرفه‌ای و نحوه استفاده از این کتاب |
-| ۴ | **JSX و رندر عناصر** | قواعد JSX، عبارات، شرط‌ها، لیست‌ها و Fragment |
-| ۵ | **کامپوننت‌ها و Props** | ترکیب، children، ref به‌عنوان prop و الگوهای طراحی API کامپوننت |
-| ۶ | **State و چرخه رندر** | useState، به‌روزرسانی‌های دسته‌ای، ناتغییرپذیری و مدل ذهنی رندر |
-| ۷ | **رویدادها و تعامل کاربر** | SyntheticEvent، الگوهای handler، propagation و دسترسی‌پذیری |
-| ۸ | **قوانین Hooks و مرور همه هوک‌ها** | چرا قوانین وجود دارند، جدول مرجع کامل هوک‌های React 19 و انتخاب هوک درست |
-| ۹ | **فرم‌ها و Actions در React 19** | `<form action>`، useActionState، useFormStatus و Progressive Enhancement |
-| ۱۰ | **useOptimistic و تجربه کاربری آنی** | به‌روزرسانی خوش‌بینانه، بازگشت خودکار و الگوهای لایک، حذف و مرتب‌سازی |
-| ۱۱ | **useEffect، useRef و useEffectEvent** | همگام‌سازی با سیستم‌های خارجی، cleanup، وابستگی‌ها و جدایی رویداد از Effect |
-| ۱۲ | **واکشی داده، Suspense و `use`** | مدل ذهنی Suspense، API جدید `use`، Error Boundary و TanStack Query |
-| ۱۳ | **Context و useReducer** | اشتراک داده بدون prop drilling، الگوی Provider، reducer و ترکیب این دو |
-| ۱۴ | **هوک‌های سفارشی** | استخراج منطق قابل‌استفاده‌مجدد، قراردادها و کتابخانه هوک‌های پرکاربرد |
-| ۱۵ | **TypeScript در React** | تایپ‌دهی props، رویدادها، هوک‌ها، جنریک‌ها و الگوهای React 19 |
-| ۱۶ | **روتینگ با React Router v8** | مسیرهای تودرتو، loader و action، navigation و مسیرهای محافظت‌شده |
-| ۱۷ | **استایل‌دهی، Tailwind v4 و Metadata** | CSS Modules، Tailwind، shadcn/ui، RTL و تگ‌های `<title>`/`<meta>` داخلی React 19 |
-| ۱۸ | **پروژه عملی: مدیریت وظایف کامل** | ترکیب مفاهیم بخش یکم در یک اپلیکیشن واقعی با Actions، Optimistic UI، Context و روتینگ |
-
-</div>
 </details>
 
 <details>
-<summary><b>بخش دوم — پیشرفته، معماری و Production</b> &nbsp;·&nbsp; ۱۴ فصل</summary>
+<summary><strong>بخش دوم — معماری و Production</strong> · فصل‌های ۱۹ تا ۳۲</summary>
 
-<div dir="rtl">
+19. [کارایی، React Compiler و Concurrent Rendering](./src/chapters/19-performance.md)
+20. [مدیریت state در مقیاس: Zustand، Redux Toolkit و Jotai](./src/chapters/20-state-management.md)
+21. [معماری پروژه و Clean Code در React](./src/chapters/21-architecture.md)
+22. [الگوهای پیشرفته کامپوننت](./src/chapters/22-patterns.md)
+23. [فرم‌ها و اعتبارسنجی پیشرفته](./src/chapters/23-forms-advanced.md)
+24. [مدیریت خطا — مرجع کامل](./src/chapters/24-error-handling.md)
+25. [دسترسی‌پذیری، RTL و بین‌المللی‌سازی](./src/chapters/25-accessibility-i18n.md)
+26. [امنیت اپلیکیشن React](./src/chapters/26-security.md)
+27. [تست‌نویسی: Vitest، Testing Library و Playwright](./src/chapters/27-testing.md)
+28. [Server Components و Server Functions](./src/chapters/28-server-components.md)
+29. [انتخاب فریم‌ورک: Next.js، React Router و TanStack Start](./src/chapters/29-frameworks.md)
+30. [Build، استقرار و Web Vitals](./src/chapters/30-deployment.md)
+31. [مهاجرت و ارتقا به React 19](./src/chapters/31-migration.md)
+32. [انیمیشن، View Transitions و حس «نرم بودن»](./src/chapters/32-animation.md)
 
-کارایی و React Compiler، state در مقیاس، تست، امنیت، دسترسی‌پذیری، RSC و استقرار.
-
-| # | فصل | محور فصل |
-|:--:|:--|:--|
-| ۱۹ | **کارایی، React Compiler و Concurrent Rendering** | memo/useMemo/useCallback، Compiler، useTransition، useDeferredValue و پروفایلینگ |
-| ۲۰ | **مدیریت state در مقیاس: Zustand، Redux Toolkit و Jotai** | انواع state، معیار انتخاب ابزار، الگوهای store و ترکیب با داده سرور |
-| ۲۱ | **معماری پروژه و Clean Code در React** | ساختار feature-based، لایه‌بندی، مرزهای ماژول و اصول کد تمیز |
-| ۲۲ | **الگوهای پیشرفته کامپوننت** | Compound Components، Portal، Controlled/Uncontrolled، Polymorphic و Headless UI |
-| ۲۳ | **فرم‌ها و اعتبارسنجی پیشرفته** | Zod، schema مشترک، خطاهای فیلدی، React Hook Form و فرم‌های چندمرحله‌ای |
-| ۲۴ | **مدیریت خطا — مرجع کامل** | Error Boundary، خطاهای async، گزینه‌های createRoot در React 19 و استراتژی چندلایه |
-| ۲۵ | **دسترسی‌پذیری، RTL و بین‌المللی‌سازی** | ARIA، مدیریت فوکوس، کیبورد، Intl API و پشتیبانی فارسی |
-| ۲۶ | **امنیت اپلیکیشن React** | XSS، احراز هویت و توکن‌ها، CSRF، CSP، وابستگی‌ها و آسیب‌پذیری‌های RSC |
-| ۲۷ | **تست‌نویسی: Vitest، Testing Library و Playwright** | هرم تست، تست کامپوننت با رفتار کاربر، mock کردن شبکه با MSW و تست E2E |
-| ۲۸ | **Server Components و Server Functions** | مدل ذهنی «دو کامپیوتر»، مرز `'use client'`، `'use server'`، `cache` و Streaming |
-| ۲۹ | **انتخاب فریم‌ورک: Next.js، React Router و TanStack Start** | SPA یا فریم‌ورک؟ مقایسه عملی، معیارهای انتخاب و مسیر مهاجرت از Vite |
-| ۳۰ | **Build، استقرار و Web Vitals** | بهینه‌سازی باندل، Docker و Nginx، CI/CD، Core Web Vitals و پایش |
-| ۳۱ | **مهاجرت و ارتقا به React 19** | تغییرات شکننده، codemodها، به‌روزرسانی تایپ‌ها و پذیرش تدریجی React Compiler |
-| ۳۲ | **انیمیشن، View Transitions و حس «نرم بودن»** | CSS-first، Motion، View Transitions API و کامپوننت آزمایشی `<ViewTransition>` |
-
-</div>
 </details>
 
 <details>
-<summary><b>بخش سوم — کارگاه عملی و نکات طلایی</b> &nbsp;·&nbsp; ۳ فصل</summary>
+<summary><strong>بخش سوم — کارگاه و تثبیت</strong> · فصل‌های ۳۳ تا ۳۵</summary>
 
-<div dir="rtl">
+33. [نکات و ترفندهای طلایی](./src/chapters/33-golden-tips.md)
+34. [کارگاه مینی‌پروژه‌ها](./src/chapters/34-workshop.md)
+35. [بهترین شیوه‌ها، اشتباهات رایج و منابع](./src/chapters/35-best-practices.md)
 
-۸ مینی‌پروژهٔ صفر تا صد، ۲۵ نکتهٔ طلایی و ۲۰ اشتباه رایج با راه‌حل.
-
-| # | فصل | محور فصل |
-|:--:|:--|:--|
-| ۳۳ | **نکات و ترفندهای طلایی** | ۲۵ نکته‌ای که سال‌ها تجربه را در چند صفحه خلاصه می‌کند |
-| ۳۴ | **کارگاه مینی‌پروژه‌ها** | هشت پروژه کوچک صفر تا صد برای تثبیت مفاهیم، به‌ترتیب سختی |
-| ۳۵ | **بهترین شیوه‌ها، اشتباهات رایج و منابع** | جمع‌بندی حرفه‌ای، ۲۰ اشتباه پرتکرار با راه‌حل، و مسیر ادامه یادگیری |
-
-</div>
 </details>
 
 <details>
-<summary><b>بخش چهارم — مرجع سریع و آمادگی مصاحبه</b> &nbsp;·&nbsp; ۲ فصل</summary>
+<summary><strong>بخش چهارم — مرجع و آمادگی شغلی</strong> · فصل‌های ۳۶ تا ۳۷</summary>
 
-<div dir="rtl">
+36. [پرسش‌های مصاحبه (Junior تا Senior)](./src/chapters/36-interview.md)
+37. [واژه‌نامه فارسی–انگلیسی](./src/chapters/37-glossary.md)
 
-پرسش‌های مصاحبه در سه سطح و واژه‌نامهٔ فارسی–انگلیسی.
-
-| # | فصل | محور فصل |
-|:--:|:--|:--|
-| ۳۶ | **پرسش‌های مصاحبه (Junior تا Senior)** | ۴۵ سؤال پرتکرار با پاسخ دقیق، دسته‌بندی‌شده بر اساس موضوع و سطح |
-| ۳۷ | **واژه‌نامه فارسی–انگلیسی** | مرجع سریع اصطلاحات کلیدی React 19 و اکوسیستم آن |
-
-</div>
 </details>
 
----
+<a id="preview"></a>
 
-<div dir="rtl">
+## پیش‌نمایش
 
-<a id="danlod"></a>
+<p align="center">
+  <a href="./docs/assets/page-toc.jpg"><img src="./docs/assets/web/preview-toc.webp" alt="فهرست مطالب" width="220"></a>
+  <a href="./docs/assets/page-chapter.jpg"><img src="./docs/assets/web/preview-chapter.webp" alt="مرجع Hooks" width="220"></a>
+  <a href="./docs/assets/page-code.jpg"><img src="./docs/assets/web/preview-code.webp" alt="Actions و فرم‌ها" width="220"></a>
+  <a href="./docs/assets/page-workshop.jpg"><img src="./docs/assets/web/preview-workshop.webp" alt="کارگاه پروژه" width="220"></a>
+</p>
 
-## 📥 دانلود سه نسخهٔ کتاب
+<a id="editions"></a>
 
-| نسخه | فایل | مناسب برای |
-|:--|:--|:--|
-| 🖥️ **رنگی (اصلی)** | [React19-Persian-Guide.pdf](./docs/pdf/React19-Persian-Guide.pdf) — ۲۳۹ صفحه | مطالعه روی مانیتور و تبلت؛ بوک‌مارک فصل‌ها، متن قابل‌جستجو و شمارهٔ صفحهٔ فارسی |
-| 📱 **موبایل و کتاب‌خوان** | [React19-Persian-Guide.epub](./docs/pdf/React19-Persian-Guide.epub) — ۶۱۵ کیلوبایت | EPUB 3 قابل‌بازچینش با RTL و قلم‌های جاسازی‌شده؛ Apple Books، Google Play Books، KOReader، Calibre |
-| 🖨️ **چاپ سیاه‌وسفید** | [React19-Persian-Guide-Print.pdf](./docs/pdf/React19-Persian-Guide-Print.pdf) — ۲۴۰ صفحه | پرینتر لیزری؛ پس‌زمینهٔ روشن و مصرف جوهر حداقلی |
+## نسخه‌های در دسترس
 
-هر سه فایل روی [Release نسخهٔ ۱.۰.۳](https://github.com/rezaian-dev/react-19-persian-guide/releases/tag/v1.0.3) هم ضمیمه‌اند و [صفحهٔ معرفی](https://rezaian-dev.github.io/react-19-persian-guide/) پیش‌نمایش صفحات را همراه دانلود مستقیم نشان می‌دهد.
+### PDF — [نسخهٔ اصلی](./docs/pdf/React19-Persian-Guide.pdf)
 
-</div>
+**۲۳۹ صفحه · A4** — نسخهٔ رنگی و قابل جست‌وجو با فهرست داخلی برای مطالعه روی دسکتاپ و تبلت.
 
----
+### EPUB — [نسخهٔ کتاب‌خوان](./docs/pdf/React19-Persian-Guide.epub)
 
-<div dir="rtl">
+**EPUB 3 · فونت داخلی** — نسخهٔ بازچینش‌پذیر راست‌به‌چپ برای موبایل و نرم‌افزارهای مطالعه EPUB.
 
-<a id="sakht"></a>
+### PRINT — [نسخهٔ مناسب چاپ](./docs/pdf/React19-Persian-Guide-Print.pdf)
 
-## 🛠️ ساخت از سورس
+**۲۴۰ صفحه · سیاه‌وسفید** — خروجی سیاه‌وسفید با پس‌زمینهٔ روشن و مصرف جوهر کمتر برای چاپ لیزری.
 
-متن کتاب Markdown است و هر سه نسخهٔ خروجی از همان منبع ساخته می‌شود:
+<a id="build"></a>
 
-</div>
+## ساخت از سورس
+
+پیش‌نیاز اصلی Python 3.10 یا جدیدتر است. برای تولید PDF، وابستگی‌های سیستمی [WeasyPrint](https://doc.courtbouillon.org/weasyprint/stable/first_steps.html#installation) نیز باید نصب باشند.
+
+### راه‌اندازی
 
 ```bash
 git clone https://github.com/rezaian-dev/react-19-persian-guide.git
+cd react-19-persian-guide
 
-cd react-19-persian-guide/src
-pip install -r requirements.txt   # WeasyPrint, markdown-it
-python3 build.py                    # → React19-Persian-Guide.pdf
-python3 build.py --print            # → B/W print edition
-python3 build.py --html           # build/book.html, quick preview
-python3 build_epub.py               # → React19-Persian-Guide.epub
+python -m venv .venv
+source .venv/bin/activate       # macOS / Linux
+# .venv\Scripts\Activate.ps1   # Windows PowerShell
+
+python -m pip install -r src/requirements.txt
+python src/build.py             # PDF رنگی
+python src/build.py --print     # نسخه مناسب چاپ
+python src/build.py --html      # پیش‌نمایش HTML
+python src/build_epub.py        # EPUB
 ```
 
-<div dir="rtl">
-
-ساختار مخزن عمداً کوچک نگه داشته شده: ۵ فایل در ریشه، دو پوشه، بدون CI و بدون نسخهٔ تکراری از یک فایل — «هر فایل، یک خانه».
-
-</div>
+### ساختار اصلی
 
 ```text
 .
-├── src/                    <- the book itself
-│   ├── chapters/           <- 37 Markdown chapters + front-matter
-│   ├── style.css           <- colour A4 / RTL
-│   ├── style-print.css     <- black & white print overrides
-│   ├── build.py            <- Markdown -> PDF
-│   ├── build_epub.py       <- Markdown -> EPUB
-│   ├── make_previews.py    <- docs/assets/page-*.jpg at 200 dpi
-│   ├── make_avatar.py      <- avatar.png, round 240 px
-│   └── fonts/ banner/      <- Vazirmatn, JetBrains Mono, artwork
-└── docs/                   <- GitHub Pages + the 3 downloads
-    ├── index.html          <- landing page
-    ├── assets/             <- previews, avatar, social card
-    └── pdf/                <- PDF, print PDF, EPUB
+├── docs/                       # سایت و سه خروجی رسمی
+│   ├── assets/
+│   ├── index.html
+│   └── pdf/
+└── src/
+    ├── chapters/               # متن ۳۷ فصل
+    ├── fonts/                  # فونت‌های محلی
+    ├── build.py                # سازنده HTML و PDF
+    ├── build_epub.py           # سازنده EPUB
+    └── style*.css
 ```
 
----
+<a id="collection"></a>
 
-<div dir="rtl">
+## مجموعه راهنماهای فارسی
 
-<a id="faq"></a>
+این سه مرجع یک مسیر هماهنگ می‌سازند: ابتدا زبان JavaScript، سپس معماری رابط کاربری با React و در پایان توسعهٔ کامل با Next.js.
 
-## ❓ پرسش‌های پرتکرار
+- **[JavaScript ES2025](https://github.com/rezaian-dev/javascript-persian-guide)** — زبان و مدل ذهنی؛ پایهٔ مشترک مسیر توسعه وب · [نسخه آنلاین](https://rezaian-dev.github.io/javascript-persian-guide/)
+- **[React 19.2](https://github.com/rezaian-dev/react-19-persian-guide)** — رابط کاربری، مدیریت state و معماری کامپوننت · [نسخه آنلاین](https://rezaian-dev.github.io/react-19-persian-guide/) — **راهنمای فعلی**
+- **[Next.js 16](https://github.com/rezaian-dev/nextjs-16-persian-guide)** — فریم‌ورک، رندر سرور، کشینگ و استقرار · [نسخه آنلاین](https://rezaian-dev.github.io/nextjs-16-persian-guide/)
 
-<details>
-<summary><b>آیا کتاب رایگان است؟</b></summary>
+## مشارکت
 
-<div dir="rtl">
+برای گزارش خطا، پیشنهاد اصلاح یا بهبود محتوا از [راهنمای مشارکت](./CONTRIBUTING.md) استفاده کنید. Pull Requestها بهتر است کوچک، متمرکز و همراه با توضیح روشن دربارهٔ دلیل تغییر باشند.
 
-بله. هر سه نسخه در همین مخزن و روی [Release](https://github.com/rezaian-dev/react-19-persian-guide/releases/tag/v1.0.3) با مجوز **CC BY-NC-SA ۴.۰** منتشر شده‌اند: استفاده و اشتراک‌گذاری آزاد با ذکر منبع، غیرتجاری.
+- [گزارش یک مشکل](https://github.com/rezaian-dev/react-19-persian-guide/issues)
+- [مشاهده مخزن](https://github.com/rezaian-dev/react-19-persian-guide)
 
-</div>
-</details>
+## نویسنده و مجوز
 
-<details>
-<summary><b>برای کدام نسخهٔ React نوشته شده؟</b></summary>
+**محمدرضا رضائیان** — [@rezaian-dev](https://github.com/rezaian-dev)
 
-<div dir="rtl">
-
-بر پایهٔ React ۱۹.۲ و React Compiler ۱.۰ نوشته شده؛ بخش «مهاجرت» (فصل ۳۱) مسیر ارتقای ۱۸ به ۱۹ و codemodها را پوشش می‌دهد.
-
-</div>
-</details>
-
-<details>
-<summary><b>بدون پیش‌زمینهٔ React می‌توانم شروع کنم؟</b></summary>
-
-<div dir="rtl">
-
-فصل‌های ۱ تا ۴ از صفر شروع می‌کنند. اگر با JavaScript تازه کار کرده‌اید، اول فصل ۳ (نقشهٔ راه) را بخوانید تا مسیر پراکنده نشود.
-
-</div>
-</details>
-
-<details>
-<summary><b>برای چاپ مناسب است؟</b></summary>
-
-<div dir="rtl">
-
-بله؛ نسخهٔ چاپی سیاه‌وسفید (۲۴۰ صفحه) با پس‌زمینهٔ روشن و مصرف جوهر حداقلی طراحی شده و همان صفحه‌بندی را دارد.
-
-</div>
-</details>
-
-<details>
-<summary><b>کتاب روی موبایل چطور خوانده می‌شود؟</b></summary>
-
-<div dir="rtl">
-
-نسخهٔ EPUB 3 قابل‌بازچینش است، راست‌به‌چپ می‌ماند و قلم‌های وزیرمتن و JetBrains Mono هم داخلش جاسازی شده‌اند؛ برای Apple Books، Google Play Books، KOReader و Calibre آماده شده است.
-
-</div>
-</details>
-
-<details>
-<summary><b>چطور خطا را گزارش بدهم یا فصلی را اصلاح کنم؟</b></summary>
-
-<div dir="rtl">
-
-یک Issue بزنید یا مستقیم PR بفرستید — فایل فصل‌ها در `src/chapters/` است و هر سه خروجی با چند دستور محلی ساخته می‌شوند ([CONTRIBUTING.md](./CONTRIBUTING.md)).
-
-</div>
-</details>
+این اثر با مجوز [Creative Commons BY-NC-SA 4.0](./LICENSE) منتشر شده است. استفاده و بازنشر غیرتجاری با ذکر منبع مجاز است و نسخهٔ اقتباسی باید با همین مجوز منتشر شود.
 
 </div>
 
 ---
 
-<div dir="rtl">
-
-<a id="moalef"></a>
-
-## 👤 نویسندهٔ کتاب و مجوز
-
-<table dir="rtl">
-<tr>
-<td align="center" valign="top" width="140"><img src="./docs/assets/avatar.png" width="120" alt="محمدرضا رضائیان" /><br><sub><b>محمدرضا رضائیان</b></sub></td>
-<td dir="rtl">
-
-نویسندهٔ [مرجع جامع Next.js 16](https://github.com/rezaian-dev/nextjs-16-persian-guide) و Front-End Developer؛ این کتاب دومِ همان مسیر است: بعد از فریم‌ورک، پایهٔ خودِ React.
-
-<p dir="rtl">اثر تحت مجوز <b>CC BY-NC-SA 4.0</b>: استفاده و اشتراک‌گذاری آزاد با ذکر منبع، غیرتجاری و با حفظ همان مجوز. کدهای نمونهٔ کتاب آزادند و این محدودیت فقط متنی است.</p>
-
-</td>
-</tr>
-</table>
-
-```bibtex
-@book{react19-persian-guide,
-  title   = {مرجع جامع React 19},
-  subtitle= {از مبانی تا معماری Production-Level},
-  author  = {Rezaian, Mohammadreza},
-  year    = {2026},
-  edition = {1.0.3},
-  url     = {https://github.com/rezaian-dev/react-19-persian-guide}
-}
-```
-
-</div>
-
----
-
-<div dir="rtl" align="center">
-
-**⭐ اگر کتاب مفید بود، یک Star بزرگ‌ترین کمک است.**
-
-اشتراک‌گذاری، گزارش خطا و Pull Request هم به همان اندازه ارزشمندند — برای مشارکت، [CONTRIBUTING.md](./CONTRIBUTING.md) را ببینید.
-
-[⬆ بازگشت به بالا](#top)
-
-</div>
+<p align="center" dir="rtl">
+  اگر این راهنما برایتان مفید بود، با ثبت یک ⭐ از ادامهٔ توسعهٔ مجموعه حمایت کنید.
+  <br>
+  <a href="#top">بازگشت به بالا</a>
+</p>
