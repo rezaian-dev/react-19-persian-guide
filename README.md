@@ -1,7 +1,7 @@
 <a id="top"></a>
 
 <p align="center">
-  <img src="./docs/assets/web/readme-hero-3d.webp" alt="مرجع فارسی React 19.2" width="100%">
+  <img src="./docs/assets/web/readme-hero-architecture.webp" alt="مرجع فارسی React 19.2" width="100%">
 </p>
 
 <p align="center" dir="rtl">
