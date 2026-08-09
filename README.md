@@ -1,7 +1,7 @@
 <a id="top"></a>
 
 <p align="center">
-  <img src="./docs/assets/web/readme-hero-architecture.webp" alt="مرجع فارسی React 19.2" width="100%">
+  <img src="./docs/assets/web/readme-hero-architecture.webp" alt="مرجع فارسی React 19.2" width="880">
 </p>
 
 <p align="center" dir="rtl">
@@ -222,11 +222,12 @@ python src/build_epub.py        # EPUB
 
 ## مجموعه راهنماهای فارسی
 
-این سه مرجع یک مسیر هماهنگ می‌سازند: ابتدا زبان JavaScript، سپس معماری رابط کاربری با React و در پایان توسعهٔ کامل با Next.js.
+این چهار مرجع یک مسیر هماهنگ می‌سازند: نسخه‌بندی و همکاری، زبان JavaScript، رابط کاربری React، و فریم‌ورک Production با Next.js.
 
-- **[JavaScript ES2025](https://github.com/rezaian-dev/javascript-persian-guide)** — زبان و مدل ذهنی؛ پایهٔ مشترک مسیر توسعه وب · [نسخه آنلاین](https://rezaian-dev.github.io/javascript-persian-guide/)
-- **[React 19.2](https://github.com/rezaian-dev/react-19-persian-guide)** — رابط کاربری، مدیریت state و معماری کامپوننت · [نسخه آنلاین](https://rezaian-dev.github.io/react-19-persian-guide/) — **راهنمای فعلی**
-- **[Next.js 16](https://github.com/rezaian-dev/nextjs-16-persian-guide)** — فریم‌ورک، رندر سرور، کشینگ و استقرار · [نسخه آنلاین](https://rezaian-dev.github.io/nextjs-16-persian-guide/)
+- **[Git و GitHub ۲۰۲۶](https://github.com/rezaian-dev/git-github-persian-guide)** — نسخه‌بندی، VS Code و همکاری · [نسخه آنلاین](https://rezaian-dev.github.io/git-github-persian-guide/)
+- **[JavaScript ES2025](https://github.com/rezaian-dev/javascript-persian-guide)** — زبان و مدل ذهنی · [نسخه آنلاین](https://rezaian-dev.github.io/javascript-persian-guide/)
+- **[React 19.2](https://github.com/rezaian-dev/react-19-persian-guide)** — رابط کاربری، state و معماری کامپوننت · [نسخه آنلاین](https://rezaian-dev.github.io/react-19-persian-guide/) — **راهنمای فعلی**
+- **[Next.js 16](https://github.com/rezaian-dev/nextjs-16-persian-guide)** — فریم‌ورک، رندر سرور و استقرار · [نسخه آنلاین](https://rezaian-dev.github.io/nextjs-16-persian-guide/)
 
 ## مشارکت
 

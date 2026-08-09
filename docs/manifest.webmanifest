@@ -1,0 +1,22 @@
+{
+  "name": "مرجع فارسی React 19.2",
+  "short_name": "React 19.2",
+  "lang": "fa",
+  "dir": "rtl",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#050816",
+  "theme_color": "#050816",
+  "icons": [
+    {
+      "src": "assets/react-logo-64.png",
+      "sizes": "64x64",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/react-logo-128.png",
+      "sizes": "128x128",
+      "type": "image/png"
+    }
+  ]
+}
