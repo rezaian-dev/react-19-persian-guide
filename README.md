@@ -157,10 +157,10 @@
 ## پیش‌نمایش
 
 <p align="center">
-  <a href="./docs/assets/page-toc.jpg"><img src="./docs/assets/web/preview-toc.webp" alt="فهرست مطالب" width="220"></a>
-  <a href="./docs/assets/page-chapter.jpg"><img src="./docs/assets/web/preview-chapter.webp" alt="مرجع Hooks" width="220"></a>
-  <a href="./docs/assets/page-code.jpg"><img src="./docs/assets/web/preview-code.webp" alt="Actions و فرم‌ها" width="220"></a>
-  <a href="./docs/assets/page-workshop.jpg"><img src="./docs/assets/web/preview-workshop.webp" alt="کارگاه پروژه" width="220"></a>
+  <a href="./docs/assets/page-toc.jpg"><img src="./docs/assets/web/preview-toc.webp" alt="فهرست مطالب" width="180"></a>
+  <a href="./docs/assets/page-chapter.jpg"><img src="./docs/assets/web/preview-chapter.webp" alt="مرجع Hooks" width="180"></a>
+  <a href="./docs/assets/page-code.jpg"><img src="./docs/assets/web/preview-code.webp" alt="Actions و فرم‌ها" width="180"></a>
+  <a href="./docs/assets/page-workshop.jpg"><img src="./docs/assets/web/preview-workshop.webp" alt="کارگاه پروژه" width="180"></a>
 </p>
 
 <a id="editions"></a>
