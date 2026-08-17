@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Page previews for the Pages site, re-cut from the edition at the density they are shown in.
 
-    python3 src/make_previews.py            # write docs/assets/page-*.jpg
+    python3 src/tools/make_previews.py       # write public/page-*.jpg
     python3 src/make_previews.py --check    # fail if the shipped images are stale
 
 The originals were 910 x 1287 — roughly 110 dpi of an A4 page, saved small. The hero paints the
@@ -20,9 +20,9 @@ import argparse, io, pathlib, sys
 from PIL import Image
 import pymupdf
 
-ROOT = pathlib.Path(__file__).resolve().parents[1]
+ROOT = pathlib.Path(__file__).resolve().parents[2]
 PDF = ROOT / "docs" / "pdf" / "React19-Persian-Guide.pdf"
-OUT = ROOT / "docs" / "assets"
+OUT = ROOT / "public"       # the site serves these from /page-*.jpg
 
 DPI = 200                     # the density the hero and the click-through actually need
 ZOOM = DPI / 72.0             # PDF user space is 72 pt per inch

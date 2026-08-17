@@ -11,10 +11,10 @@ from pygments.lexers import get_lexer_by_name, TextLexer
 from pygments.formatters import HtmlFormatter
 from weasyprint import HTML
 
-ROOT = pathlib.Path(__file__).parent
-CH_DIR = ROOT / "chapters"
-OUT_PDF = ROOT / "React19-Persian-Guide.pdf"
-OUT_HTML = ROOT / "build" / "book.html"
+ROOT = pathlib.Path(__file__).resolve().parents[2]
+CH_DIR = ROOT / "src" / "chapters"
+OUT_PDF = ROOT / "docs" / "pdf" / "React19-Persian-Guide.pdf"
+OUT_HTML = ROOT / "src" / "build" / "book.html"
 
 PARTS = {
     "1": ("بخش یکم", "بنیادها و مفاهیم اصلی"),
@@ -370,9 +370,9 @@ def build(pdf=True):
         sections.append(render_chapter(meta, body))
         print(f"  parsed {f.name}: {meta['title']}")
 
-    css = (ROOT / "style.css").read_text(encoding="utf-8")
+    css = (ROOT / "src" / "style.css").read_text(encoding="utf-8")
     if PRINT_MODE:
-        css += "\n" + (ROOT / "style-print.css").read_text(encoding="utf-8")
+        css += "\n" + (ROOT / "src" / "style-print.css").read_text(encoding="utf-8")
     doc = f"""<!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head><meta charset="utf-8"/>
@@ -393,8 +393,8 @@ def build(pdf=True):
     print(f"HTML written ({len(doc)//1024} KB) in {time.time()-t0:.1f}s")
     if pdf:
         t1 = time.time()
-        out = ROOT / "React19-Persian-Guide-Print.pdf" if PRINT_MODE else OUT_PDF
-        HTML(string=doc, base_url=str(ROOT)).write_pdf(str(out))
+        out = ROOT / "docs" / "pdf" / "React19-Persian-Guide-Print.pdf" if PRINT_MODE else OUT_PDF
+        HTML(string=doc, base_url=str(ROOT / "src")).write_pdf(str(out))
         print(f"PDF written -> {out} in {time.time()-t1:.1f}s")
 
 

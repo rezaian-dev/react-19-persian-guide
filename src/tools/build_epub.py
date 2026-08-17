@@ -10,8 +10,8 @@ from PIL import Image
 
 import build as B  # md, preprocess, parse_chapter, PARTS, CH_DIR
 
-ROOT = pathlib.Path(__file__).parent
-OUT = ROOT / "React19-Persian-Guide.epub"
+ROOT = pathlib.Path(__file__).resolve().parents[2]
+OUT = ROOT / "docs" / "pdf" / "React19-Persian-Guide.epub"
 
 EPUB_CSS = """
 @font-face { font-family: "Vazirmatn"; src: url("../fonts/Vazirmatn-Regular.ttf"); font-weight: 400; }
@@ -102,7 +102,7 @@ def fix_pre_code(body: str) -> str:
 def make_cover_png() -> bytes:
     """Rasterize the PDF cover page as the EPUB cover image (1200px tall)."""
     import pymupdf
-    pdf = ROOT / "React19-Persian-Guide.pdf"
+    pdf = ROOT / "docs" / "pdf" / "React19-Persian-Guide.pdf"
     doc = pymupdf.open(str(pdf))
     pix = doc[0].get_pixmap(dpi=150)
     im = Image.frombytes("RGB", [pix.width, pix.height], pix.samples)
@@ -153,7 +153,7 @@ def build():
     css = epub.EpubItem(uid="style", file_name="styles/book.css", media_type="text/css", content=EPUB_CSS.encode("utf-8"))
     book.add_item(css)
     for fn in ["Vazirmatn-Regular.ttf", "Vazirmatn-Bold.ttf", "JetBrainsMono-Regular.ttf"]:
-        book.add_item(epub.EpubItem(uid=fn, file_name=f"fonts/{fn}", media_type="font/ttf", content=(ROOT / "fonts" / fn).read_bytes()))
+        book.add_item(epub.EpubItem(uid=fn, file_name=f"fonts/{fn}", media_type="font/ttf", content=(ROOT / "src" / "fonts" / fn).read_bytes()))
 
     # cover
     book.set_cover("images/cover.jpg", make_cover_png(), create_page=True)

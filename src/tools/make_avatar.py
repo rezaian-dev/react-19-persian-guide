@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """The round author avatar for the README footer, cut from the portrait the cover embeds.
 
-    python3 src/make_avatar.py            # write docs/assets/avatar.png
+    python3 src/tools/make_avatar.py      # write src/assets/avatar.png
     python3 src/make_avatar.py --check    # fail if the shipped file is stale
 
 `src/author-sq.png` is the 400 x 400 master portrait and stays untouched. The README footer is a different job: a small
@@ -20,9 +20,9 @@ import argparse, io, pathlib, sys
 
 from PIL import Image, ImageDraw
 
-ROOT = pathlib.Path(__file__).resolve().parents[1]
+ROOT = pathlib.Path(__file__).resolve().parents[2]
 SRC = ROOT / "src" / "author-sq.png"
-OUT = ROOT / "docs" / "assets" / "avatar.png"
+OUT = ROOT / "src" / "assets" / "avatar.png"
 
 AVATAR = 240        # px, the file
 PAINT = 120         # px, the README box — the file is 2× it
