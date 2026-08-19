@@ -5,17 +5,12 @@
   "dir": "rtl",
   "start_url": "./",
   "display": "standalone",
-  "background_color": "#050816",
-  "theme_color": "#050816",
+  "background_color": "#0e1a26",
+  "theme_color": "#0e1a26",
   "icons": [
     {
-      "src": "assets/react-logo-64.png",
+      "src": "react-logo-64.png",
       "sizes": "64x64",
-      "type": "image/png"
-    },
-    {
-      "src": "assets/react-logo-128.png",
-      "sizes": "128x128",
       "type": "image/png"
     }
   ]

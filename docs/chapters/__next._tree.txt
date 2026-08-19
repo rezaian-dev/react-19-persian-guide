@@ -1,0 +1,8 @@
+:HL["/react-19-persian-guide/_next/static/chunks/0c5jte96zc00v.css","style"]
+:HL["/react-19-persian-guide/_next/static/media/JetBrainsMono_Bold-s.p.191p904ugps23.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/react-19-persian-guide/_next/static/media/JetBrainsMono_Regular-s.p.0h2t-824dnmbm.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/react-19-persian-guide/_next/static/media/Vazirmatn_Bold-s.p.2etnjmwb7b4kt.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/react-19-persian-guide/_next/static/media/Vazirmatn_ExtraBold-s.p.16lki4rdowt64.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/react-19-persian-guide/_next/static/media/Vazirmatn_Medium-s.p.2h1gkwp6n-pc5.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/react-19-persian-guide/_next/static/media/Vazirmatn_Regular-s.p.1q4vtznet77r-.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+0:{"tree":{"name":"","param":null,"prefetchHints":4176,"slots":{"children":{"name":"chapters","param":null,"prefetchHints":4192,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":4256,"slots":null}}}}},"staleTime":300,"buildId":"Ut63vdO2KQvyyskYMgkvY"}
