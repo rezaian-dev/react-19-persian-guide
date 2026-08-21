@@ -145,10 +145,23 @@ def build_html(dims: list[tuple[int, int]]) -> str:
             f'<figcaption>{fa(i)}</figcaption></figure>'
         )
 
-    nav_chapters = "".join(
-        f'<option value="#ch-{c["num"]:02d}">{fa(f"{c['num']:02d}")} · {esc(c["title"])}</option>'
-        for c in DATA["chapters"]
-    )
+    # shadcn/ui-style Select: items grouped under their part label, each row
+    # carrying a check slot the controller lights up for the active chapter.
+    nav: list[str] = []
+    for part in DATA["parts"]:
+        rows = [c for c in DATA["chapters"] if part["from"] <= c["num"] <= part["to"]]
+        nav.append(f'<div class="select-label">بخش {fa(part["num"])} · {esc(part["name"])}</div>')
+        for c in rows:
+            n = fa(f"{c['num']:02d}")
+            nav.append(
+                f'<div class="select-item" role="option" id="jump-ch-{c["num"]:02d}" '
+                f'data-value="#ch-{c["num"]:02d}" aria-selected="false">'
+                f'<span class="n">{n}</span><span class="t">{esc(c["title"])}</span>'
+                f'<svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" '
+                f'stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'
+                f'<path d="M20 6 9 17l-5-5"/></svg></div>'
+            )
+    nav_chapters = "".join(nav)
 
     title = f'{esc(book["title"])} — نسخهٔ آنلاین'
     desc = (f'خواندن آنلاین {esc(book["title"])}؛ '
@@ -192,13 +205,15 @@ def build_html(dims: list[tuple[int, int]]) -> str:
     </div>
 
     <div class="tools">
-      <label class="jump">
-        <span class="sr">پرش به فصل</span>
-        <select id="jump" aria-label="پرش به فصل">
-          <option value="">فهرست فصل‌ها…</option>
+      <div class="select" id="jump">
+        <button type="button" class="select-trigger" aria-haspopup="listbox" aria-expanded="false" aria-label="پرش به فصل">
+          <span class="select-value ph">فهرست فصل‌ها…</span>
+          <svg class="select-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+        </button>
+        <div class="select-pop" role="listbox" aria-label="پرش به فصل" hidden>
           {nav_chapters}
-        </select>
-      </label>
+        </div>
+      </div>
       <button id="toc-btn" class="icon" type="button" aria-controls="toc" aria-expanded="false" aria-label="فهرست مطالب">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h10"/></svg>
       </button>
@@ -290,11 +305,37 @@ a{color:inherit}
 .ident strong{font-size:14px;font-weight:800;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .ident span{font-size:11.5px;color:var(--faint)}
 .tools{display:flex;align-items:center;gap:8px;flex-shrink:0}
-.jump select{appearance:none;font-family:inherit;font-size:12.5px;font-weight:600;color:var(--sub);
+/* --- chapter select (shadcn/ui Select, vanilla) --- */
+.select{position:relative}
+.select-trigger{display:inline-flex;align-items:center;gap:8px;min-height:38px;padding:8px 12px;
+  font-family:inherit;font-size:12.5px;font-weight:700;color:var(--sub);cursor:pointer;
   background:rgba(32,43,72,.7);border:1px solid var(--line);border-radius:10px;
-  padding:9px 12px;max-width:230px;cursor:pointer}
-.jump select:hover{color:#fff}
-.jump option{background:#182240;color:#f6f8fd}
+  transition:color .16s,border-color .16s}
+.select-trigger:hover{color:#fff;border-color:rgb(var(--accent)/.55)}
+.select-trigger[aria-expanded="true"]{color:#fff;border-color:rgb(var(--accent)/.75)}
+.select-value{max-width:200px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.select-value.ph{color:var(--faint);font-weight:600}
+.select-chevron{width:15px;height:15px;flex-shrink:0;opacity:.75;transition:transform .18s}
+.select-trigger[aria-expanded="true"] .select-chevron{transform:rotate(180deg)}
+.select-pop{position:absolute;top:calc(100% + 8px);inset-inline-end:0;z-index:120;
+  width:min(370px,88vw);max-height:min(64vh,500px);overflow-y:auto;overscroll-behavior:contain;
+  padding:6px;border:1px solid var(--line);border-radius:14px;background:var(--panel-2);
+  box-shadow:0 26px 64px rgba(0,0,0,.5);animation:pop .16s ease}
+.select-pop[hidden]{display:none}
+.select-pop::-webkit-scrollbar{width:8px}
+.select-pop::-webkit-scrollbar-thumb{background:hsla(0,0%,100%,.14);border-radius:8px}
+@keyframes pop{from{opacity:0;transform:translateY(-6px) scale(.98)}to{opacity:1;transform:none}}
+.select-label{padding:9px 10px 4px;font-size:11px;font-weight:800;letter-spacing:.03em;
+  color:rgb(var(--accent))}
+.select-item{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:9px;
+  padding:8px 10px;border-radius:9px;cursor:pointer;font-size:13px;font-weight:600;color:var(--sub)}
+.select-item .n{font-family:"JetBrains Mono",monospace;font-size:10.5px;font-weight:700;
+  color:rgb(var(--accent))}
+.select-item .t{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.select-item .check{width:15px;height:15px;visibility:hidden;color:rgb(var(--accent))}
+.select-item.hl{background:hsla(0,0%,100%,.07);color:#fff}
+.select-item[aria-selected="true"]{color:#fff}
+.select-item[aria-selected="true"] .check{visibility:visible}
 .icon{display:grid;place-items:center;width:38px;height:38px;border-radius:10px;cursor:pointer;
   border:1px solid var(--line);background:rgba(32,43,72,.7);color:var(--ink)}
 .icon svg{width:19px;height:19px}
@@ -309,7 +350,7 @@ a{color:inherit}
 
 @media (max-width:760px){
   .ident span{display:none}
-  .jump{display:none}
+  .select{display:none}
   .home span{display:none}
   .home{padding:9px}
 }
@@ -414,11 +455,70 @@ JS = """(() => {
     if (e.key === 'Escape' && !toc.hidden) { close(); btn.focus(); }
   });
 
-  if (jump) jump.addEventListener('change', () => {
-    if (!jump.value) return;
-    document.querySelector(jump.value)?.scrollIntoView({ block: 'start' });
-    jump.selectedIndex = 0;
-  });
+  /* --- chapter select (shadcn/ui Select behaviour: keyboard, check, outside-close) --- */
+  if (jump && !jump.querySelector('select')) {
+    const trigger = jump.querySelector('.select-trigger');
+    const value = jump.querySelector('.select-value');
+    const pop = jump.querySelector('.select-pop');
+    const items = [...jump.querySelectorAll('.select-item')];
+    let hl = -1;
+    const setHl = (i) => {
+      hl = i;
+      items.forEach((it, k) => it.classList.toggle('hl', k === i));
+      if (i >= 0) {
+        // scroll the highlighted row inside the popover only — never the page
+        const el = items[i], t = el.offsetTop, b = t + el.offsetHeight;
+        if (t < pop.scrollTop) pop.scrollTop = t - 8;
+        else if (b > pop.scrollTop + pop.clientHeight) pop.scrollTop = b - pop.clientHeight + 8;
+      }
+    };
+    const setOpen = (o) => {
+      pop.hidden = !o;
+      trigger.setAttribute('aria-expanded', o ? 'true' : 'false');
+      if (o) {
+        const cur = items.findIndex((it) => it.getAttribute('aria-selected') === 'true');
+        setHl(cur >= 0 ? cur : 0);
+      } else setHl(-1);
+    };
+    const pick = (it) => {
+      items.forEach((o) => o.setAttribute('aria-selected', o === it ? 'true' : 'false'));
+      value.textContent = it.querySelector('.t').textContent;
+      value.classList.remove('ph');
+      setOpen(false);
+      trigger.focus();
+      document.querySelector(it.dataset.value)?.scrollIntoView({ block: 'start' });
+    };
+    trigger.addEventListener('click', () => setOpen(pop.hidden));
+    items.forEach((it) => {
+      it.addEventListener('click', () => pick(it));
+      it.addEventListener('mousemove', () => setHl(items.indexOf(it)));
+    });
+    document.addEventListener('pointerdown', (e) => {
+      if (!pop.hidden && !jump.contains(e.target)) setOpen(false);
+    });
+    document.addEventListener('keydown', (e) => {
+      if (pop.hidden) {
+        if ((e.key === 'ArrowDown' || e.key === 'ArrowUp') && document.activeElement === trigger) {
+          e.preventDefault(); setOpen(true);
+        }
+        return;
+      }
+      if (e.key === 'Escape') { setOpen(false); trigger.focus(); }
+      else if (e.key === 'ArrowDown') { e.preventDefault(); setHl((hl + 1) % items.length); }
+      else if (e.key === 'ArrowUp') { e.preventDefault(); setHl((hl - 1 + items.length) % items.length); }
+      else if (e.key === 'Home') { e.preventDefault(); setHl(0); }
+      else if (e.key === 'End') { e.preventDefault(); setHl(items.length - 1); }
+      else if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); if (items[hl]) pick(items[hl]); }
+    });
+    // keep the trigger label in sync with the chapter on screen
+    window.__selectSync = (id) => {
+      const it = items.find((o) => o.dataset.value === '#' + id);
+      if (!it) return;
+      items.forEach((o) => o.setAttribute('aria-selected', o === it ? 'true' : 'false'));
+      value.textContent = it.querySelector('.t').textContent;
+      value.classList.remove('ph');
+    };
+  }
 
   top.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 
@@ -467,6 +567,7 @@ JS = """(() => {
         active?.classList.remove('on');
         a.classList.add('on');
         active = a;
+        window.__selectSync?.(en.target.id);
       });
     }, { rootMargin: '-15% 0px -70% 0px' });
     heads.forEach((h) => io.observe(h));

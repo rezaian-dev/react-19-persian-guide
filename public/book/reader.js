@@ -26,11 +26,70 @@
     if (e.key === 'Escape' && !toc.hidden) { close(); btn.focus(); }
   });
 
-  if (jump) jump.addEventListener('change', () => {
-    if (!jump.value) return;
-    document.querySelector(jump.value)?.scrollIntoView({ block: 'start' });
-    jump.selectedIndex = 0;
-  });
+  /* --- chapter select (shadcn/ui Select behaviour: keyboard, check, outside-close) --- */
+  if (jump && !jump.querySelector('select')) {
+    const trigger = jump.querySelector('.select-trigger');
+    const value = jump.querySelector('.select-value');
+    const pop = jump.querySelector('.select-pop');
+    const items = [...jump.querySelectorAll('.select-item')];
+    let hl = -1;
+    const setHl = (i) => {
+      hl = i;
+      items.forEach((it, k) => it.classList.toggle('hl', k === i));
+      if (i >= 0) {
+        // scroll the highlighted row inside the popover only — never the page
+        const el = items[i], t = el.offsetTop, b = t + el.offsetHeight;
+        if (t < pop.scrollTop) pop.scrollTop = t - 8;
+        else if (b > pop.scrollTop + pop.clientHeight) pop.scrollTop = b - pop.clientHeight + 8;
+      }
+    };
+    const setOpen = (o) => {
+      pop.hidden = !o;
+      trigger.setAttribute('aria-expanded', o ? 'true' : 'false');
+      if (o) {
+        const cur = items.findIndex((it) => it.getAttribute('aria-selected') === 'true');
+        setHl(cur >= 0 ? cur : 0);
+      } else setHl(-1);
+    };
+    const pick = (it) => {
+      items.forEach((o) => o.setAttribute('aria-selected', o === it ? 'true' : 'false'));
+      value.textContent = it.querySelector('.t').textContent;
+      value.classList.remove('ph');
+      setOpen(false);
+      trigger.focus();
+      document.querySelector(it.dataset.value)?.scrollIntoView({ block: 'start' });
+    };
+    trigger.addEventListener('click', () => setOpen(pop.hidden));
+    items.forEach((it) => {
+      it.addEventListener('click', () => pick(it));
+      it.addEventListener('mousemove', () => setHl(items.indexOf(it)));
+    });
+    document.addEventListener('pointerdown', (e) => {
+      if (!pop.hidden && !jump.contains(e.target)) setOpen(false);
+    });
+    document.addEventListener('keydown', (e) => {
+      if (pop.hidden) {
+        if ((e.key === 'ArrowDown' || e.key === 'ArrowUp') && document.activeElement === trigger) {
+          e.preventDefault(); setOpen(true);
+        }
+        return;
+      }
+      if (e.key === 'Escape') { setOpen(false); trigger.focus(); }
+      else if (e.key === 'ArrowDown') { e.preventDefault(); setHl((hl + 1) % items.length); }
+      else if (e.key === 'ArrowUp') { e.preventDefault(); setHl((hl - 1 + items.length) % items.length); }
+      else if (e.key === 'Home') { e.preventDefault(); setHl(0); }
+      else if (e.key === 'End') { e.preventDefault(); setHl(items.length - 1); }
+      else if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); if (items[hl]) pick(items[hl]); }
+    });
+    // keep the trigger label in sync with the chapter on screen
+    window.__selectSync = (id) => {
+      const it = items.find((o) => o.dataset.value === '#' + id);
+      if (!it) return;
+      items.forEach((o) => o.setAttribute('aria-selected', o === it ? 'true' : 'false'));
+      value.textContent = it.querySelector('.t').textContent;
+      value.classList.remove('ph');
+    };
+  }
 
   top.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 
@@ -79,6 +138,7 @@
         active?.classList.remove('on');
         a.classList.add('on');
         active = a;
+        window.__selectSync?.(en.target.id);
       });
     }, { rootMargin: '-15% 0px -70% 0px' });
     heads.forEach((h) => io.observe(h));
