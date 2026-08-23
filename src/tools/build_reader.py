@@ -175,16 +175,17 @@ def build_html(dims: list[tuple[int, int]]) -> str:
 <meta name="color-scheme" content="dark">
 <title>{title}</title>
 <meta name="description" content="{desc}">
-<link rel="canonical" href="https://rezaian-dev.github.io/nextjs-16-persian-guide/book/">
+<link rel="canonical" href="https://rezaian-dev.github.io/react-19-persian-guide/book/">
 <meta name="theme-color" content="#111a30">
 <meta property="og:type" content="book">
 <meta property="og:locale" content="fa_IR">
 <meta property="og:title" content="{title}">
 <meta property="og:description" content="{desc}">
-<meta property="og:url" content="https://rezaian-dev.github.io/nextjs-16-persian-guide/book/">
-<meta property="og:image" content="https://rezaian-dev.github.io/nextjs-16-persian-guide/assets/social-card.png">
-<link rel="icon" type="image/png" sizes="32x32" href="../assets/next-logo-32.png">
-<link rel="icon" type="image/png" sizes="64x64" href="../assets/next-logo-64.png">
+<meta property="og:url" content="https://rezaian-dev.github.io/react-19-persian-guide/book/">
+<meta property="og:image" content="https://rezaian-dev.github.io/react-19-persian-guide/social-card.jpg">
+<link rel="icon" type="image/svg+xml" href="../favicon.svg">
+<link rel="icon" href="../favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="../icon-180.png">
 <link rel="preload" href="../assets/fonts/Vazirmatn-Regular.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="pages/p001.webp" as="image">
 <link rel="stylesheet" href="reader.css">
