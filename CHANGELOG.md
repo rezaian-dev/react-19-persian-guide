@@ -4,6 +4,13 @@
 
 ## [Unreleased]
 
+### اپ خالص Next.js (حذف Python و HTML ایستا)
+- نسخهٔ آنلاین کتاب دیگر یک `index.html` ایستا نیست؛ روت `/book` از App Router با همان UI (نوار بالا، انتخاب فصل، فهرست کشویی، پیشروی اسکرول) همان URL قبلی (`/book/` + لینک `#ch-NN`) را سرو می‌کند.
+- قالب `social.html` بنر به کامپوننت `SocialCard` تبدیل شد و از روت `/social-card` (noindex) برای بازتولید تصویر OG قابل اسکرین‌شات است.
+- کل زنجیرهٔ Python حذف شد (`src/tools/`، `src/banner/`، `src/edition/`، `src/chapters/`)؛ فایل‌های PDF/EPUB ساخته‌شده در `public/pdf/` و `docs/pdf/` دست‌نخورده‌اند و سورس‌ها در تاریخچهٔ git محفوظ‌اند.
+- زبان مخزن عملاً فقط TypeScript و CSS است: کانفیگ‌ها به `next.config.ts` و `postcss.config.ts` تبدیل شدند و خروجی `docs/` با `.gitattributes` از آمار زبان کنار گذاشته شد.
+- لینک‌های خراب پیش‌نمایش README (`./docs/assets/…`) به `./assets/readme/…` اصلاح شد.
+
 ### ساختار مخزن (حذف CI و فایل‌های بلااستفاده)
 - **`.github/` از مخزن بیرون رفت**؛ workflow ساخت کتاب حذف شد تا هر سه نسخه فقط محلی ساخته شود (۴ فایل در ریشه + `src/` و `docs/`). نتیجهٔ جانبی: صفحه‌بندی کتاب دیگر هیچ‌وقت توسط build خودکار روی runner جابه‌جا نمی‌شود.
 - `docs/assets/banner.jpg` حذف شد: نسخهٔ ۲۲ کیلوبایتی بنر که هیچ‌جا به آن ارجاع داده نمی‌شد (صفحهٔ Pages و README هر دو `src/banner/banner.png` را نشان می‌دهند).

@@ -6,16 +6,6 @@ node_modules/
 # raw static export; the published copy is committed under docs/
 out/
 
-# Python
-__pycache__/
-*.py[cod]
-.venv/
-src/build/
-
-# book builder outputs (published copies live under docs/pdf/)
-src/tools/*.pdf
-src/tools/*.epub
-
 # TypeScript
 *.tsbuildinfo
 
@@ -38,8 +28,3 @@ Thumbs.db
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-
-# WeasyPrint temp
-*.pdf.tmp
-docs/pdf/*.tmp
-docs/assets/*.tmp

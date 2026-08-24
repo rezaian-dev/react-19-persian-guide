@@ -66,10 +66,10 @@ React 19 قواعد بازی را عوض کرد: **Actions**، `useOptimistic`،
 ## 🖼️ نگاهی به داخل کتاب
 
 <p align="center">
-  <a href="./docs/assets/page-toc.jpg"><img src="./docs/assets/web/preview-toc.webp" alt="فهرست مطالب" width="180"></a>
-  <a href="./docs/assets/page-chapter.jpg"><img src="./docs/assets/web/preview-chapter.webp" alt="مرجع Hooks" width="180"></a>
-  <a href="./docs/assets/page-code.jpg"><img src="./docs/assets/web/preview-code.webp" alt="Actions و فرم‌ها" width="180"></a>
-  <a href="./docs/assets/page-workshop.jpg"><img src="./docs/assets/web/preview-workshop.webp" alt="کارگاه پروژه" width="180"></a>
+  <a href="./assets/readme/page-toc.jpg"><img src="./assets/readme/preview-toc.webp" alt="فهرست مطالب" width="180"></a>
+  <a href="./assets/readme/page-chapter.jpg"><img src="./assets/readme/preview-chapter.webp" alt="مرجع Hooks" width="180"></a>
+  <a href="./assets/readme/page-code.jpg"><img src="./assets/readme/preview-code.webp" alt="Actions و فرم‌ها" width="180"></a>
+  <a href="./assets/readme/page-workshop.jpg"><img src="./assets/readme/preview-workshop.webp" alt="کارگاه پروژه" width="180"></a>
 </p>
 
 ## 📦 در چه قالبی می‌خواهید؟
@@ -151,34 +151,28 @@ cd react-19-persian-guide && npm install && npm run dev
 ```
 
 <details>
-<summary><strong>🛠️ بیلد کامل: سایت (Next.js) و کتاب (Python، PDF، EPUB)</strong></summary>
+<summary><strong>🛠️ بیلد و ساختار پروژه (Next.js + TypeScript)</strong></summary>
 
 ```bash
-# سایت — بیلد استاتیک برای GitHub Pages
+# توسعه
+npm install      # نصب وابستگی‌ها
+npm run dev      # سرور توسعه روی localhost:3000
+
+# بیلد
 npm run typecheck    # بررسی تایپ‌ها
 npm run build        # بیلد استاندارد (Vercel / Node)
-npm run build:pages  # خروجی استاتیک در out/ با basePath
-
-# کتاب — پیش‌نیاز Python 3.10+ و WeasyPrint
-python -m venv .venv && source .venv/bin/activate
-python -m pip install -r src/requirements.txt
-python src/tools/build_edition.py    # PDF رنگی
-python src/tools/build_edition.py --print  # نسخهٔ چاپ
-python src/tools/build_epub.py       # EPUB
-python src/tools/build_reader.py     # نسخهٔ آنلاین در public/book/
-python src/tools/make_previews.py    # پیش‌نمایش‌های صفحه‌ها
-python src/tools/qa.py               # ممیزی کل مخزن
+npm run build:pages  # خروجی استاتیک در out/ با basePath (برای GitHub Pages)
 ```
 
 ```text
-src/app/        صفحه‌ها و layout اپ Next.js
-src/components/ کامپوننت‌های رابط کاربری
-src/lib/        داده فصل‌ها و پیوندها
-src/chapters/   متن ۳۷ فصل (Markdown)
-src/edition/    منبع ساختاری فصل‌ها (chapters.json)
-src/tools/      ساخت PDF/EPUB، نسخهٔ آنلاین و QA
-public/         دارایی‌ها، PDF، EPUB و نسخهٔ آنلاین
-docs/           خروجی منتشرشده روی GitHub Pages
+src/app/          صفحه‌ها و layout (خانه، فصل‌ها، نسخهٔ آنلاین، سوشال‌کارت)
+src/app/book/     روت نسخهٔ آنلاین کتاب + استایل ریدر
+src/components/   کامپوننت‌های رابط کاربری (بخش‌ها، ریدر، بنر)
+src/lib/          داده فصل‌ها، طرح کتاب و پیوندها
+src/fonts/        فونت‌های وزیرمتن و جت‌برینز (woff2)
+public/           دارایی‌ها، PDF، EPUB و صفحه‌های نسخهٔ آنلاین
+public/book/      تصویر صفحه‌های کتاب (۲۳۹ صفحه)
+docs/             خروجی منتشرشده روی GitHub Pages (ساختهٔ build:pages)
 ```
 
 </details>
