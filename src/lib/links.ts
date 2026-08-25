@@ -8,6 +8,11 @@
  * `next/link` and `next/image` prefix basePath automatically, but a plain
  * <a href="/pdf/..."> or a raw <img> does NOT. Use `asset()` for those so a
  * download link never 404s on Pages.
+ *
+ * IMPORTANT: `next/link` must receive the RAW path ("/book/"), never the
+ * basePath-prefixed one — Next adds basePath itself, so passing an already
+ * prefixed href would double it. Use ROUTES for <Link>, asset()/BOOK_URL
+ * for plain anchors, <img> and downloads.
  */
 const BASE = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 
@@ -15,6 +20,18 @@ const BASE = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 export function asset(path: string): string {
   const clean = path.startsWith("/") ? path : `/${path}`;
   return `${BASE}${clean}`;
+}
+
+/** Raw App Router paths — for `next/link` only (no basePath prefix). */
+export const ROUTES = {
+  home: "/",
+  book: "/book/",
+  chapters: "/chapters/",
+} as const;
+
+/** Raw deep-link to a chapter inside the online edition — for `next/link`. */
+export function chapterRoute(n: number): string {
+  return `${ROUTES.book}#ch-${String(n).padStart(2, "0")}`;
 }
 
 /** Canonical origin of the published site. */
@@ -29,6 +46,7 @@ export function chapterUrl(n: number): string {
 }
 
 export const PDF_URL = asset("/pdf/React19-Persian-Guide.pdf");
+export const PRINT_URL = asset("/pdf/React19-Persian-Guide-Print.pdf");
 export const EPUB_URL = asset("/pdf/React19-Persian-Guide.epub");
 
 export const REPO_URL = "https://github.com/rezaian-dev/react-19-persian-guide";

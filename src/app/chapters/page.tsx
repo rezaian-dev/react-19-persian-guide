@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight, BookOpen, ExternalLink } from "lucide-react";
+import { ArrowRight, BookOpen } from "lucide-react";
 
 import Background from "@/components/layout/Background";
 import ScrollProgress from "@/components/layout/ScrollProgress";
@@ -9,14 +9,14 @@ import Footer from "@/components/layout/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { PARTS, TOTAL_CHAPTERS } from "@/lib/chapters";
-import { BOOK_URL, chapterUrl } from "@/lib/links";
+import { ROUTES, chapterRoute } from "@/lib/links";
 
 export const metadata: Metadata = {
   title: "فهرست فصل‌ها | مرجع جامع React 19.2",
   description: "فهرست کامل ۳۷ فصل مرجع فارسی React 19.2 — از JSX و State تا معماری Production‏.",
 };
 
-export default function BookPage() {
+export default function ChaptersPage() {
   return (
     <>
       <Background />
@@ -37,9 +37,9 @@ export default function BookPage() {
           </p>
           <div className="mt-7 flex flex-wrap justify-center gap-3">
             <Button asChild>
-              <a href={BOOK_URL} target="_blank" rel="noopener">
-                <BookOpen /> مطالعهٔ کامل کتاب <ExternalLink />
-              </a>
+              <Link href={ROUTES.book}>
+                <BookOpen /> مطالعهٔ کامل کتاب
+              </Link>
             </Button>
             <Button asChild variant="outline">
               <Link href="/">
@@ -66,18 +66,16 @@ export default function BookPage() {
               </div>
               <CardContent className="grid gap-1.5 sm:grid-cols-2">
                 {part.chapters.map((c) => (
-                  <a
+                  <Link
                     key={c.n}
-                    href={chapterUrl(c.n)}
-                    target="_blank"
-                    rel="noopener"
+                    href={chapterRoute(c.n)}
                     className="flex items-center gap-3 rounded-xl border border-transparent px-3.5 py-2.5 transition-colors hover:border-border hover:bg-secondary/40"
                   >
                     <span dir="ltr" className="grid size-7 shrink-0 place-items-center rounded-lg border border-primary/20 bg-primary/10 font-mono text-[11px] font-bold text-primary-soft">
                       {c.n}
                     </span>
                     <span className="text-[13.5px] text-sub">{c.title}</span>
-                  </a>
+                  </Link>
                 ))}
               </CardContent>
             </Card>

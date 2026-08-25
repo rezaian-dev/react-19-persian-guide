@@ -1,4 +1,6 @@
-import { BOOK_URL, REPO_URL, ISSUES_URL } from "@/lib/links";
+import Link from "next/link";
+
+import { REPO_URL, ISSUES_URL, ROUTES } from "@/lib/links";
 
 export default function Footer() {
   return (
@@ -14,10 +16,10 @@ export default function Footer() {
         <div className="mt-10 flex flex-wrap items-center justify-between gap-4 text-xs text-muted-foreground">
           <div>© ۲۰۲۶ محمدرضا رضائیان · مرجع جامع React 19.2 · CC BY-NC-SA 4.0</div>
           <nav className="flex flex-wrap gap-5" aria-label="پیوندهای پایین صفحه">
-            <a href="#top" className="text-sub transition-colors hover:text-primary-soft">بازگشت به بالا ↑</a>
+            <Link href="/#top" className="text-sub transition-colors hover:text-primary-soft">بازگشت به بالا ↑</Link>
             <a href={REPO_URL} target="_blank" rel="noopener" className="text-sub transition-colors hover:text-primary-soft">مخزن</a>
             <a href={ISSUES_URL} target="_blank" rel="noopener" className="text-sub transition-colors hover:text-primary-soft">گزارش خطا</a>
-            <a href={BOOK_URL} target="_blank" rel="noopener" className="text-sub transition-colors hover:text-primary-soft">نسخهٔ آنلاین کتاب</a>
+            <Link href={ROUTES.book} className="text-sub transition-colors hover:text-primary-soft">نسخهٔ آنلاین کتاب</Link>
           </nav>
         </div>
       </div>

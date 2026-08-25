@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import Image from "next/image";
 import { BookOpen, MessageSquare } from "lucide-react";
 
@@ -8,7 +9,7 @@ import Magnetic from "@/components/motion/Magnetic";
 import GitHubIcon from "@/components/icons/GitHubIcon";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { asset, AUTHOR_URL, BOOK_URL, ISSUES_URL } from "@/lib/links";
+import { asset, AUTHOR_URL, ISSUES_URL, ROUTES } from "@/lib/links";
 
 export default function Author() {
   return (
@@ -20,8 +21,8 @@ export default function Author() {
               <Image
                 src={asset("/author.webp")}
                 alt="محمدرضا رضائیان"
-                width={640}
-                height={640}
+                width={400}
+                height={400}
                 className="size-32 rounded-full border-4 border-background object-cover"
               />
             </div>
@@ -50,9 +51,9 @@ export default function Author() {
                 </Magnetic>
                 <Magnetic>
                   <Button asChild size="sm">
-                    <a href={BOOK_URL} target="_blank" rel="noopener">
+                    <Link href={ROUTES.book}>
                       <BookOpen /> مطالعه آنلاین
-                    </a>
+                    </Link>
                   </Button>
                 </Magnetic>
               </div>

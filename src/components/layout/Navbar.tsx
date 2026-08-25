@@ -20,15 +20,17 @@ import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import GitHubIcon from "@/components/icons/GitHubIcon";
 import ReactIcon from "@/components/icons/ReactIcon";
-import { BOOK_URL, PDF_URL, REPO_URL } from "@/lib/links";
+import { PDF_URL, REPO_URL, ROUTES } from "@/lib/links";
 
+/* Absolute home-page hashes so the menu also works from /chapters and /book:
+   Next resolves them client-side with no document reload. */
 const LINKS = [
-  { href: "#features", label: "ویژگی‌ها", icon: Sparkles, hint: "چرا این کتاب" },
-  { href: "#path", label: "مسیر کتاب", icon: Route, hint: "چهار گام یادگیری" },
-  { href: "#preview", label: "پیش‌نمایش", icon: Images, hint: "نگاهی به داخل" },
-  { href: "#chapters", label: "فصل‌ها", icon: ListTree, hint: "۳۷ فصل" },
-  { href: "#editions", label: "نسخه‌ها", icon: Download, hint: "آنلاین · PDF · EPUB" },
-  { href: "#series", label: "مجموعه", icon: Layers, hint: "چهار مرجع فارسی" },
+  { href: "/#features", label: "ویژگی‌ها", icon: Sparkles, hint: "چرا این کتاب" },
+  { href: "/#path", label: "مسیر کتاب", icon: Route, hint: "چهار گام یادگیری" },
+  { href: "/#preview", label: "پیش‌نمایش", icon: Images, hint: "نگاهی به داخل" },
+  { href: "/#chapters", label: "فصل‌ها", icon: ListTree, hint: "۳۷ فصل" },
+  { href: "/#editions", label: "نسخه‌ها", icon: Download, hint: "آنلاین · PDF · EPUB" },
+  { href: "/#series", label: "مجموعه", icon: Layers, hint: "چهار مرجع فارسی" },
 ];
 
 /* Drawer slides in from the right (RTL) and its items cascade in after it. */
@@ -106,21 +108,21 @@ export default function Navbar() {
           <ul className="mx-auto hidden items-center gap-0.5 lg:flex">
             {LINKS.map((l) => (
               <li key={l.href}>
-                <a
+                <Link
                   href={l.href}
                   className="block rounded-lg px-3 py-2.5 text-sm font-semibold text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground"
                 >
                   {l.label}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>
 
           <div className="ms-auto flex items-center gap-2">
             <Button asChild size="sm" className="hidden sm:inline-flex">
-              <a href={BOOK_URL} target="_blank" rel="noopener" onClick={() => setOpen(false)}>
+              <Link href={ROUTES.book} onClick={() => setOpen(false)}>
                 <BookOpen /> مطالعه آنلاین
-              </a>
+              </Link>
             </Button>
             <button
               type="button"
@@ -203,7 +205,7 @@ export default function Navbar() {
                 <ul className="grid gap-1.5">
                   {LINKS.map((l) => (
                     <m.li key={l.href} variants={row}>
-                      <a
+                      <Link
                         href={l.href}
                         onClick={() => setOpen(false)}
                         className="group flex items-center gap-3.5 rounded-2xl border border-transparent px-3.5 py-3 transition-colors hover:border-border hover:bg-secondary/50"
@@ -218,7 +220,7 @@ export default function Navbar() {
                           </span>
                         </span>
                         <ArrowLeft className="size-4 shrink-0 text-faint transition-all group-hover:-translate-x-0.5 group-hover:text-primary-soft" />
-                      </a>
+                      </Link>
                     </m.li>
                   ))}
                 </ul>
@@ -226,9 +228,9 @@ export default function Navbar() {
 
               <m.footer variants={row} className="relative grid gap-2.5 border-t border-border px-4 py-4">
                 <Button asChild size="lg" className="w-full">
-                  <a href={BOOK_URL} target="_blank" rel="noopener" onClick={() => setOpen(false)}>
+                  <Link href={ROUTES.book} onClick={() => setOpen(false)}>
                     <BookOpen /> مطالعه آنلاین
-                  </a>
+                  </Link>
                 </Button>
                 <div className="grid grid-cols-2 gap-2.5">
                   <Button asChild variant="outline" size="sm">
