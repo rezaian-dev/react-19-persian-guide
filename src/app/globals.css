@@ -56,6 +56,10 @@
   --animate-drift-c: drift-c 34s ease-in-out infinite;
   --animate-accordion-down: accordion-down 0.25s ease-out;
   --animate-accordion-up: accordion-up 0.25s ease-out;
+  /* reader chrome */
+  --animate-pop: pop 0.16s ease;
+  --animate-fade: fade 0.2s ease;
+  --animate-slide: slide 0.32s cubic-bezier(0.22, 1, 0.36, 1);
 
   @keyframes float {
     0%, 100% { transform: translateY(0); }
@@ -96,6 +100,19 @@
     from { height: var(--radix-accordion-content-height); }
     to { height: 0; }
   }
+  @keyframes pop {
+    from { opacity: 0; transform: translateY(-6px) scale(0.98); }
+    to { opacity: 1; transform: none; }
+  }
+  @keyframes fade {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  /* TOC drawer sits at inline-end (left in RTL), so it slides in from the left. */
+  @keyframes slide {
+    from { transform: translateX(-100%); opacity: 0.4; }
+    to { transform: none; opacity: 1; }
+  }
 }
 
 /* runtime values (next/font variables) */
@@ -104,8 +121,6 @@
   --color-foreground: var(--foreground);
   --color-card: var(--card);
   --color-card-foreground: var(--card-foreground);
-  --color-popover: var(--popover);
-  --color-popover-foreground: var(--popover-foreground);
   --color-primary: var(--primary);
   --color-primary-foreground: var(--primary-foreground);
   --color-secondary: var(--secondary);
@@ -245,7 +260,10 @@
   .animate-marquee,
   .animate-wheel,
   .animate-blink,
-  .animate-pulse-dot {
+  .animate-pulse-dot,
+  .animate-pop,
+  .animate-fade,
+  .animate-slide {
     animation: none !important;
   }
 }

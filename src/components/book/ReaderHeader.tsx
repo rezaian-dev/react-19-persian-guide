@@ -3,8 +3,17 @@
 import { Fragment, useCallback, useEffect, useRef, useState } from "react";
 import Link from "next/link";
 
+import { cn } from "@/lib/utils";
 import { asset } from "@/lib/links";
 import { BOOK, BOOK_CHAPTERS, BOOK_PARTS, chapterId, fa } from "@/lib/book";
+
+/** Visible keyboard focus for every reader control. */
+const FOCUS =
+  "focus-visible:outline-[3px] focus-visible:outline-sky-400 focus-visible:outline-offset-2";
+
+/** Active TOC link — toggled by the IntersectionObserver below. The literal
+    must stay in this file so Tailwind generates the utility. */
+const TOC_ACTIVE = "bg-sky-400/15";
 
 /**
  * Reader chrome for `/book`: a sticky top bar with a chapter jump-select, a
@@ -165,12 +174,12 @@ export default function ReaderHeader() {
 
   // Highlight the chapter currently on screen (TOC link + select label).
   useEffect(() => {
-    const heads = [...document.querySelectorAll(".ch-head")];
+    const heads = [...document.querySelectorAll("[data-ch-head]")];
     if (!("IntersectionObserver" in window) || heads.length === 0) return;
     let active: Element | null = null;
     const links = new Map(
-      [...document.querySelectorAll(".toc-part a")].map((a) => [
-        (a.getAttribute("href") ?? "").slice(1),
+      [...document.querySelectorAll("[data-toc-link]")].map((a) => [
+        a.getAttribute("data-toc-link") ?? "",
         a,
       ]),
     );
@@ -182,8 +191,8 @@ export default function ReaderHeader() {
           const link = links.get(id);
           if (!link) continue;
           if (link !== active) {
-            active?.classList.remove("on");
-            link.classList.add("on");
+            active?.classList.remove(TOC_ACTIVE);
+            link.classList.add(TOC_ACTIVE);
             active = link;
           }
           const num = Number(id.replace("ch-", ""));
@@ -202,9 +211,16 @@ export default function ReaderHeader() {
 
   return (
     <>
-      <header className="bar">
-        <div className="bar-in">
-          <Link className="home" href="/" aria-label="بازگشت به صفحهٔ کتاب">
+      <header className="sticky top-0 z-[90] border-b border-white/10 bg-[#111a30]/85 backdrop-blur-lg backdrop-saturate-[1.4]">
+        <div className="mx-auto flex min-h-[60px] w-[min(1180px,calc(100%-28px))] items-center gap-3">
+          <Link
+            href="/"
+            aria-label="بازگشت به صفحهٔ کتاب"
+            className={cn(
+              FOCUS,
+              "inline-flex shrink-0 items-center gap-1.5 rounded-[10px] border border-white/15 bg-[#202b48]/60 px-2.5 py-2 text-[13px] font-bold text-[#b2bcd0] no-underline transition-colors duration-150 hover:border-sky-400/50 hover:text-white",
+            )}
+          >
             <svg
               viewBox="0 0 24 24"
               fill="none"
@@ -213,36 +229,45 @@ export default function ReaderHeader() {
               strokeLinecap="round"
               strokeLinejoin="round"
               aria-hidden="true"
+              className="size-4"
             >
               <path d="m14 6-6 6 6 6" />
             </svg>
-            <span>صفحهٔ کتاب</span>
+            <span className="max-md:hidden">صفحهٔ کتاب</span>
           </Link>
 
-          <div className="ident">
-            <strong>{BOOK.title}</strong>
-            <span>
+          <div className="me-auto grid min-w-0 leading-[1.3]">
+            <strong className="truncate text-sm font-extrabold">{BOOK.title}</strong>
+            <span className="text-[11.5px] text-[#8b95ad] max-md:hidden">
               نسخهٔ آنلاین · {fa(BOOK.pages)} صفحه
             </span>
           </div>
 
-          <div className="tools">
-            <div className="select" ref={jumpRef}>
+          <div className="flex shrink-0 items-center gap-2">
+            <div className="relative max-md:hidden" ref={jumpRef}>
               <button
                 ref={triggerRef}
                 type="button"
-                className="select-trigger"
                 aria-haspopup="listbox"
                 aria-expanded={selectOpen}
                 aria-label="پرش به فصل"
                 onClick={() => setOpen(!selectOpen)}
                 onKeyDown={onTriggerKey}
+                className={cn(
+                  FOCUS,
+                  "group inline-flex min-h-[38px] cursor-pointer items-center gap-2 rounded-[10px] border border-white/15 bg-[#202b48]/70 px-3 py-2 font-sans text-[12.5px] font-bold text-[#b2bcd0] transition-colors duration-150 hover:border-sky-400/55 hover:text-white aria-expanded:border-sky-400/75 aria-expanded:text-white",
+                )}
               >
-                <span className={`select-value${selectedChapter ? "" : " ph"}`}>
+                <span
+                  className={cn(
+                    "max-w-[200px] truncate",
+                    !selectedChapter && "font-semibold text-[#8b95ad]",
+                  )}
+                >
                   {selectedChapter ? selectedChapter.title : "فهرست فصل‌ها…"}
                 </span>
                 <svg
-                  className="select-chevron"
+                  className="size-[15px] shrink-0 opacity-75 transition-transform duration-200 group-aria-expanded:rotate-180"
                   viewBox="0 0 24 24"
                   fill="none"
                   stroke="currentColor"
@@ -256,10 +281,10 @@ export default function ReaderHeader() {
               </button>
               <div
                 ref={popRef}
-                className="select-pop"
                 role="listbox"
                 aria-label="پرش به فصل"
                 hidden={!selectOpen}
+                className="absolute end-0 top-[calc(100%+8px)] z-[120] max-h-[min(64vh,500px)] w-[min(370px,88vw)] animate-pop overflow-y-auto overscroll-contain rounded-[14px] border border-white/15 bg-[#182240] p-1.5 shadow-[0_26px_64px_rgba(0,0,0,0.5)] [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-thumb]:rounded-lg [&::-webkit-scrollbar-thumb]:bg-white/15"
               >
                 {BOOK_PARTS.map((part) => {
                   const rows = BOOK_CHAPTERS.filter(
@@ -268,11 +293,13 @@ export default function ReaderHeader() {
                   if (rows.length === 0) return null;
                   return (
                     <Fragment key={part.num}>
-                      <div className="select-label">
+                      <div className="px-2.5 pb-1 pt-2 text-[11px] font-extrabold tracking-wide text-sky-400">
                         بخش {fa(part.num)} · {part.name}
                       </div>
                       {rows.map((c) => {
                         const idx = flat.findIndex((x) => x.num === c.num);
+                        const isHl = idx === highlight;
+                        const isSel = selected === c.num;
                         return (
                           <div
                             key={c.num}
@@ -280,20 +307,26 @@ export default function ReaderHeader() {
                               if (el) itemRefs.current.set(c.num, el);
                               else itemRefs.current.delete(c.num);
                             }}
-                            className={`select-item${idx === highlight ? " hl" : ""}`}
                             role="option"
                             id={`jump-${chapterId(c.num)}`}
-                            data-value={`#${chapterId(c.num)}`}
-                            aria-selected={selected === c.num}
+                            aria-selected={isSel}
                             onClick={() => pick(c.num)}
                             onMouseMove={() => setHighlight(idx)}
+                            className={cn(
+                              "grid cursor-pointer grid-cols-[auto_1fr_auto] items-center gap-2.5 rounded-[9px] px-2.5 py-2 text-[13px] font-semibold text-[#b2bcd0]",
+                              isHl && "bg-white/[0.07] text-white",
+                              isSel && "text-white",
+                            )}
                           >
-                            <span className="n">
+                            <span className="font-mono text-[10.5px] font-bold text-sky-400">
                               {fa(String(c.num).padStart(2, "0"))}
                             </span>
-                            <span className="t">{c.title}</span>
+                            <span className="min-w-0 truncate">{c.title}</span>
                             <svg
-                              className="check"
+                              className={cn(
+                                "size-[15px] text-sky-400",
+                                isSel ? "visible" : "invisible",
+                              )}
                               viewBox="0 0 24 24"
                               fill="none"
                               stroke="currentColor"
@@ -314,12 +347,15 @@ export default function ReaderHeader() {
             </div>
             <button
               id="toc-btn"
-              className="icon"
               type="button"
               aria-controls="toc"
               aria-expanded={tocOpen}
               aria-label="فهرست مطالب"
               onClick={() => setTocOpen((o) => !o)}
+              className={cn(
+                FOCUS,
+                "grid size-[38px] cursor-pointer place-items-center rounded-[10px] border border-white/15 bg-[#202b48]/70 text-[#f6f8fd] transition-colors hover:border-sky-400/50",
+              )}
             >
               <svg
                 viewBox="0 0 24 24"
@@ -328,11 +364,19 @@ export default function ReaderHeader() {
                 strokeWidth="2"
                 strokeLinecap="round"
                 aria-hidden="true"
+                className="size-[19px]"
               >
                 <path d="M4 6h16M4 12h16M4 18h10" />
               </svg>
             </button>
-            <a className="dl" href={asset(`/pdf/${BOOK.pdfFile}`)} download>
+            <a
+              href={asset(`/pdf/${BOOK.pdfFile}`)}
+              download
+              className={cn(
+                FOCUS,
+                "inline-flex items-center gap-1.5 rounded-[10px] bg-[linear-gradient(135deg,#38bdf8,#51a0f7)] px-[13px] py-[9px] text-[12.5px] font-extrabold text-[#03101a] no-underline shadow-[0_10px_26px_rgb(56_189_248/0.22)]",
+              )}
+            >
               <svg
                 viewBox="0 0 24 24"
                 fill="none"
@@ -341,6 +385,7 @@ export default function ReaderHeader() {
                 strokeLinecap="round"
                 strokeLinejoin="round"
                 aria-hidden="true"
+                className="size-4"
               >
                 <path d="M12 3v12m0 0 4-4m-4 4-4-4M4 19v2h16v-2" />
               </svg>
@@ -348,24 +393,32 @@ export default function ReaderHeader() {
             </a>
           </div>
         </div>
-        <div className="progress">
-          <i style={{ width: `${progress}%` }} />
+        <div className="h-0.5 bg-transparent">
+          <i className="block h-full bg-sky-400 transition-[width] duration-100" style={{ width: `${progress}%` }} />
         </div>
       </header>
 
       <div
-        className="scrim"
+        className="fixed inset-0 z-[95] animate-fade bg-[#060a16]/60 backdrop-blur-[3px]"
         hidden={!tocOpen}
         onClick={() => setTocOpen(false)}
       />
-      <aside className="toc" id="toc" hidden={!tocOpen} aria-label="فهرست مطالب">
-        <div className="toc-top">
-          <strong>فهرست مطالب</strong>
+      <aside
+        id="toc"
+        hidden={!tocOpen}
+        aria-label="فهرست مطالب"
+        className="fixed inset-y-0 end-0 z-[96] flex w-[min(430px,90vw)] animate-slide flex-col border-s border-white/15 bg-[#182240] shadow-[-30px_0_70px_rgba(0,0,0,0.42)]"
+      >
+        <div className="flex items-center justify-between gap-2.5 border-b border-white/10 px-[18px] py-4">
+          <strong className="text-[15px] font-extrabold">فهرست مطالب</strong>
           <button
-            className="icon"
             type="button"
             aria-label="بستن فهرست"
             onClick={() => setTocOpen(false)}
+            className={cn(
+              FOCUS,
+              "grid size-[38px] cursor-pointer place-items-center rounded-[10px] border border-white/15 bg-[#202b48]/70 text-[#f6f8fd] transition-colors hover:border-sky-400/50",
+            )}
           >
             <svg
               viewBox="0 0 24 24"
@@ -374,37 +427,49 @@ export default function ReaderHeader() {
               strokeWidth="2"
               strokeLinecap="round"
               aria-hidden="true"
+              className="size-[19px]"
             >
               <path d="M6 6l12 12M18 6 6 18" />
             </svg>
           </button>
         </div>
-        <div className="toc-body">
+        <div className="overscroll-contain overflow-y-auto px-3 pb-[22px] pt-2">
           {BOOK_PARTS.map((part) => {
             const rows = BOOK_CHAPTERS.filter(
               (c) => part.from <= c.num && c.num <= part.to,
             );
             if (rows.length === 0) return null;
             return (
-              <section key={part.num} className="toc-part">
-                <h3>
+              <section key={part.num} className="mt-3.5">
+                <h3 className="m-0 mb-2 px-1.5 text-[11.5px] font-extrabold tracking-wide text-sky-400">
                   بخش {fa(part.num)} · {part.name}
                 </h3>
-                <ol>
+                <ol className="m-0 grid list-none gap-0.5 p-0">
                   {rows.map((c) => (
                     <li key={c.num}>
                       <a
                         href={`#${chapterId(c.num)}`}
+                        data-toc-link={chapterId(c.num)}
                         onClick={() => setTocOpen(false)}
+                        className={cn(
+                          FOCUS,
+                          "grid grid-cols-[auto_1fr_auto] items-center gap-2.5 rounded-[10px] px-2.5 py-[9px] text-inherit no-underline transition-colors duration-150 hover:bg-white/[0.06]",
+                        )}
                       >
-                        <span className="n">
+                        <span className="min-w-5 font-mono text-[11px] font-bold text-sky-400">
                           {fa(String(c.num).padStart(2, "0"))}
                         </span>
-                        <span className="t">
+                        <span className="grid min-w-0 text-[13.5px] font-bold leading-[1.45]">
                           {c.title}
-                          {c.subtitle ? <em>{c.subtitle}</em> : null}
+                          {c.subtitle ? (
+                            <em className="truncate text-[11.5px] font-medium not-italic text-[#8b95ad]">
+                              {c.subtitle}
+                            </em>
+                          ) : null}
                         </span>
-                        <span className="p">ص&nbsp;{fa(c.page)}</span>
+                        <span className="whitespace-nowrap text-[10.5px] text-[#8b95ad]">
+                          ص&nbsp;{fa(c.page)}
+                        </span>
                       </a>
                     </li>
                   ))}
@@ -416,11 +481,14 @@ export default function ReaderHeader() {
       </aside>
 
       <button
-        className="to-top"
         type="button"
         aria-label="بازگشت به ابتدا"
         hidden={!showTop}
         onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+        className={cn(
+          FOCUS,
+          "fixed bottom-[18px] start-[18px] z-[80] grid size-11 cursor-pointer place-items-center rounded-full border border-white/15 bg-[#182240]/90 text-[#f6f8fd] shadow-[0_10px_28px_rgba(0,0,0,0.35)] backdrop-blur",
+        )}
       >
         <svg
           viewBox="0 0 24 24"
@@ -430,6 +498,7 @@ export default function ReaderHeader() {
           strokeLinecap="round"
           strokeLinejoin="round"
           aria-hidden="true"
+          className="size-5"
         >
           <path d="m6 14 6-6 6 6" />
         </svg>
