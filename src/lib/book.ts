@@ -39,9 +39,11 @@ export const BOOK = {
   pdfFile: "React19-Persian-Guide.pdf",
   epubFile: "React19-Persian-Guide.epub",
   socialCard: "social-card.jpg",
-  /** Stored pixel size of every `public/book/pages/*.webp` (2x the 820px paint width). */
-  pageWidth: 1640,
-  pageHeight: 2320,
+  /** Stored pixel size of every `public/book/pages/*.webp`: a lossless 2460px
+      render of the vector PDF (3x the 820px paint width), so text stays crisp
+      on high-density displays. */
+  pageWidth: 2460,
+  pageHeight: 3480,
 } as const;
 
 export const BOOK_PARTS: BookPart[] = [
