@@ -37,7 +37,7 @@ export const metadata: Metadata = {
       "۳۷ فصل، ۲۳۹ صفحه — از JSX و State تا Actions، Suspense، Compiler و معماری Production‏.",
     url: "https://rezaian-dev.github.io/react-19-persian-guide/",
     siteName: "Persian Developer Handbook",
-    images: [{ url: `${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/social-card.jpg`, width: 1280, height: 640 }],
+    images: [{ url: `${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/social-card.png`, width: 1280, height: 640 }],
     locale: "fa_IR",
     type: "book",
   },
@@ -63,7 +63,7 @@ const BOOK_JSONLD = {
   bookFormat: "https://schema.org/EBook",
   datePublished: "2026",
   url: "https://rezaian-dev.github.io/react-19-persian-guide/",
-  image: "https://rezaian-dev.github.io/react-19-persian-guide/social-card.jpg",
+  image: "https://rezaian-dev.github.io/react-19-persian-guide/social-card.png",
   description:
     "مرجع فارسی React 19.2 در ۳۷ فصل — کامپوننت‌ها، Hooks، Actions، Suspense، React Compiler، تست، امنیت و معماری.",
   author: { "@type": "Person", name: "محمدرضا رضائیان", url: "https://github.com/rezaian-dev" },

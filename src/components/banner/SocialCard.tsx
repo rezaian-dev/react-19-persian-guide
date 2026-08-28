@@ -1,93 +1,122 @@
 import { asset } from "@/lib/links";
-import "./social-card.css";
+import { BOOK, fa } from "@/lib/book";
+import ReactBrandIcon from "@/components/icons/ReactBrandIcon";
+
+const STATS = [
+  { value: fa(37), label: "فصل" },
+  { value: fa(BOOK.pages), label: "صفحه" },
+  { value: fa(8), label: "مینی‌پروژه" },
+  { value: fa(45), label: "پرسش مصاحبه" },
+];
 
 /**
- * Fixed-size (1280×640) social / OG card for the React 19.2 handbook.
+ * Fixed-size (1280×640) banner / OG card for the React 19.2 handbook.
  *
- * Converted from the former `src/banner/social.html` WeasyPrint template into
- * a component. It is rendered by the `/social-card` route (not linked anywhere
- * in the UI) — screenshot that route at 1280×640 to regenerate the
- * `public/social-card.jpg` Open Graph image.
+ * Pure Tailwind, real Persian typography (Vazirmatn via next/font) and the
+ * official React brand mark — no AI-guessed logo, no code-window clutter.
+ * Rendered by the `/social-card` route (not linked anywhere in the UI):
+ * screenshot that route at 1280×640 to regenerate the images —
+ *   1x → `public/social-card.png` (Open Graph)
+ *   3x → `assets/readme/react-19-persian-guide-banner.png` (README hero)
+ *
+ * The footer is a separate block: divider line, 24px of padding, then the
+ * author content — nothing may cross above the line.
  */
 export default function SocialCard() {
   return (
-    <div className="sc" role="img" aria-label="مرجع جامع و حرفه‌ای React 19">
-      <div className="sc-grid" aria-hidden="true" />
+    <div
+      role="img"
+      aria-label="مرجع فارسی React 19.2 — از اولین کامپوننت تا معماری Production"
+      dir="rtl"
+      className="relative h-[640px] w-[1280px] overflow-hidden bg-[#0b1226] font-sans text-slate-100"
+    >
+      {/* ambient glows */}
+      <div
+        aria-hidden="true"
+        className="absolute -left-36 -top-10 size-[640px] rounded-full bg-[radial-gradient(circle,rgb(56_189_248/0.32),transparent_65%)] blur-[10px]"
+      />
+      <div
+        aria-hidden="true"
+        className="absolute -right-30 top-15 size-[560px] rounded-full bg-[radial-gradient(circle,rgb(139_92_246/0.26),transparent_65%)] blur-[10px]"
+      />
+      {/* blueprint grid */}
+      <div
+        aria-hidden="true"
+        className="absolute inset-0 bg-[linear-gradient(rgb(148_163_184/0.09)_1px,transparent_1px),linear-gradient(90deg,rgb(148_163_184/0.09)_1px,transparent_1px)] [background-size:44px_44px] [mask-image:radial-gradient(ellipse_80%_80%_at_50%_40%,#000_20%,transparent_75%)]"
+      />
 
-      <div className="sc-title">
-        <div className="sc-kicker">PERSIAN DEVELOPER HANDBOOK</div>
-        <div className="sc-h1">
-          مرجع جامع و حرفه‌ای{" "}
-          <span className="en">
-            React <b>19</b>
-          </span>
-        </div>
-        <div className="sc-sub">
-          از مبانی تا معماری <b>Production-Level</b> · رایگان و متن‌باز
-        </div>
-      </div>
-
-      <div className="sc-stats">
-        <span>
-          <b>۳۷</b>فصل
-        </span>
-        <span>
-          <b>۲۳۹</b>صفحه
-        </span>
-        <span>
-          <b>۸</b>مینی‌پروژه
-        </span>
-        <span>
-          <b>۴۵</b>پرسش مصاحبه
-        </span>
-        <span>PDF · EPUB · نسخه چاپی</span>
-      </div>
-
-      <div className="sc-tags">
-        <span>React 19.2</span>
-        <span>TypeScript</span>
-        <span>Vite 8</span>
-        <span>React Compiler</span>
-        <span>Server Components</span>
-      </div>
-
-      <div className="sc-author">
-        <img src={asset("/author.webp")} alt="" width={62} height={62} />
-        <div className="txt">
-          <div className="n">محمدرضا رضائیان</div>
-          <div className="r">Front-End Developer</div>
-        </div>
-      </div>
-      <div className="sc-url">github.com/rezaian-dev/react-19-persian-guide</div>
-
-      <div className="sc-win">
-        <div className="sc-window">
-          <div className="sc-win-head">
-            <span className="d r" />
-            <span className="d y" />
-            <span className="d g" />
-            <span className="fn">src/features/checkout/CheckoutForm.tsx</span>
+      <div className="absolute inset-0 flex flex-col px-16 pb-10 pt-14">
+        <div className="flex flex-1 gap-8">
+          {/* title column */}
+          <div className="w-[620px]">
+            <p className="font-mono text-sm tracking-[0.35em] text-cyan-300">
+              PERSIAN DEVELOPER HANDBOOK · 2026
+            </p>
+            <h1 className="mt-2">
+              <span className="block text-[60px] font-extrabold leading-[1.25] text-white">
+                مرجع فارسی
+              </span>
+              <span
+                dir="ltr"
+                className="block font-mono text-[78px] font-extrabold leading-[1.05] tracking-tight text-[#61DAFB]"
+              >
+                React 19.2
+              </span>
+            </h1>
+            <p className="mt-3 text-[21px] leading-8 text-slate-200">
+              از اولین کامپوننت تا معماری رابط کاربری در Production
+            </p>
+            <div className="mt-5 flex gap-2.5">
+              {STATS.map((s) => (
+                <span
+                  key={s.label}
+                  className="whitespace-nowrap rounded-xl border border-white/20 bg-slate-950/60 px-4 py-2 text-[17px] text-slate-200"
+                >
+                  <b className="ml-1.5 font-sans text-[19px] font-extrabold text-cyan-300">
+                    {s.value}
+                  </b>
+                  {s.label}
+                </span>
+              ))}
+            </div>
+            <p dir="ltr" className="mt-3.5 text-right font-mono text-[13.5px] text-slate-400">
+              TypeScript · Vite 8 · React Compiler · Server Components
+            </p>
           </div>
-          <pre>
-            <span className="k">import</span> {"{ useActionState, useOptimistic } "}<span className="k">from</span> <span className="s">'react'</span>;{"\n"}
-            {"\n"}
-            <span className="k">export function</span> <span className="f">CheckoutForm</span>({"{"} cart {"}"}: {"{"} cart: <span className="t">Cart</span> {"}"}) {"{"}{"\n"}
-            {"  "}<span className="k">const</span> [state, submit, pending] ={"\n"}
-            {"    "}<span className="f">useActionState</span>(placeOrder, <span className="c">null</span>);{"\n"}
-            {"  "}<span className="k">const</span> [items, addOptimistic] ={"\n"}
-            {"    "}<span className="f">useOptimistic</span>(cart.items);{"\n"}
-            {"\n"}
-            {"  "}<span className="k">return</span> ({"\n"}
-            {"    "}&lt;<span className="tag">form</span> <span className="a">action</span>={"{"}submit{"}"}&gt;{"\n"}
-            {"      "}&lt;<span className="tag">Suspense</span> <span className="a">fallback</span>={"{"}&lt;<span className="tag">Skeleton</span> /&gt;{"}"}&gt;{"\n"}
-            {"        "}&lt;<span className="tag">CartSummary</span> <span className="a">items</span>={"{"}items{"}"} /&gt;{"\n"}
-            {"      "}&lt;/<span className="tag">Suspense</span>&gt;{"\n"}
-            {"      "}{"{"}state?.error && &lt;<span className="tag">p</span> <span className="a">role</span>=<span className="s">"alert"</span>&gt;{"{"}state.error{"}"}&lt;/<span className="tag">p</span>&gt;{"}"}{"\n"}
-            {"      "}&lt;<span className="tag">SubmitButton</span> /&gt;   <span className="cm">{"// useFormStatus()"}</span>{"\n"}
-            {"    "}&lt;/<span className="tag">form</span>&gt;{"\n"}
-            {"  "});{"\n"}
-            {"}"}
-          </pre>
+
+          {/* official React mark */}
+          <div className="relative grid flex-1 place-items-center">
+            <div
+              aria-hidden="true"
+              className="absolute size-[380px] rounded-full bg-[radial-gradient(circle,rgb(97_218_251/0.22),transparent_65%)] blur-2xl"
+            />
+            <ReactBrandIcon className="relative size-[300px] text-[#61DAFB] drop-shadow-[0_0_45px_rgb(97_218_251/0.45)]" />
+          </div>
+        </div>
+
+        {/* footer: divider, 24px gap, then author content */}
+        <div className="h-px w-full bg-white/15" data-testid="footer-divider" />
+        <div className="flex items-center justify-between pt-6" data-testid="footer-content">
+          <div className="flex items-center gap-4">
+            <img
+              src={asset("/author.webp")}
+              alt=""
+              width={400}
+              height={400}
+              className="size-14 rounded-full object-cover ring-2 ring-cyan-300/80"
+            />
+            <div>
+              <div className="text-xl font-extrabold leading-[1.3] text-white">
+                {BOOK.author}
+              </div>
+              <div dir="ltr" className="text-right font-mono text-sm text-slate-400">
+                Front-End Developer
+              </div>
+            </div>
+          </div>
+          <div dir="ltr" className="font-mono text-base text-slate-400">
+            github.com/rezaian-dev/react-19-persian-guide
+          </div>
         </div>
       </div>
     </div>

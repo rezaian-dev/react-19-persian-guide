@@ -38,7 +38,7 @@ export const BOOK = {
   license: "CC BY-NC-SA 4.0",
   pdfFile: "React19-Persian-Guide.pdf",
   epubFile: "React19-Persian-Guide.epub",
-  socialCard: "social-card.jpg",
+  socialCard: "social-card.png",
   /** Stored pixel size of every `public/book/pages/*.webp`: a lossless 2460px
       render of the vector PDF (3x the 820px paint width), so text stays crisp
       on high-density displays. */
