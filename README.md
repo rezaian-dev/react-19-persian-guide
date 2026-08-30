@@ -1,17 +1,17 @@
 <a id="top"></a>
 
 <p align="center">
-  <img src="./assets/readme/readme-hero.webp" alt="مرجع فارسی React 19.2" width="880">
+  <a href="./assets/readme/react-19-persian-guide-banner.png"><img src="./assets/readme/react-19-persian-guide-banner.png" alt="مرجع فارسی React 19.2" width="880"></a>
 </p>
 
 <p align="center" dir="rtl">
-  <strong>🎉 راهنمای کامل React 19.2 به زبان فارسی — رایگان و بدون محدودیت</strong>
+  <strong>🎉 راهنمای کامل React 19.2 به زبان فارسی — رایگان برای استفادهٔ غیرتجاری</strong>
 </p>
 
 <p align="center">
-  <a href="https://rezaian-dev.github.io/react-19-persian-guide/"><img src="https://img.shields.io/badge/READ_ONLINE-0EA5E9?style=for-the-badge&logo=githubpages&logoColor=white" alt="مطالعه آنلاین"></a>
-  <a href="./docs/pdf/React19-Persian-Guide.pdf"><img src="https://img.shields.io/badge/DOWNLOAD_PDF-DC2626?style=for-the-badge&logo=adobeacrobatreader&logoColor=white" alt="دانلود PDF"></a>
-  <a href="./docs/pdf/React19-Persian-Guide.epub"><img src="https://img.shields.io/badge/DOWNLOAD_EPUB-7C3AED?style=for-the-badge&logo=applebooks&logoColor=white" alt="دانلود EPUB"></a>
+  <a href="https://rezaian-dev.github.io/react-19-persian-guide/book/"><img src="https://img.shields.io/badge/READ_ONLINE-0EA5E9?style=for-the-badge&logo=githubpages&logoColor=white" alt="مطالعه آنلاین"></a>
+  <a href="https://github.com/rezaian-dev/react-19-persian-guide/releases/download/v1.0.3/React19-Persian-Guide.pdf"><img src="https://img.shields.io/badge/DOWNLOAD_PDF-DC2626?style=for-the-badge&logo=adobeacrobatreader&logoColor=white" alt="دانلود PDF"></a>
+  <a href="https://github.com/rezaian-dev/react-19-persian-guide/releases/download/v1.0.3/React19-Persian-Guide.epub"><img src="https://img.shields.io/badge/DOWNLOAD_EPUB-7C3AED?style=for-the-badge&logo=applebooks&logoColor=white" alt="دانلود EPUB"></a>
 </p>
 
 <p align="center">
@@ -38,11 +38,22 @@ React 19 قواعد بازی را عوض کرد: **Actions**، `useOptimistic`،
 ## 👥 برای چه کسی؟
 
 | 🎯 اگر شما… | 📦 این کتاب به شما می‌دهد |
-|:---:|:---|
+|:---:|:---:|
 | تازه وارد دنیای React شده‌اید | مسیر یادگیری گام‌به‌گام از JSX تا یک اپ کامل مدیریت وظایف |
 | با نسخه‌های قبلی کار کرده‌اید | نقشهٔ ارتقای دقیق به ۱۹: Actions، `use`، Compiler و Activity |
 | دنبال سطح ارشد هستید | معماری feature-based، الگوهای پیشرفته، تست، امنیت و کارایی |
 | در مسیر استخدام هستید | ۴۵ پرسش مصاحبهٔ سطح‌بندی‌شده و واژه‌نامهٔ ۱۳۳ مدخلی تخصصی |
+
+## 📋 پیش‌نیازها
+
+آنچه خود کتاب (فصل ۱) لازم می‌داند:
+
+- 🟨 **JavaScript مدرن (ES2020+):** ‏`const`/`let`، arrow function، destructuring، spread، ‏`async`/`await`، ماژول‌ها و متدهای آرایه (`map`/`filter`/`reduce`)
+- 🎨 **HTML و CSS پایه:** عناصر، ویژگی‌ها و Flexbox
+- 🔷 **TypeScript مقدماتی** مفید است ولی الزامی نیست؛ فصل ۱۵ کامل به آن می‌پردازد (همهٔ مثال‌ها TypeScript هستند)
+- 🛠️ **Node.js نسخه ۲۰.۱۹ یا بالاتر** و یک ویرایشگر مثل VS Code برای تمرین‌ها
+
+> 💡 اگر با `map`/`filter`، ‏destructuring و `async`/`await` راحت نیستید، اول ۲ تا ۳ روز روی JavaScript مدرن وقت بگذارید؛ React خودش ساده است و بیشتر سردرگمی‌ها از JavaScript می‌آیند. (فصل ۳)
 
 ## 💎 چرا این کتاب متفاوت است؟
 
@@ -66,25 +77,34 @@ React 19 قواعد بازی را عوض کرد: **Actions**، `useOptimistic`،
 ## 🖼️ نگاهی به داخل کتاب
 
 <p align="center">
-  <a href="./assets/readme/page-toc.jpg"><img src="./assets/readme/preview-toc.webp" alt="فهرست مطالب" width="180"></a>
-  <a href="./assets/readme/page-chapter.jpg"><img src="./assets/readme/preview-chapter.webp" alt="مرجع Hooks" width="180"></a>
-  <a href="./assets/readme/page-code.jpg"><img src="./assets/readme/preview-code.webp" alt="Actions و فرم‌ها" width="180"></a>
-  <a href="./assets/readme/page-workshop.jpg"><img src="./assets/readme/preview-workshop.webp" alt="کارگاه پروژه" width="180"></a>
+  <a href="./public/page-toc.jpg"><img src="./public/preview-toc.webp" alt="فهرست مطالب" width="180"></a>
+  <a href="./public/page-chapter.jpg"><img src="./public/preview-chapter.webp" alt="ساختار فصل" width="180"></a>
+  <a href="./public/page-code.jpg"><img src="./public/preview-code.webp" alt="Actions و فرم‌ها" width="180"></a>
+  <a href="./public/page-workshop.jpg"><img src="./public/preview-workshop.webp" alt="کارگاه پروژه" width="180"></a>
+  <a href="./public/page-interview.jpg"><img src="./public/preview-interview.webp" alt="پرسش مصاحبه" width="180"></a>
 </p>
+
+<sub>💡 روی هر تصویر کلیک کنید تا در اندازهٔ کامل باز شود.</sub>
 
 ## 📦 در چه قالبی می‌خواهید؟
 
 | قالب | مناسب برای | لینک |
 |:---:|:---:|:---:|
 | 🌐 **آنلاین** | مطالعهٔ فوری هر ۲۳۹ صفحه در مرورگر با پیوند مستقیم به هر فصل | [**شروع مطالعه**](https://rezaian-dev.github.io/react-19-persian-guide/book/) |
-| 📕 **PDF** | دانلود، جست‌وجو و چاپ — قطع A4 رنگی | [**دانلود**](./docs/pdf/React19-Persian-Guide.pdf) |
-| 📗 **EPUB** | موبایل و کتاب‌خوان — بازچینش‌پذیر راست‌به‌چپ با فونت داخلی | [**دانلود**](./docs/pdf/React19-Persian-Guide.epub) |
-| 🖨️ **چاپ** | نسخهٔ سیاه‌وسفید بهینه برای چاپ لیزری | [**دانلود**](./docs/pdf/React19-Persian-Guide-Print.pdf) |
+| 📕 **PDF** | دانلود، جست‌وجو و چاپ — قطع A4 رنگی، ۲۳۹ صفحه | [**دانلود**](https://github.com/rezaian-dev/react-19-persian-guide/releases/download/v1.0.3/React19-Persian-Guide.pdf) |
+| 📗 **EPUB** | موبایل و کتاب‌خوان — متن واقعی بازچینش‌پذیر راست‌به‌چپ با فونت داخلی | [**دانلود**](https://github.com/rezaian-dev/react-19-persian-guide/releases/download/v1.0.3/React19-Persian-Guide.epub) |
+| 🖨️ **چاپ** | نسخهٔ سیاه‌وسفید بهینه برای چاپ لیزری، ۲۴۰ صفحه | [**دانلود**](https://github.com/rezaian-dev/react-19-persian-guide/releases/download/v1.0.3/React19-Persian-Guide-Print.pdf) |
+
+> ⚠️ **شفاف دربارهٔ قالب‌ها:** نسخهٔ آنلاین **تصویرمحور** است؛ متن آن قابل انتخاب و جست‌وجو نیست و بازچینش نمی‌شود، اما هر صفحه دکمهٔ «بزرگ‌نمایی» برای بازشدن در اندازهٔ کامل دارد. برای متن قابل جست‌وجو از **PDF** و برای مطالعه در موبایل و کتاب‌خوان از **EPUB** (متن واقعی) استفاده کنید.
 
 <a id="chapters"></a>
 
+## 📚 فهرست کامل ۳۷ فصل
+
+[🗂️ فهرست تعاملی فصل‌ها در سایت](https://rezaian-dev.github.io/react-19-persian-guide/chapters/) — یا از فهرست زیر مستقیم به هر فصل در نسخهٔ آنلاین بروید:
+
 <details>
-<summary><strong>📚 فهرست کامل ۳۷ فصل</strong> <em>(برای باز کردن کلیک کنید)</em></summary>
+<summary><strong>نمایش فهرست</strong> <em>(برای باز کردن کلیک کنید)</em></summary>
 
 **🌱 بخش اول — بنیادها و مفاهیم اصلی · فصل‌های ۱ تا ۱۸**
 
@@ -143,39 +163,9 @@ React 19 قواعد بازی را عوض کرد: **Actions**، `useOptimistic`،
 
 ۱. **سریع‌ترین راه:** کتاب را همان [نسخهٔ آنلاین](https://rezaian-dev.github.io/react-19-persian-guide/book/) بخوانید — نصب لازم نیست. ⚡
 
-۲. **اگر سورس را می‌خواهید:**
+۲. **برای مطالعهٔ آفلاین:** یکی از قالب‌های [PDF](https://github.com/rezaian-dev/react-19-persian-guide/releases/download/v1.0.3/React19-Persian-Guide.pdf)، [EPUB](https://github.com/rezaian-dev/react-19-persian-guide/releases/download/v1.0.3/React19-Persian-Guide.epub) یا [نسخهٔ چاپی](https://github.com/rezaian-dev/react-19-persian-guide/releases/download/v1.0.3/React19-Persian-Guide-Print.pdf) را از [صفحهٔ انتشار v1.0.3](https://github.com/rezaian-dev/react-19-persian-guide/releases/tag/v1.0.3) دانلود کنید. 📥
 
-```bash
-git clone https://github.com/rezaian-dev/react-19-persian-guide.git
-cd react-19-persian-guide && npm install && npm run dev
-```
-
-<details>
-<summary><strong>🛠️ بیلد و ساختار پروژه (Next.js + TypeScript)</strong></summary>
-
-```bash
-# توسعه
-npm install      # نصب وابستگی‌ها
-npm run dev      # سرور توسعه روی localhost:3000
-
-# بیلد
-npm run typecheck    # بررسی تایپ‌ها
-npm run build        # بیلد استاندارد (Vercel / Node)
-npm run build:pages  # خروجی استاتیک در out/ با basePath (برای GitHub Pages)
-```
-
-```text
-src/app/          صفحه‌ها و layout (خانه، فصل‌ها، نسخهٔ آنلاین، سوشال‌کارت)
-src/app/book/     روت نسخهٔ آنلاین کتاب + استایل ریدر
-src/components/   کامپوننت‌های رابط کاربری (بخش‌ها، ریدر، بنر)
-src/lib/          داده فصل‌ها، طرح کتاب و پیوندها
-src/fonts/        فونت‌های وزیرمتن و جت‌برینز (woff2)
-public/           دارایی‌ها، PDF، EPUB و صفحه‌های نسخهٔ آنلاین
-public/book/      تصویر صفحه‌های کتاب (۲۳۹ صفحه)
-docs/             خروجی منتشرشده روی GitHub Pages (ساختهٔ build:pages)
-```
-
-</details>
+> 👩‍💻 توسعه‌دهنده‌اید و می‌خواهید روی سایت کار کنید؟ [راهنمای مشارکت](./CONTRIBUTING.md) را ببینید.
 
 ## 🧩 مجموعهٔ کامل راهنماهای فارسی
 
@@ -188,7 +178,7 @@ docs/             خروجی منتشرشده روی GitHub Pages (ساختهٔ 
 | ⚛️ [**React 19.2**](https://github.com/rezaian-dev/react-19-persian-guide) | رابط کاربری، state و معماری | [آنلاین](https://rezaian-dev.github.io/react-19-persian-guide/) · 📍 **همین کتاب** |
 | ▲ [**Next.js 16**](https://github.com/rezaian-dev/nextjs-16-persian-guide) | فریم‌ورک، رندر سرور و استقرار | [آنلاین](https://rezaian-dev.github.io/nextjs-16-persian-guide/) |
 
-## 🤝 مشارکت
+## 🤝 مشارکت و بازخورد
 
 خطایی دیدید؟ پیشنهادی دارید؟ [راهنمای مشارکت](./CONTRIBUTING.md) را ببینید و یک [Issue](https://github.com/rezaian-dev/react-19-persian-guide/issues) باز کنید 🐛 — PRهای کوچک و متمرکز همیشه خوش‌آمدند. 🙏
 
@@ -198,7 +188,7 @@ docs/             خروجی منتشرشده روی GitHub Pages (ساختهٔ 
 
 **محمدرضا رضائیان** — [@rezaian-dev](https://github.com/rezaian-dev)
 
-این اثر با مجوز [Creative Commons BY-NC-SA 4.0](./LICENSE) منتشر شده است: استفاده و بازنشر غیرتجاری با ذکر منبع آزاد است و نسخهٔ اقتباسی باید با همین مجوز منتشر شود. ⚖️
+این اثر با مجوز [Creative Commons BY-NC-SA 4.0](./LICENSE) منتشر شده است: استفاده و بازنشر **غیرتجاری** با ذکر منبع آزاد است و نسخهٔ اقتباسی باید با همین مجوز منتشر شود. استفادهٔ تجاری مجاز نیست. ⚖️
 
 </div>
 
