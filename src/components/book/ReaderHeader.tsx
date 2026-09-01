@@ -151,6 +151,7 @@ export default function ReaderHeader() {
 
   // Deep-link settle: a hash landing happens before the lazy images above it
   // have decoded, so re-pin the chapter head under the bar a few times.
+  // Instant, not smooth: a 100k-pixel smooth swoosh takes seconds in Chromium.
   useEffect(() => {
     const settle = () => {
       const hash = window.location.hash;
@@ -158,7 +159,7 @@ export default function ReaderHeader() {
       if (!el) return;
       let n = 0;
       const fix = () => {
-        el.scrollIntoView({ block: "start" });
+        el.scrollIntoView({ block: "start", behavior: "instant" });
         if (++n < 3) window.setTimeout(fix, 220);
       };
       window.setTimeout(fix, 60);
