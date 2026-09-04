@@ -1,3 +1,0 @@
-User-agent: *
-Allow: /
-Sitemap: https://rezaian-dev.github.io/react-19-persian-guide/sitemap.xml

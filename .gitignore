@@ -3,7 +3,7 @@ node_modules/
 
 # Next.js build output
 .next/
-# raw static export; the published copy is committed under docs/
+# static export for GitHub Pages (built by CI, never committed)
 out/
 
 # TypeScript
