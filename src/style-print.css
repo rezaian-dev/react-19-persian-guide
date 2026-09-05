@@ -1,0 +1,123 @@
+/* =====================================================================
+   PRINT / GRAYSCALE OVERRIDES  — appended after style.css when built with
+   `python3 build.py --print`. Goal: laser-printer friendly, minimal ink,
+   meaning conveyed by weight/borders/icons instead of colour.
+   ===================================================================== */
+:root {
+  --accent: #111827;
+  --accent-soft: #f3f4f6;
+  --accent-code: #111827;
+  --react: #111827;
+  --ink: #111827;
+  --ink-strong: #000;
+  --muted: #4b5563;
+  --line: #9ca3af;
+}
+body { color: #111; }
+a { color: #111; text-decoration: underline; }
+.toc a, .toc a * { text-decoration: none; }   /* TOC rows are navigation, not inline links */
+
+/* ---- Cover: white, ink-light ---- */
+.cover { background: #fff !important; color: #111; border: 0; }   /* no artwork in the print edition */
+.cover-glow { display: none; }
+.cover-code { color: rgba(0,0,0,0.08); }
+.cover-kicker { color: #6b7280; }
+.cover-inner { padding-top: 52mm; }
+.cover-brand { display: flex; margin-top: 10mm; }   /* no artwork on the print cover, so the brand line returns */
+.cover-title { margin-top: 16mm; }
+.brand-txt, .brand-txt em { color: #111; border-color: #111; }
+.cover-title { color: #000; }
+.cover-frame { color: #111; border: 2px solid #111; background: transparent; }
+.cover-line { background: #111; }
+.cover-sub { color: #111; }
+.tech-mark { background: #f3f4f6 !important; }
+.tech-name { color: #111; }
+.cover-desc { color: #374151; }
+.cover-stats { border-color: #111; background: transparent; color: #111; }
+.cover-stats b { color: #000; }
+.cover-stats i { background: #111; }
+.cover-author-card { background: transparent; border: 1px solid #111; }
+.cover-author img { border-color: #111; filter: grayscale(1); }
+.ca-name { color: #000; } .ca-role { color: #374151; } .ca-tag { color: #6b7280; }
+.cover-foot { color: #6b7280; }
+.cover svg circle, .cover svg ellipse { fill: #111; stroke: #111; }
+.cover svg g { stroke: #111; }
+.cover svg circle { fill: #111; }
+
+/* ---- TOC ---- */
+.toc-num, .toc-part-name { color: #111; }
+.toc-page, .toc-heading, .toc-title, .toc-part { color: #000; }
+.toc-leader::after { color: #9ca3af; }
+
+/* ---- Headings / bullets ---- */
+.chapter-num { color: #111; }
+h2 .hx { background: linear-gradient(to left, #f3f4f6, rgba(243,244,246,0) 70%); }
+h2 .hx::before, h3 .hx::before { background: #111; }
+ul > li::before { color: #111; }
+ol > li::marker { color: #111; }
+h4 { color: #111; }
+
+/* ---- Inline code ---- */
+code { background: #f3f4f6; color: #111; border: 1px solid #e5e7eb; }
+
+/* ---- Code blocks: light background, dark text ---- */
+/* the 1px border is compensated in the padding so the code area keeps exactly the same inner
+   width as the colour edition — otherwise lines that just fit there would wrap here */
+.code { background: #fafafa; border: 1px solid #9ca3af; }
+.code pre { padding: 12px 13px; } .code.bare pre { padding: 10px 13px; } .col .code pre { padding: 9px 9px; }
+.code-head { background: #e5e7eb; border-bottom: 1px solid #9ca3af; }
+.dots i { background: #6b7280 !important; }
+.fname { color: #111; }
+.code pre { color: #111; }
+.code pre span { color: #111 !important; }             /* neutralise leftover colours */
+.code pre span[style*="font-weight: bold"] { font-weight: 700; }
+.code pre span[style*="font-style: italic"] { font-style: italic; color: #4b5563 !important; }
+
+/* ---- Tables ---- */
+th { background: #e5e7eb !important; color: #000 !important; border-bottom: 2px solid #111; }
+td { border-color: #d1d5db; }
+tbody tr:nth-child(even) td { background: #f9fafb; }
+.tbl-wrap { border-color: #9ca3af; }
+
+/* ---- Callouts: white bg + distinct borders ---- */
+.callout { background: #fff !important; border: 1px solid #9ca3af; border-right: 4px solid #111 !important; }
+.callout-title { color: #000 !important; }
+.callout-title::before { color: #000 !important; }
+.callout-danger { border-right-style: double !important; border-right-width: 6px !important; }
+.callout-warn   { border-right-style: dashed !important; }
+.callout-tip    { border-right-style: dotted !important; }
+.callout-interview { border-right-width: 6px !important; }
+.callout-summary   { background: #f9fafb !important; }
+
+/* ---- Compare columns ---- */
+.col, .col:nth-child(odd), .col:nth-child(even), .col.good, .col.bad { background: #fff !important; border-color: #6b7280 !important; }
+.col-title, .col:nth-child(odd) .col-title, .col:nth-child(even) .col-title, .col.good .col-title, .col.bad .col-title { color: #000 !important; }
+.col.good { border-style: solid !important; border-width: 2px !important; }
+.col.bad  { border-style: dashed !important; border-width: 2px !important; }
+/* emoji in headings print as grey glyphs; keep them (Noto Emoji is monochrome) */
+.col.good .col-title::before { content: "✓ "; }
+.col.bad  .col-title::before { content: "✗ "; }
+
+/* ---- Flow diagrams / facts ---- */
+.flow .box { background: #fff; border-color: #6b7280; }
+.flow .box b { color: #111; }
+.flow .arrow { color: #374151; }
+.facts b { color: #111; }
+.facts > div { background: #fff; border-color: #9ca3af; }
+
+/* ---- Checklists / glossary ---- */
+.checklist ul > li::before { color: #111; }
+.glossary td:first-child { color: #111; }
+
+/* ---- Closing ---- */
+.closing-card { background: #fff; border: 1px solid #111; }
+.closing-kicker { color: #374151; }
+.closing-tags span { background: transparent; color: #111; border: 1px solid #111; }
+.closing-links a { color: #111; }
+
+/* Page numbers stay grey-ish but darker for print */
+@page {
+  @bottom-right { color: #374151; border-top-color: #9ca3af; background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'><rect x='2' y='2' width='6' height='6' rx='1.2' transform='rotate(45 5 5)' fill='%23111111'/></svg>"); }
+  @bottom-center { color: #111; border-color: #9ca3af; background: #f3f4f6; }
+  @bottom-left { color: #6b7280; border-top-color: #9ca3af; }
+}
